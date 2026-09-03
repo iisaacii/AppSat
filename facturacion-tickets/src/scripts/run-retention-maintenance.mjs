@@ -4,9 +4,9 @@ import { runFirestoreRetentionMaintenance } from "../maintenance/firestore-reten
 const execute = process.argv.includes("--execute");
 const summaryOnly = process.argv.includes("--summary");
 
-if (execute && getEnv("RETENTION_EXECUTE_CONFIRM") !== "CONFIRMO ejecutar limpieza EasySat") {
+if (execute && getEnv("RETENTION_EXECUTE_CONFIRM") !== "CONFIRMO ejecutar limpieza AppSat") {
   throw new Error(
-    "Execution requires RETENTION_EXECUTE_CONFIRM=CONFIRMO ejecutar limpieza EasySat. Run without --execute for dry-run.",
+    "Execution requires RETENTION_EXECUTE_CONFIRM=CONFIRMO ejecutar limpieza AppSat. Run without --execute for dry-run.",
   );
 }
 

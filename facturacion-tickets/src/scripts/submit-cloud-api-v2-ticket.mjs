@@ -3,7 +3,8 @@ import { readFile } from "node:fs/promises";
 import { basename, extname, resolve } from "node:path";
 import { getFirebaseAuth } from "../config/firebase.mjs";
 
-const expectedProjectId = "easysat-dev";
+const expectedProjectId = optionalEnv("BILLING_LIVE_EXPECTED_PROJECT_ID", "appsat-dev");
+const expectedApiHostPrefix = optionalEnv("BILLING_LIVE_API_HOST_PREFIX", "appsat-billing-stg-api-").toLowerCase();
 const apiBaseUrl = normalizeApiBaseUrl(requiredEnv("BILLING_API_BASE_URL"));
 const firebaseWebApiKey = requiredEnv("FIREBASE_WEB_API_KEY");
 const projectId = requiredEnv("FIREBASE_PROJECT_ID");
@@ -22,8 +23,11 @@ if (!process.argv.includes("--allow-final-submit")) {
 if (projectId !== expectedProjectId) {
   throw new Error(`Live ticket submission is restricted to ${expectedProjectId}.`);
 }
-if (!apiBaseUrl.hostname.startsWith("easysat-billing-stg-api-")) {
-  throw new Error("BILLING_API_BASE_URL must point to the EasySat staging API.");
+if (!/^[a-z0-9-]+$/.test(expectedApiHostPrefix)) {
+  throw new Error("BILLING_LIVE_API_HOST_PREFIX must contain only lowercase letters, digits and hyphens.");
+}
+if (!apiBaseUrl.hostname.toLowerCase().startsWith(expectedApiHostPrefix)) {
+  throw new Error(`BILLING_API_BASE_URL must point to the expected staging API (${expectedApiHostPrefix}...).`);
 }
 
 const ticketBytes = await readFile(ticketPath);
@@ -197,6 +201,10 @@ function requiredEnv(name) {
   const value = String(process.env[name] ?? "").trim();
   if (!value) throw new Error(`Missing environment variable ${name}.`);
   return value;
+}
+
+function optionalEnv(name, fallback) {
+  return String(process.env[name] ?? fallback).trim() || fallback;
 }
 
 function assert(condition, message) {

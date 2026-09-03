@@ -81,7 +81,7 @@ export function validateCfdiXmlText({
     return buildFailure(`XML could not be parsed: ${error.message}`, { sourcePath, byteLength });
   }
 
-  const placeholder = findNode(parsed, "easysatCfdiPlaceholder");
+  const placeholder = findNode(parsed, "appsatCfdiPlaceholder");
   if (placeholder) {
     return {
       ok: allowDevelopmentPlaceholder,

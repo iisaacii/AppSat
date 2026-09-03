@@ -1,10 +1,10 @@
-name: easysat-billing
+name: appsat-billing
 
 x-firebase-environment: &firebase-environment
-  FIREBASE_PROJECT_ID: ${FIREBASE_PROJECT_ID:-easysat-dev}
-  FIREBASE_STORAGE_BUCKET: ${FIREBASE_STORAGE_BUCKET:-easysat-dev.firebasestorage.app}
+  FIREBASE_PROJECT_ID: ${FIREBASE_PROJECT_ID:-appsat-dev}
+  FIREBASE_STORAGE_BUCKET: ${FIREBASE_STORAGE_BUCKET:-appsat-dev.firebasestorage.app}
   GOOGLE_APPLICATION_CREDENTIALS: /run/secrets/firebase-service-account.json
-  FIRESTORE_ROOT_COLLECTION: ${FIRESTORE_ROOT_COLLECTION:-EasySat}
+  FIRESTORE_ROOT_COLLECTION: ${FIRESTORE_ROOT_COLLECTION:-AppSat}
   FIRESTORE_ROOT_DOCUMENT: ${FIRESTORE_ROOT_DOCUMENT:-app}
 
 x-worker-environment: &worker-environment
@@ -16,13 +16,13 @@ x-worker-environment: &worker-environment
   PORTAL_KNOWLEDGE_STORE: firestore
   REDIS_URL: ${REDIS_URL:-redis://redis:6379}
   BILLING_DISPATCH_MODE: ${BILLING_DISPATCH_MODE:-hybrid}
-  BILLING_QUEUE_PREFIX: ${BILLING_QUEUE_PREFIX:-easysat:billing}
+  BILLING_QUEUE_PREFIX: ${BILLING_QUEUE_PREFIX:-appsat:billing}
   BILLING_QUEUE_FALLBACK_POLL_MS: ${BILLING_QUEUE_FALLBACK_POLL_MS:-30000}
   BILLING_QUEUE_ATTEMPTS: ${BILLING_QUEUE_ATTEMPTS:-3}
   BILLING_QUEUE_BACKOFF_MS: ${BILLING_QUEUE_BACKOFF_MS:-1000}
   PORTAL_RATE_LIMIT_BACKEND: redis
   PORTAL_RATE_LIMIT_REDIS_REQUIRED: "true"
-  PORTAL_RATE_LIMIT_NAMESPACE: ${PORTAL_RATE_LIMIT_NAMESPACE:-easysat:billing:portal}
+  PORTAL_RATE_LIMIT_NAMESPACE: ${PORTAL_RATE_LIMIT_NAMESPACE:-appsat:billing:portal}
   PORTAL_RATE_LIMIT_LEASE_MS: ${PORTAL_RATE_LIMIT_LEASE_MS:-120000}
   PORTAL_RATE_LIMIT_ACQUIRE_TIMEOUT_MS: ${PORTAL_RATE_LIMIT_ACQUIRE_TIMEOUT_MS:-900000}
   WORKER_POLL_INTERVAL_MS: ${WORKER_POLL_INTERVAL_MS:-5000}
@@ -65,7 +65,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    image: easysat-billing-api:local
+    image: appsat-billing-api:local
     depends_on:
       redis:
         condition: service_healthy
@@ -74,10 +74,10 @@ services:
       PORT: 8080
       REDIS_URL: ${REDIS_URL:-redis://redis:6379}
       BILLING_DISPATCH_MODE: ${BILLING_API_DISPATCH_MODE:-hybrid}
-      BILLING_QUEUE_PREFIX: ${BILLING_QUEUE_PREFIX:-easysat:billing}
+      BILLING_QUEUE_PREFIX: ${BILLING_QUEUE_PREFIX:-appsat:billing}
       BILLING_QUEUE_ATTEMPTS: ${BILLING_QUEUE_ATTEMPTS:-3}
       BILLING_QUEUE_BACKOFF_MS: ${BILLING_QUEUE_BACKOFF_MS:-1000}
-      BILLING_API_ALLOWED_ORIGINS: ${BILLING_API_ALLOWED_ORIGINS:-https://easysat-dev.web.app,http://127.0.0.1:52123,http://localhost:52123}
+      BILLING_API_ALLOWED_ORIGINS: ${BILLING_API_ALLOWED_ORIGINS:-https://appsat-dev.web.app,http://127.0.0.1:52123,http://localhost:52123}
       BILLING_API_TICKET_LIMIT_BYTES: ${BILLING_API_TICKET_LIMIT_BYTES:-10485760}
     ports:
       - "${BILLING_API_HOST_PORT:-8080}:8080"
@@ -91,7 +91,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.worker-ocr
-    image: easysat-billing-worker-ocr:local
+    image: appsat-billing-worker-ocr:local
     depends_on:
       redis:
         condition: service_healthy
@@ -114,7 +114,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.worker-browser
-    image: easysat-billing-worker-browser:local
+    image: appsat-billing-worker-browser:local
     depends_on:
       redis:
         condition: service_healthy
@@ -147,7 +147,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.worker-browser
-    image: easysat-billing-worker-browser:local
+    image: appsat-billing-worker-browser:local
     depends_on:
       redis:
         condition: service_healthy
@@ -169,14 +169,14 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    image: easysat-billing-api:local
+    image: appsat-billing-api:local
     depends_on:
       redis:
         condition: service_healthy
     command: ["node", "src/scripts/monitor-billing-queues.mjs", "--watch"]
     environment:
       REDIS_URL: ${REDIS_URL:-redis://redis:6379}
-      BILLING_QUEUE_PREFIX: ${BILLING_QUEUE_PREFIX:-easysat:billing}
+      BILLING_QUEUE_PREFIX: ${BILLING_QUEUE_PREFIX:-appsat:billing}
       BILLING_MONITOR_INTERVAL_MS: ${BILLING_MONITOR_INTERVAL_MS:-30000}
       BILLING_MONITOR_STARTUP_GRACE_MS: ${BILLING_MONITOR_STARTUP_GRACE_MS:-60000}
       BILLING_MONITOR_ALERT_COOLDOWN_MS: ${BILLING_MONITOR_ALERT_COOLDOWN_MS:-300000}

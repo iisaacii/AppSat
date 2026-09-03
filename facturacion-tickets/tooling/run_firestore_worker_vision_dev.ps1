@@ -9,13 +9,13 @@ if (-not (Test-Path $credentialsPath)) {
 }
 
 $env:GOOGLE_APPLICATION_CREDENTIALS = $credentialsPath
-$env:FIREBASE_PROJECT_ID = "easysat-dev"
-$env:FIREBASE_STORAGE_BUCKET = "easysat-dev.firebasestorage.app"
+$env:FIREBASE_PROJECT_ID = "appsat-dev"
+$env:FIREBASE_STORAGE_BUCKET = "appsat-dev.firebasestorage.app"
 $env:CFDI_STORAGE_MODE = "firebase"
 $env:WORKER_POLL_INTERVAL_MS = "3000"
 $env:OCR_ENGINE = "google_vision"
 
-Write-Host "Worker dev con Google Vision OCR escuchando jobs pending en easysat-dev..."
+Write-Host "Worker dev con Google Vision OCR escuchando jobs pending en appsat-dev..."
 Write-Host "Requiere Cloud Vision API habilitada para el proyecto."
 Write-Host "Ctrl+C para detener."
 Write-Host ""

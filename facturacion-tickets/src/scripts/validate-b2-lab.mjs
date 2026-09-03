@@ -15,7 +15,7 @@ const ticket = buildTicketDictionary({
 });
 const taxProfile = {
   rfc: "XAXX010101000",
-  email: "pruebas@easysat.dev",
+  email: "pruebas@appsat.dev",
   postalCode: "54040",
 };
 

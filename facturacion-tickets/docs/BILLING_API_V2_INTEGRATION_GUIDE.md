@@ -1,20 +1,20 @@
-# Guia Rapida: Integrar EasySat Billing API V2
+# Guia rapida: integrar AppSat Billing API V2
 
 Esta guia es para cualquier equipo que quiera integrar su aplicacion con
-EasySat. La app movil manda la foto y datos fiscales a su propio backend; ese
-backend llama a EasySat.
+AppSat. La app movil manda la foto y datos fiscales a su propio backend; ese
+backend llama a AppSat.
 
-No enviar el token de EasySat desde Flutter, una APK o JavaScript del
+No enviar la credencial de AppSat desde Flutter, una APK o JavaScript del
 navegador.
 
-## Que hace EasySat
+## Que hace AppSat
 
-EasySat recibe una foto de ticket y el perfil fiscal del receptor. Despues,
+AppSat recibe una foto de ticket y el perfil fiscal del receptor. Despues,
 de forma asincrona, ejecuta:
 
 ```text
 foto + perfil fiscal
-  -> OCR y candidatos seguros
+  -> OCR autonomo y candidatos seguros
   -> busqueda del portal correcto
   -> Capa A: receta rapida, si ya se conoce el portal
   -> B3: navegacion adaptativa, si A no puede resolverlo
@@ -28,14 +28,15 @@ el backend integrador consulta ese `jobId` hasta tener el resultado.
 ## Datos necesarios
 
 ```text
-API base: https://easysat-billing-stg-api-570722310741.us-central1.run.app
-Credencial: debe ser configurada y entregada por EasySat antes de usar la API
+API base: la URL HTTPS que entregue el operador de AppSat
+Credencial: la configurada por el operador para ese despliegue
 ```
 
 La credencial debe guardarse como secreto en el servidor de la integracion, por
 ejemplo en variables de entorno o su administrador de secretos. La integracion
-no necesita usar Firebase de EasySat ni compartir su Firebase con EasySat. No
-hay un token de servicio externo compartido activo en staging actualmente.
+no necesita usar Firebase de AppSat ni compartir su Firebase con AppSat. El
+despliegue puede aceptar Firebase ID tokens, un token de servicio o ambos; el
+repositorio publico no contiene ninguna credencial activa.
 
 ## Paso 1: Crear una solicitud de factura
 
@@ -50,7 +51,7 @@ La solicitud usa `multipart/form-data`, porque contiene una imagen y un JSON.
 Headers obligatorios:
 
 ```http
-Authorization: Bearer TOKEN_DE_EASYSAT
+Authorization: Bearer TOKEN_DE_APPSAT
 Idempotency-Key: UUID_UNICO_POR_TICKET
 ```
 
@@ -88,8 +89,8 @@ recomendable porque muchos portales lo piden. Los demas campos son necesarios.
 Ejemplo en PowerShell:
 
 ```powershell
-$baseUrl = "https://easysat-billing-stg-api-570722310741.us-central1.run.app"
-$token = $env:EASYSAT_BILLING_TOKEN
+$baseUrl = $env:APPSAT_BILLING_API_URL
+$token = $env:APPSAT_BILLING_TOKEN
 $requestId = [guid]::NewGuid().ToString()
 
 $taxProfile = @{
@@ -170,7 +171,7 @@ GET /v2/billing/jobs/{jobId}/events?limit=20
 | Estado | Que debe hacer la integracion |
 | --- | --- |
 | `pending`, `ocr_processing`, `portal_processing` | Seguir consultando con `pollAfterMs`. |
-| `retry_scheduled` | Esperar y seguir consultando. EasySat reintentara automaticamente. |
+| `retry_scheduled` | Esperar y seguir consultando. AppSat reintentara automaticamente. |
 | `completed` | Entregar `data.result.xmlUrl` y/o `data.result.pdfUrl` al usuario. |
 | `resolved` | Mostrar el mensaje. Usualmente el ticket ya estaba facturado. |
 | `needs_user_action` | Revisar `data.userAction` y mostrar la ayuda indicada. |
@@ -213,7 +214,7 @@ el boton `Continuar en portal`:
 
 ```http
 POST /v2/billing/jobs/{jobId}/commands
-Authorization: Bearer TOKEN_DE_EASYSAT
+Authorization: Bearer <credencial-configurada-en-el-despliegue>
 Idempotency-Key: UUID_NUEVO
 Content-Type: application/json
 ```
@@ -246,7 +247,7 @@ Para cada ticket nuevo, el backend integrador genera un UUID nuevo en
 `Idempotency-Key`.
 
 - Si hay timeout o pierde internet, repite exactamente la misma solicitud con
-  la misma clave: EasySat devuelve el mismo job.
+  la misma clave: AppSat devuelve el mismo job.
 - Para otro ticket, usa una clave nueva.
 - No reutilizar una clave con otra foto o perfil fiscal: la API responde `409`.
 
@@ -266,9 +267,9 @@ Para cada ticket nuevo, el backend integrador genera un UUID nuevo en
 ```text
 Aplicacion cliente
   -> backend integrador: foto + perfil fiscal
-  -> EasySat POST /v2/billing/jobs
+  -> AppSat POST /v2/billing/jobs
   <- jobId
-  -> EasySat GET /v2/billing/jobs/{jobId} hasta terminar
+  -> AppSat GET /v2/billing/jobs/{jobId} hasta terminar
   <- XML/PDF, estado resuelto, error o instruccion Capa C
   -> backend integrador devuelve el resultado a la aplicacion
 ```

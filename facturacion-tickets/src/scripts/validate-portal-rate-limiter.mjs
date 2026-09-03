@@ -111,7 +111,7 @@ async function validateLocalLimiter() {
 }
 
 async function validateRedisAcrossProcesses() {
-  const namespace = `easysat:test:portal:${Date.now()}:${process.pid}`;
+  const namespace = `appsat:test:portal:${Date.now()}:${process.pid}`;
   const env = {
     ...process.env,
     PORTAL_RATE_LIMIT_BACKEND: "redis",

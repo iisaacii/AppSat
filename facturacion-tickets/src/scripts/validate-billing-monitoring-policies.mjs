@@ -4,7 +4,7 @@ import {
   normalizeNotificationChannels,
 } from "../deployment/billing-monitoring-policies.mjs";
 
-const channel = "projects/easysat-dev/notificationChannels/billing-alerts";
+const channel = "projects/appsat-dev/notificationChannels/billing-alerts";
 const policies = buildBillingMonitoringPolicies({ notificationChannels: [channel, channel] });
 
 assert.equal(policies.length, 2);

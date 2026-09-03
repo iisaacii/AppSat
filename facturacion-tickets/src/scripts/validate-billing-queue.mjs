@@ -1,5 +1,5 @@
 process.env.BILLING_DISPATCH_MODE = "hybrid";
-process.env.BILLING_QUEUE_PREFIX = `easysat:test:queue:${Date.now()}:${process.pid}`;
+process.env.BILLING_QUEUE_PREFIX = `appsat:test:queue:${Date.now()}:${process.pid}`;
 process.env.BILLING_QUEUE_ATTEMPTS = "2";
 process.env.BILLING_QUEUE_BACKOFF_MS = "100";
 

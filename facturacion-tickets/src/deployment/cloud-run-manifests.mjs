@@ -303,7 +303,7 @@ function normalizeCloudRunConfig(raw) {
   return {
     projectId,
     region: String(raw?.region ?? "").trim(),
-    namePrefix: String(raw?.namePrefix ?? "easysat-billing-stg").trim(),
+    namePrefix: String(raw?.namePrefix ?? "appsat-billing-stg").trim(),
     network: String(raw?.network ?? "").trim(),
     subnetwork: String(raw?.subnetwork ?? "").trim(),
     redisHost: String(raw?.redisHost ?? "").trim(),
@@ -312,9 +312,9 @@ function normalizeCloudRunConfig(raw) {
     firebaseStorageBucket: String(
       raw?.firebaseStorageBucket ?? `${projectId}.firebasestorage.app`,
     ).trim(),
-    firestoreRootCollection: String(raw?.firestoreRootCollection ?? "EasySat").trim(),
+    firestoreRootCollection: String(raw?.firestoreRootCollection ?? "AppSat").trim(),
     firestoreRootDocument: String(raw?.firestoreRootDocument ?? "app").trim(),
-    queuePrefix: String(raw?.queuePrefix ?? "easysat:billing:staging").trim(),
+    queuePrefix: String(raw?.queuePrefix ?? "appsat:billing:staging").trim(),
     releaseId: String(raw?.releaseId ?? "").trim(),
     geminiModel: String(raw?.geminiModel ?? "gemini-3.1-flash-lite").trim(),
     geminiBackend: String(raw?.geminiBackend ?? "developer").trim().toLowerCase(),

@@ -31,7 +31,7 @@ class B3StructuredResult(BaseModel):
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="B3 Browser-use lab runner for EasySat billing tickets")
+    parser = argparse.ArgumentParser(description="B3 Browser-use lab runner for AppSat billing tickets")
     parser.add_argument("--fixture", required=True, help="Path to a stagehand/b2 fixture JSON")
     parser.add_argument("--profile", default="data/tax-profiles/sample.json")
     parser.add_argument("--max-steps", type=int, default=int(os.getenv("B3_BROWSER_USE_MAX_STEPS", "40")))
@@ -144,7 +144,7 @@ async def run_b3_browseruse(fixture: dict, tax_profile: dict, fiscal_compliance:
             loop_detection_enabled=True,
             calculate_cost=calculate_cost,
             pricing_url=pricing_url,
-            source="easysat-b3-browseruse",
+            source="appsat-b3-browseruse",
         )
         history = await agent.run(max_steps=args.max_steps)
     finally:
@@ -467,7 +467,7 @@ Debes darle MAXIMA PRIORIDAD a resolver este error. Analiza por que fallo e inte
 """
 
     return f"""
-# B3 EasySat - contrato de navegacion
+# B3 AppSat - contrato de navegacion
 
 ## Objetivo
 Obtén la factura CFDI mexicana de este ticket. El resultado exitoso es descargar el XML y, si existe, tambien el PDF o representacion impresa. Llegar a un boton "Facturar" no es exito.
@@ -779,7 +779,7 @@ def extract_facturation_links_from_landing(url: str) -> list[dict]:
         request = urllib.request.Request(
             normalized,
             headers={
-                "User-Agent": "Mozilla/5.0 EasySat Billing Lab",
+                "User-Agent": "Mozilla/5.0 AppSat Billing Lab",
                 "Accept": "text/html,application/xhtml+xml",
             },
         )

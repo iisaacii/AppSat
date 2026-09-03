@@ -23,7 +23,7 @@ try {
   $firebaseOutput = & $firebaseCli emulators:exec `
     --config $firebaseConfig `
     --only firestore,storage `
-    --project demo-easysat-rules-test `
+    --project demo-appsat-rules-test `
     "npm run security:rules:test" 2>&1
   $firebaseExitCode = $LASTEXITCODE
   $firebaseOutput | ForEach-Object { Write-Output $_ }

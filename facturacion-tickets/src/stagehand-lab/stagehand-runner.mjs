@@ -1272,7 +1272,7 @@ function buildBrowserbaseStagehandOptions(stagehandEnv, context) {
         blockAds: true,
       },
       userMetadata: {
-        app: "easysat-billing-service",
+        app: "appsat-billing-service",
         jobId: safeBrowserbaseMetadataValue(context?.id ?? "stagehand_lab_job"),
         rfcEmisor: safeBrowserbaseMetadataValue(context?.rfcEmisor ?? "unknown"),
         portalHost: safeBrowserbaseMetadataValue(getHost(context?.portalUrl) || "unknown"),

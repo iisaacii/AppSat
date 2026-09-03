@@ -4,7 +4,7 @@ const TOKEN_HASH_PATTERN = /^[a-f0-9]{64}$/i;
 const CLIENT_ID_PATTERN = /^[A-Za-z0-9_-]{1,64}$/;
 
 /**
- * Creates the verifier for a server-to-server EasySat token.
+ * Creates the verifier for an optional server-to-server AppSat token.
  * The configured value is a SHA-256 hash, so the plaintext token never needs
  * to be present in the repository or in the Cloud Run manifest.
  */

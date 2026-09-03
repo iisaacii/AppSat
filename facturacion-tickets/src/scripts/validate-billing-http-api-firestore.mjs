@@ -10,19 +10,19 @@ if (!process.env.FIRESTORE_EMULATOR_HOST) {
 const uid = "api_test_user";
 const otherUid = "api_other_user";
 const db = getFirebaseDb();
-const userRef = db.doc(`EasySat/app/users/${uid}`);
+const userRef = db.doc(`AppSat/app/users/${uid}`);
 const profileRef = userRef.collection("contribuyentes").doc("billing_lab_default");
 const repository = createFirestoreBillingApiRepository({ db });
 const ticketUrl =
-  "https://firebasestorage.googleapis.com/v0/b/easysat-dev.firebasestorage.app/o/" +
+  "https://firebasestorage.googleapis.com/v0/b/appsat-dev.firebasestorage.app/o/" +
   `billing-lab%2Ftickets%2F${uid}%2Fticket-api-test.jpg?alt=media`;
 const autonomousTicketUrl =
-  "https://firebasestorage.googleapis.com/v0/b/easysat-dev.firebasestorage.app/o/" +
+  "https://firebasestorage.googleapis.com/v0/b/appsat-dev.firebasestorage.app/o/" +
   `billing-api%2Ftickets%2F${uid}%2Fticket-api-v2-test.jpg?alt=media`;
 const autonomousTaxProfile = {
   rfc: "XAXX010101000",
   legalName: "PERSONA CONTRIBUYENTE DEMO",
-  email: "pruebas@easysat.dev",
+  email: "pruebas@appsat.dev",
   fiscalRegime: "605 - Sueldos y Salarios e Ingresos Asimilados a Salarios",
   fiscalRegimes: ["605 - Sueldos y Salarios e Ingresos Asimilados a Salarios"],
   cfdiUse: "S01 - Sin efectos fiscales",
@@ -41,7 +41,7 @@ await profileRef.set({
   rfc: "XAXX010101000",
   nombre: "PERSONA CONTRIBUYENTE DEMO",
   regimenesFiscales: ["605 - Sueldos y Salarios e Ingresos Asimilados a Salarios"],
-  email: "pruebas@easysat.dev",
+  email: "pruebas@appsat.dev",
   usoCfdi: "S01 - Sin efectos fiscales",
   codigoPostal: "54040",
   calle: "CAOBA",
@@ -166,7 +166,7 @@ await assert.rejects(
     idempotencyKey: "missing-profile",
     body: {
       ticketFileUrl:
-        "https://firebasestorage.googleapis.com/v0/b/easysat-dev.firebasestorage.app/o/" +
+        "https://firebasestorage.googleapis.com/v0/b/appsat-dev.firebasestorage.app/o/" +
         "billing-lab%2Ftickets%2Fprofile_missing_user%2Fticket.jpg?alt=media",
       taxProfileId: "missing",
     },

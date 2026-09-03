@@ -14,7 +14,7 @@ import {
 } from "../orchestrator/ocr-checkpoint.mjs";
 import { runFacturaJobWorkerOnce, watchFacturaJobs } from "../jobs/factura-job.worker.mjs";
 
-const ticketFileUrl = "https://firebasestorage.googleapis.com/v0/b/easysat-dev.firebasestorage.app/o/billing-lab%2Ftickets%2Fuser_1%2Fticket.jpg?alt=media";
+const ticketFileUrl = "https://firebasestorage.googleapis.com/v0/b/appsat-dev.firebasestorage.app/o/billing-lab%2Ftickets%2Fuser_1%2Fticket.jpg?alt=media";
 const initialJob = {
   id: "job_initial",
   status: "pending",

@@ -14,7 +14,7 @@ const suffix = randomUUID().replaceAll("-", "").slice(0, 8);
 const uid = `smoke_portal_${suffix}`;
 const jobId = `portal_router_${suffix}`;
 const rfcEmisor = `TST010101${suffix.slice(0, 3).toUpperCase()}`;
-const portalUrl = "https://example.com/easysat-portal-smoke";
+const portalUrl = "https://example.com/appsat-portal-smoke";
 const ticketFileUrl = `mock://portal-router-smoke-${suffix}.jpg`;
 const now = new Date().toISOString();
 
@@ -58,7 +58,7 @@ const extraction = {
 const taxProfile = {
   rfc: "XAXX010101000",
   legalName: "PERSONA CONTRIBUYENTE DEMO",
-  email: "pruebas@easysat.dev",
+  email: "pruebas@appsat.dev",
   fiscalRegime: "605 - Sueldos y Salarios e Ingresos Asimilados a Salarios",
   fiscalRegimes: ["605 - Sueldos y Salarios e Ingresos Asimilados a Salarios"],
   cfdiUse: "S01 - Sin efectos fiscales",

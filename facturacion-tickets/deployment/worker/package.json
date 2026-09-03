@@ -1,5 +1,5 @@
 {
-  "name": "easysat-billing-worker-runtime",
+  "name": "appsat-billing-worker-runtime",
   "version": "0.1.0",
   "private": true,
   "type": "module",

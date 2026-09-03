@@ -26,7 +26,7 @@ const dueQueryLimit = getNumberConfig("WORKER_DUE_QUERY_LIMIT", 25);
 const demoTaxProfile = {
   rfc: "XAXX010101000",
   legalName: "PERSONA CONTRIBUYENTE DEMO",
-  email: "pruebas@easysat.dev",
+  email: "pruebas@appsat.dev",
   fiscalRegime: "605 - Sueldos y Salarios e Ingresos Asimilados a Salarios",
   fiscalRegimes: ["605 - Sueldos y Salarios e Ingresos Asimilados a Salarios"],
   cfdiUse: "S01 - Sin efectos fiscales",

@@ -66,8 +66,8 @@ const results = [];
 
 for (const desired of desiredPolicies) {
   const existing = existingPolicies.find(
-    (policy) => policy.userLabels?.easysat_component === "billing"
-      && policy.userLabels?.easysat_policy === desired.key,
+    (policy) => policy.userLabels?.appsat_component === "billing"
+      && policy.userLabels?.appsat_policy === desired.key,
   );
   const policy = existing ? { ...desired.policy, name: existing.name } : desired.policy;
 

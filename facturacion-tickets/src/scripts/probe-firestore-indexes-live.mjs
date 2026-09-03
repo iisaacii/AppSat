@@ -4,8 +4,8 @@ import { getFirebaseDb } from "../config/firebase.mjs";
 
 const db = getFirebaseDb();
 const { collection, document } = getFirestoreRoot();
-const probeValue = "__easysat_index_probe__";
-const probeDocumentId = "easysat_index_probe";
+const probeValue = "__appsat_index_probe__";
+const probeDocumentId = "appsat_index_probe";
 const usersRef = db.collection(collection).doc(document).collection("users");
 const supportProbe = await findSupportProbeUser(usersRef);
 const probes = [

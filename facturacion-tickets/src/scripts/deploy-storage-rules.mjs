@@ -7,8 +7,8 @@ import { getEnv } from "../config/env.mjs";
 const rootDir = resolve(dirname(fileURLToPath(import.meta.url)), "../..");
 const workspaceDir = resolve(rootDir, "..");
 const rulesPath = resolve(workspaceDir, "storage.rules");
-const projectId = getEnv("FIREBASE_PROJECT_ID", "easysat-dev");
-const bucketName = getEnv("FIREBASE_STORAGE_BUCKET", "easysat-dev.firebasestorage.app").replace(/^gs:\/\//, "").trim();
+const projectId = getEnv("FIREBASE_PROJECT_ID", "appsat-dev");
+const bucketName = getEnv("FIREBASE_STORAGE_BUCKET", "appsat-dev.firebasestorage.app").replace(/^gs:\/\//, "").trim();
 
 const rulesApi = "https://firebaserules.googleapis.com/v1";
 const auth = new GoogleAuth({ scopes: ["https://www.googleapis.com/auth/cloud-platform"] });

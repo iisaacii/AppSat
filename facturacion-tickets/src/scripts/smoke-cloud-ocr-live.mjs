@@ -7,7 +7,7 @@ import {
   getFirebaseStorageBucket,
 } from "../config/firebase.mjs";
 
-const expectedProjectId = "easysat-dev";
+const expectedProjectId = "appsat-dev";
 const ticketPath = resolve(getRequiredArg("--ticket"));
 const apiBaseUrl = normalizeApiBaseUrl(getRequiredEnv("BILLING_API_BASE_URL"));
 const firebaseWebApiKey = getRequiredEnv("FIREBASE_WEB_API_KEY");
@@ -28,8 +28,8 @@ if (!process.argv.includes("--confirm-staging")) {
 if (projectId !== expectedProjectId) {
   throw new Error(`OCR smoke test is restricted to ${expectedProjectId}.`);
 }
-if (!apiBaseUrl.hostname.startsWith("easysat-billing-stg-api-")) {
-  throw new Error("BILLING_API_BASE_URL must point to the EasySat staging API.");
+if (!apiBaseUrl.hostname.startsWith("appsat-billing-stg-api-")) {
+  throw new Error("BILLING_API_BASE_URL must point to the AppSat staging API.");
 }
 
 const ticketStats = await stat(ticketPath);
@@ -187,7 +187,7 @@ async function apiRequest(path, idToken, init = {}) {
 
 async function cleanupProbe({ auth, db, bucket, uid, objectPath }) {
   await bucket.file(objectPath).delete({ ignoreNotFound: true });
-  await db.recursiveDelete(db.collection("EasySat").doc("app").collection("users").doc(uid));
+  await db.recursiveDelete(db.collection("AppSat").doc("app").collection("users").doc(uid));
   await auth.deleteUser(uid).catch((error) => {
     if (error?.code !== "auth/user-not-found") throw error;
   });
@@ -201,7 +201,7 @@ function buildSmokeTaxProfile() {
   return {
     rfc: "AAA010101AAA",
     legalName: "EMPRESA DEMO SA DE CV",
-    email: "billing-smoke@easysat.dev",
+    email: "billing-smoke@appsat.dev",
     fiscalRegime: "601 - General de Ley Personas Morales",
     fiscalRegimes: ["601 - General de Ley Personas Morales"],
     cfdiUse: "G03 - Gastos en general",

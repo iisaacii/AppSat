@@ -4,23 +4,23 @@ import { generateCloudRunManifests } from "../deployment/cloud-run-manifests.mjs
 
 const digest = (character) => character.repeat(64);
 const config = {
-  projectId: "easysat-dev",
+  projectId: "appsat-dev",
   region: "us-central1",
-  namePrefix: "easysat-billing-stg",
-  network: "easysat-staging",
-  subnetwork: "easysat-staging-us-central1",
+  namePrefix: "appsat-billing-stg",
+  network: "appsat-staging",
+  subnetwork: "appsat-staging-us-central1",
   redisHost: "10.10.0.5",
-  runtimeServiceAccount: "easysat-billing-runtime@easysat-dev.iam.gserviceaccount.com",
+  runtimeServiceAccount: "appsat-billing-runtime@appsat-dev.iam.gserviceaccount.com",
   releaseId: "stg-test-release",
   apiPublicAccess: true,
-  allowedOrigins: ["https://easysat-dev.web.app"],
+  allowedOrigins: ["https://appsat-dev.web.app"],
   geminiBackend: "vertex",
   geminiVertexLocation: "global",
-  geminiSecret: { name: "easysat-gemini-api-key", version: "1" },
+  geminiSecret: { name: "appsat-gemini-api-key", version: "1" },
   images: {
-    api: `us-central1-docker.pkg.dev/easysat-dev/easysat/billing-api@sha256:${digest("a")}`,
-    ocr: `us-central1-docker.pkg.dev/easysat-dev/easysat/billing-ocr@sha256:${digest("b")}`,
-    browser: `us-central1-docker.pkg.dev/easysat-dev/easysat/billing-browser@sha256:${digest("c")}`,
+    api: `us-central1-docker.pkg.dev/appsat-dev/appsat/billing-api@sha256:${digest("a")}`,
+    ocr: `us-central1-docker.pkg.dev/appsat-dev/appsat/billing-ocr@sha256:${digest("b")}`,
+    browser: `us-central1-docker.pkg.dev/appsat-dev/appsat/billing-browser@sha256:${digest("c")}`,
   },
 };
 

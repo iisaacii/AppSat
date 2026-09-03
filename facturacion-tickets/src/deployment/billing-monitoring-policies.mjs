@@ -1,6 +1,6 @@
 const MANAGED_LABELS = Object.freeze({
-  easysat_component: "billing",
-  easysat_managed: "true",
+  appsat_component: "billing",
+  appsat_managed: "true",
 });
 
 export function buildBillingMonitoringPolicies({ notificationChannels = [] } = {}) {
@@ -9,7 +9,7 @@ export function buildBillingMonitoringPolicies({ notificationChannels = [] } = {
   return [
     buildLogAlertPolicy({
       key: "queue_critical",
-      displayName: "EasySat Billing: queue critical",
+      displayName: "AppSat Billing: queue critical",
       severity: "CRITICAL",
       filter: [
         'jsonPayload.meta.event="billing_queue_alert"',
@@ -28,7 +28,7 @@ export function buildBillingMonitoringPolicies({ notificationChannels = [] } = {
     }),
     buildLogAlertPolicy({
       key: "b3_usage_critical",
-      displayName: "EasySat Billing: B3 usage critical",
+      displayName: "AppSat Billing: B3 usage critical",
       severity: "WARNING",
       filter: [
         'jsonPayload.meta.event="b3_llm_usage"',
@@ -85,7 +85,7 @@ function buildLogAlertPolicy({
       },
       userLabels: {
         ...MANAGED_LABELS,
-        easysat_policy: key,
+        appsat_policy: key,
       },
       conditions: [
         {

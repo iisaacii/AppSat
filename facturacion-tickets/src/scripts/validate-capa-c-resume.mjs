@@ -12,7 +12,7 @@ process.env.CAPA_C_KEEP_BROWSER_OPEN = "false";
 const taxProfile = {
   rfc: "XAXX010101000",
   legalName: "PERSONA CONTRIBUYENTE DEMO",
-  email: "pruebas@easysat.dev",
+  email: "pruebas@appsat.dev",
   fiscalRegime: "605 - Sueldos y Salarios e Ingresos Asimilados a Salarios",
   cfdiUse: "S01 - Sin efectos fiscales",
   postalCode: "54040",

@@ -54,7 +54,7 @@ const ticketUpload = {
   async save(input) {
     calls.push({ type: "upload", input });
     return {
-      downloadUrl: "https://firebasestorage.googleapis.com/v0/b/easysat-dev.firebasestorage.app/o/billing-api%2Ftickets%2Fuser_123%2Fticket_1.jpg?alt=media&token=test",
+      downloadUrl: "https://firebasestorage.googleapis.com/v0/b/appsat-dev.firebasestorage.app/o/billing-api%2Ftickets%2Fuser_123%2Fticket_1.jpg?alt=media&token=test",
       path: "billing-api/tickets/user_123/ticket_1.jpg",
       reused: false,
     };

@@ -12,12 +12,12 @@ import {
 
 const serviceRoot = resolve(dirname(fileURLToPath(import.meta.url)), "../..");
 const repositoryRoot = resolve(serviceRoot, "..");
-const projectId = "demo-easysat-rules-test";
+const projectId = "demo-appsat-rules-test";
 const bucketUrl = `gs://${projectId}.appspot.com`;
 const ownerUid = "billing_owner";
 const otherUid = "billing_other";
 const jobId = "job_security_test";
-const jobPath = `EasySat/app/users/${ownerUid}/facturaJobs/${jobId}`;
+const jobPath = `AppSat/app/users/${ownerUid}/facturaJobs/${jobId}`;
 
 const testEnvironment = await initializeTestEnvironment({
   projectId,
@@ -111,7 +111,7 @@ async function validateFirestoreIsolation() {
   await assertFails(otherDb.doc(jobPath).set({ uid: otherUid, status: "pending" }));
   const unsafeJobId = `${jobId}_unsafe_url`;
   await assertFails(
-    ownerDb.doc(`EasySat/app/users/${ownerUid}/facturaJobs/${unsafeJobId}`).set({
+    ownerDb.doc(`AppSat/app/users/${ownerUid}/facturaJobs/${unsafeJobId}`).set({
       contractVersion: "factura-job.v1",
       id: unsafeJobId,
       uid: ownerUid,
@@ -153,8 +153,8 @@ async function validateFirestoreIsolation() {
   );
   await assertFails(ownerDb.doc(jobPath).delete());
 
-  const sharedTemplatePath = "EasySat/app/billingPortalTemplates/template_security_test";
-  const sharedOutcomePath = "EasySat/app/billingPortalOutcomes/outcome_security_test";
+  const sharedTemplatePath = "AppSat/app/billingPortalTemplates/template_security_test";
+  const sharedOutcomePath = "AppSat/app/billingPortalOutcomes/outcome_security_test";
   await testEnvironment.withSecurityRulesDisabled(async (context) => {
     const adminDb = context.firestore();
     await adminDb.doc(sharedTemplatePath).set({ kind: "template_candidate" });
@@ -165,7 +165,7 @@ async function validateFirestoreIsolation() {
   await assertFails(ownerDb.doc(sharedTemplatePath).set({ kind: "tampered" }));
 
   const commandPath =
-    `EasySat/app/users/${ownerUid}/billingJobCommands/command_owner`;
+    `AppSat/app/users/${ownerUid}/billingJobCommands/command_owner`;
   const command = {
     version: "billing-job-command.v1",
     clientRequestId: "command_owner",
@@ -181,7 +181,7 @@ async function validateFirestoreIsolation() {
 
   await assertSucceeds(
     ownerDb
-      .collection(`EasySat/app/users/${ownerUid}/facturaJobs`)
+      .collection(`AppSat/app/users/${ownerUid}/facturaJobs`)
       .orderBy("createdAt", "desc")
       .limit(100)
       .get(),
@@ -261,21 +261,16 @@ async function validateStorageIsolation() {
   await assertSucceeds(ownerStorage.ref(screenshotPath).getMetadata());
   await assertFails(otherStorage.ref(screenshotPath).getMetadata());
 
-  const compatibilityPath = "SalesPro/test/security-check.txt";
-  await assertSucceeds(
-    ownerStorage.ref(compatibilityPath).putString("ok", "raw", {
-      contentType: "text/plain",
-    }),
-  );
+  const unknownPath = "other-product/test/security-check.txt";
   await assertFails(
-    anonymousStorage.ref(compatibilityPath).putString("denied", "raw", {
+    ownerStorage.ref(unknownPath).putString("denied", "raw", {
       contentType: "text/plain",
     }),
   );
 }
 
 function buildTicketDownloadUrl(uid, id) {
-  return `https://firebasestorage.googleapis.com/v0/b/easysat-dev.firebasestorage.app/o/billing-lab%2Ftickets%2F${uid}%2F${id}.jpg?alt=media&token=test-token`;
+  return `https://firebasestorage.googleapis.com/v0/b/appsat-dev.firebasestorage.app/o/billing-lab%2Ftickets%2F${uid}%2F${id}.jpg?alt=media&token=test-token`;
 }
 
 async function validateWorkerCommandApplication() {
@@ -286,9 +281,9 @@ async function validateWorkerCommandApplication() {
 
   const integrationJobId = "job_command_integration";
   const integrationJobPath =
-    `EasySat/app/users/${ownerUid}/facturaJobs/${integrationJobId}`;
+    `AppSat/app/users/${ownerUid}/facturaJobs/${integrationJobId}`;
   const integrationCommandPath =
-    `EasySat/app/users/${ownerUid}/billingJobCommands/command_integration`;
+    `AppSat/app/users/${ownerUid}/billingJobCommands/command_integration`;
 
   await testEnvironment.withSecurityRulesDisabled(async (context) => {
     const db = context.firestore();
@@ -415,11 +410,11 @@ async function validateRetentionMaintenance() {
   const now = new Date("2026-08-27T12:00:00.000Z");
   const staleDate = new Date("2026-08-20T12:00:00.000Z");
   const oldDate = new Date("2026-07-01T12:00:00.000Z");
-  const expirableJobPath = `EasySat/app/users/${ownerUid}/facturaJobs/job_retention_expire`;
-  const processingJobPath = `EasySat/app/users/${ownerUid}/facturaJobs/job_retention_processing`;
-  const staleCommandPath = `EasySat/app/users/${ownerUid}/billingJobCommands/command_retention_stale`;
-  const oldCommandPath = `EasySat/app/users/${ownerUid}/billingJobCommands/command_retention_old`;
-  const inactiveTemplatePath = "EasySat/app/billingPortalTemplates/template_retention_old";
+  const expirableJobPath = `AppSat/app/users/${ownerUid}/facturaJobs/job_retention_expire`;
+  const processingJobPath = `AppSat/app/users/${ownerUid}/facturaJobs/job_retention_processing`;
+  const staleCommandPath = `AppSat/app/users/${ownerUid}/billingJobCommands/command_retention_stale`;
+  const oldCommandPath = `AppSat/app/users/${ownerUid}/billingJobCommands/command_retention_old`;
+  const inactiveTemplatePath = "AppSat/app/billingPortalTemplates/template_retention_old";
 
   await testEnvironment.withSecurityRulesDisabled(async (context) => {
     const db = context.firestore();
@@ -503,7 +498,7 @@ async function validateWorkerLeaseFencing() {
   process.env.GCLOUD_PROJECT = projectId;
 
   const leaseJobId = "job_lease_fencing";
-  const leaseJobPath = `EasySat/app/users/${ownerUid}/facturaJobs/${leaseJobId}`;
+  const leaseJobPath = `AppSat/app/users/${ownerUid}/facturaJobs/${leaseJobId}`;
 
   await testEnvironment.withSecurityRulesDisabled(async (context) => {
     await context.firestore().doc(leaseJobPath).set({

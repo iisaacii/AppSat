@@ -13,8 +13,8 @@ if (-not (Test-Path $credentialsPath)) {
 }
 
 $env:GOOGLE_APPLICATION_CREDENTIALS = $credentialsPath
-$env:FIREBASE_PROJECT_ID = "easysat-dev"
-$env:FIREBASE_STORAGE_BUCKET = "easysat-dev.firebasestorage.app"
+$env:FIREBASE_PROJECT_ID = "appsat-dev"
+$env:FIREBASE_STORAGE_BUCKET = "appsat-dev.firebasestorage.app"
 $env:FIRESTORE_WORKER_UID = $Uid
 $env:FIRESTORE_DEMO_APPROVE_FINAL_SUBMIT = "true"
 $env:CFDI_STORAGE_MODE = "firebase"

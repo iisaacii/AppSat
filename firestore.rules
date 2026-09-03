@@ -1,0 +1,53 @@
+rules_version = '2';
+
+// AppSat billing data is written by the API/workers through Firebase Admin SDK.
+// Authenticated clients may only read their own job history and generated evidence.
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function signedIn() {
+      return request.auth != null;
+    }
+
+    function owns(uid) {
+      return signedIn() && request.auth.uid == uid;
+    }
+
+    match /AppSat/app {
+      allow read, write: if false;
+    }
+
+    match /AppSat/app/users/{uid} {
+      allow read: if owns(uid);
+      allow write: if false;
+
+      match /facturaJobs/{jobId} {
+        allow read: if owns(uid);
+        allow write: if false;
+
+        match /events/{eventId} {
+          allow read: if owns(uid);
+          allow write: if false;
+        }
+      }
+
+      // Commands are accepted only by the authenticated HTTP API, which
+      // validates ownership, idempotency and the allowed command type.
+      match /billingJobCommands/{commandId} {
+        allow read, write: if false;
+      }
+    }
+
+    // Recipes, outcomes and global queues are backend-owned shared knowledge.
+    match /AppSat/app/billingPortalTemplates/{templateId} {
+      allow read, write: if false;
+    }
+
+    match /AppSat/app/billingPortalOutcomes/{outcomeId} {
+      allow read, write: if false;
+    }
+
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

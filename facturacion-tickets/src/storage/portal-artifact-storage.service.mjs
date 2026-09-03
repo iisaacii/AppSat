@@ -75,7 +75,7 @@ async function uploadPortalArtifact(bucket, artifact) {
       contentType: artifact.contentType,
       metadata: {
         firebaseStorageDownloadTokens: token,
-        easysatSourcePath: artifact.localPath,
+        appsatSourcePath: artifact.localPath,
       },
     },
   });

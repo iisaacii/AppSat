@@ -1,92 +1,48 @@
-# compiler_GPT
+# Compilador B3 a Capa A
 
-Compiler experimental para convertir aprendizaje de B3 (`browser-use`) en candidatos de receta A (`portal-template.v1` ejecutable por Playwright).
+Este componente transforma una corrida exitosa de B3 en un candidato de receta
+determinista para Capa A.
 
-## Idea
-
-`browser-use` resuelve portales con acciones visuales como:
-
-```json
-{ "input": { "index": 211, "text": "..." } }
+```text
+B3 navega y resuelve un portal
+  -> historial + evidencia de elementos interactivos
+  -> compiler_GPT genera portal-template.v1
+  -> replay con Playwright sin IA
+  -> candidato puede promoverse a receta A
 ```
 
-Capa A necesita recetas deterministicas:
+La idea es que la siguiente factura del mismo emisor use selectores y pasos
+rapidos en vez de gastar una nueva sesion de IA.
 
-```json
-{ "type": "fill", "selector": "#noTicket", "valueFrom": "ticketId" }
-```
+## Entradas y salida
 
-Este compilador usa:
+Entrada privada:
 
-- candidate B3 guardado en `data/portal-template-candidates`;
-- `history.json` de B3/browser-use;
-- bloque `Interactive elements` dentro del historial;
-- schema A existente en `src/portals/template-schema.mjs`.
+- candidato B3;
+- historial de browser-use;
+- mapa de elementos interactivos y evidencia del portal.
+
+Salida privada:
+
+- `*-compiled-gpt.candidate.json` con receta compatible con
+  `portal-template.v1`;
+- estado de aprendizaje y pasos que no pudieron compilarse.
+
+Estas rutas estan ignoradas en Git porque pueden contener sesiones, selectores
+fragiles y datos de ticket. Solo el codigo del compilador se publica.
 
 ## Comandos
 
-Validar imports:
-
 ```powershell
 npm run compiler:gpt:validate
+npm run compiler:gpt:compile -- --candidate=data/portal-template-candidates/<candidate>.json
+npm run compiler:gpt:replay -- --candidate=data/portal-template-candidates/<candidate>.json --fixture=<ticket>.json
 ```
 
-Compilar candidate B3:
+Un replay exitoso demuestra que A puede repetir la navegacion sin IA. No se
+promueve una receta solo por compilarla: se conserva evidencia y se valida el
+resultado antes de marcarla activa.
 
-```powershell
-npm run compiler:gpt:compile -- --candidate=data/portal-template-candidates/SEM980701STA-www.e7-eleven.com.mx-b2_seven_ticket_local_lab-b3.candidate.json
-```
-
-Salida default:
-
-```txt
-data/portal-template-candidates/*-compiled-gpt.candidate.json
-```
-
-## Estados
-
-- `compiled`: se pudo generar una receta A valida.
-- `draft`: falta informacion para generar selectores estables.
-
-El campo `learningState` explica el detalle:
-
-- `compiled_ready_for_replay`;
-- `compiled_dynamic_stop`;
-- `needs_dom_map`;
-- `compiler_failed`.
-
-## Importante
-
-Si el portal requiere CAPTCHA, el compiler puede generar pasos A hasta el punto seguro y luego un `stop` con `reason=captcha_required`. Eso permite que Capa A no se quede atorada y haga handoff a B/B3.
-
-## Smoke Test Pinturerias
-
-Candidate B3:
-
-```powershell
-npm run compiler:gpt:compile -- --candidate=data/portal-template-candidates/PMA1805167L1-facturacionpintu.com.mx-b2_pinturerias_ticket_pintura_lab-b3.candidate.json
-```
-
-Salida:
-
-```txt
-data/portal-template-candidates/PMA1805167L1-facturacionpintu.com.mx-b2_pinturerias_ticket_pintura_lab-b3-compiled-gpt.candidate.json
-```
-
-Resultado esperado:
-
-- `status=compiled`;
-- `learningState=compiled_ready_for_replay`;
-- `unresolvedActions=0`;
-- replay A llega hasta `finalSubmit`.
-
-Comando de replay seguro:
-
-```powershell
-$env:PORTAL_RUNNER_MODE="playwright"
-$env:HEADLESS="false"
-$env:PORTAL_ALLOW_FINAL_SUBMIT="false"
-npm run compiler:gpt:replay -- --candidate=data/portal-template-candidates/PMA1805167L1-facturacionpintu.com.mx-b2_pinturerias_ticket_pintura_lab-b3-compiled-gpt.candidate.json --fixture=data/stagehand-fixtures/pinturerias-ticket-pintura.json
-```
-
-La prueba debe detenerse con `template_safe_stop` si no hay aprobacion de envio final. Eso confirma que A reproduce la navegacion aprendida por B3 sin IA; no confirma descarga CFDI.
+Para CAPTCHA o login, el compilador puede generar pasos hasta el punto seguro y
+un `stop` tipado. Eso permite que el router vaya a Capa C sin reintentar B3
+innecesariamente.

@@ -1,7 +1,7 @@
 import { GoogleAuth } from "google-auth-library";
 import { getEnv } from "../config/env.mjs";
 
-const projectId = getEnv("FIREBASE_PROJECT_ID", "easysat-dev");
+const projectId = getEnv("FIREBASE_PROJECT_ID", "appsat-dev");
 const rulesApi = "https://firebaserules.googleapis.com/v1";
 const auth = new GoogleAuth({ scopes: ["https://www.googleapis.com/auth/cloud-platform"] });
 const client = await auth.getClient();

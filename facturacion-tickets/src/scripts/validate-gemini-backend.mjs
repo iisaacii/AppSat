@@ -6,13 +6,13 @@ import {
 
 const vertex = buildGeminiClientOptions({
   backend: "vertex",
-  project: "easysat-dev",
+  project: "appsat-dev",
   location: "global",
 });
 assert.equal(vertex.status.configured, true);
 assert.deepEqual(vertex.options, {
   vertexai: true,
-  project: "easysat-dev",
+  project: "appsat-dev",
   location: "global",
 });
 assert.equal("apiKey" in vertex.options, false);

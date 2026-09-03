@@ -10,9 +10,9 @@ import {
 import { buildFlutterWebviewHandoff } from "../user-action/flutter-webview-handoff.mjs";
 
 const uid = "owner_123";
-const bucketName = "easysat-dev.firebasestorage.app";
+const bucketName = "appsat-dev.firebasestorage.app";
 const ticketUrl =
-  "https://firebasestorage.googleapis.com/v0/b/easysat-dev.firebasestorage.app/o/" +
+  "https://firebasestorage.googleapis.com/v0/b/appsat-dev.firebasestorage.app/o/" +
   "billing-lab%2Ftickets%2Fowner_123%2Fjob-1.jpg?alt=media&token=test-token";
 
 assert.equal(validateExternalUrlStructure("https://example.com/form").hostname, "example.com");

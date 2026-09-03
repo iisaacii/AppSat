@@ -31,7 +31,7 @@ console.log(
     {
       contractVersion: FACTURA_JOB_CONTRACT_VERSION,
       validation,
-      writePath: `EasySat/app/users/${uid}/facturaJobs/{jobId}`,
+      writePath: `AppSat/app/users/${uid}/facturaJobs/{jobId}`,
       storagePath: `billing-lab/tickets/${uid}/{jobId}.jpg`,
       payload,
     },

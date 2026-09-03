@@ -1,16 +1,20 @@
-# Capa C: Intervencion Del Usuario
+# Capa C: intervencion del usuario
 
 ## Objetivo
 
-Capa C no intenta resolver el portal con otra IA. Es la salida controlada cuando A/B3 ya llegaron a una condicion que requiere al usuario o cuando el portal informa que el ticket ya esta resuelto.
+Capa C no intenta resolver el portal con otra IA. Es la salida controlada cuando
+A/B3 ya llegaron a una condicion que requiere al usuario o cuando el portal
+informa que el ticket ya esta resuelto.
 
-El contrato para Flutter es `userAction`. El front puede mostrar estados, mensaje del portal, screenshot de evidencia, campos editables y un checkpoint para continuar manualmente.
+El contrato para la aplicacion integradora es `userAction`. Puede mostrar el
+mensaje del portal, evidencia, URL actual, datos de prellenado y un checkpoint
+para continuar manualmente.
 
 ## Estados
 
 - `completed`: XML/PDF descargados y guardados.
 - `resolved`: no hay que hacer mas automatizacion. Ejemplo principal: `ticket_already_invoiced`.
-- `needs_user_action`: el usuario debe revisar datos o continuar manualmente.
+- `needs_user_action`: el usuario debe continuar manualmente en el portal.
 - `failed`: error no recuperable del worker o infraestructura.
 
 Dentro de `userAction.status` usamos:
@@ -21,13 +25,28 @@ Dentro de `userAction.status` usamos:
 ## Razones Principales
 
 - `ticket_already_invoiced`: el portal dice que el ticket ya fue facturado. El job queda `resolved`. Si existe CFDI guardado en el job, `userAction.existingCfdi` apunta a XML/PDF.
-- `ocr_review_required`: revision OCR obligatoria. En cada ticket nuevo el usuario confirma/corrige los datos detectados antes de correr A/B3.
 - `ticket_data_rejected`: el portal rechazo folio, codigo de facturacion, monto, fecha, sucursal, serie o token.
-- `ocr_review_required`: tambien incluye revision de campos criticos por giro. En gasolineras, `permisoCre` es critico y debe confirmarse si OCR lo omitio o lo detecto con baja confianza.
+- `ocr_unresolved`: en API V2 se marca como `failed` cuando OCR no obtiene los datos indispensables con evidencia suficiente; no se factura por aproximacion.
 - `captcha_required`: el portal requiere CAPTCHA. Se guarda checkpoint para sesion interactiva corta.
 - `login_required`: el portal requiere credenciales.
 - `portal_blocked`: bot protection, portal inaccesible o bloqueo duro.
 - `manual_portal_required`: no hay portal/receta suficiente para automatizar.
+
+## Alcance de API V2
+
+API V2 es autonoma: no usa `ocr_review_required` como paso normal. El backend
+intenta OCR, candidatos y variantes controladas antes de abrir un portal. Si no
+puede comprobar RFC emisor, fecha, monto e identificador con suficiente
+evidencia, termina el job con `ocr_unresolved`.
+
+Cuando Capa C aparece por CAPTCHA, login o bloqueo, `userAction.mobileHandoff`
+incluye una URL segura, `prefillData`, pistas y un script de prellenado para un
+WebView de Flutter. La app debe ejecutar ese script solamente dentro del
+WebView y solo para los hosts permitidos por `allowedAutofillHosts`.
+
+La API V2 actual prepara el handoff con `request_capa_c_resume`, pero todavia
+no expone un endpoint publico para asociar al mismo job el XML/PDF descargado
+manualmente. Esa es la pieza pendiente para cerrar Capa C manual en produccion.
 
 ## Contrato `userAction`
 
@@ -67,7 +86,11 @@ Dentro de `userAction.status` usamos:
 }
 ```
 
-## UX Recomendado
+## UX recomendado
+
+Las secciones de correccion de OCR que aparecen abajo se conservan para el
+Billing Lab/V1. Una integracion nueva por API V2 no debe depender de ellas:
+V2 resuelve el OCR automaticamente o falla con `ocr_unresolved`.
 
 Para A rapido:
 
@@ -149,7 +172,7 @@ Para produccion elegimos WebView en Flutter, no navegador abierto en el servidor
         "preferred": "download_cfdi_or_upload_files",
         "acceptedFiles": ["xml", "pdf"],
         "xmlIsSufficientForFiscalUse": true,
-        "returnToApp": "easysat://billing/handoff-complete"
+        "returnToApp": "appsat://billing/handoff-complete"
       }
     }
   }
@@ -164,7 +187,7 @@ Uso esperado en Flutter:
 4. `mobileHandoff.autofill.canRunInExternalBrowser=false`: en Chrome/Safari externo o en el lab web normal no se pueden llenar campos de otro dominio por seguridad del navegador.
 4. El usuario resuelve CAPTCHA/login/bloqueo.
 5. Si el portal descarga XML/PDF dentro del WebView, Flutter captura esos archivos y los sube al Storage del job.
-6. Si el portal solo muestra botones de descarga, Flutter permite compartir/abrir el archivo y regresar a EasySat.
+6. Si el portal solo muestra botones de descarga, Flutter permite compartir/abrir el archivo y regresar a AppSat.
 
 El XML es suficiente fiscalmente para declaracion; PDF es conveniente para vista humana, pero no debe bloquear el cierre si el XML ya fue capturado.
 

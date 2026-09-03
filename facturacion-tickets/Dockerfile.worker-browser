@@ -2,7 +2,7 @@ FROM node:22-bookworm-slim
 
 ENV DEBIAN_FRONTEND=noninteractive \
     NODE_ENV=production \
-    PATH=/opt/easysat-venv/bin:$PATH \
+    PATH=/opt/appsat-venv/bin:$PATH \
     PLAYWRIGHT_BROWSERS_PATH=/ms-playwright \
     B3_BROWSER_EXECUTABLE_PATH=/ms-playwright/chromium-1223/chrome-linux64/chrome
 
@@ -10,7 +10,7 @@ WORKDIR /app
 
 RUN apt-get update \
     && apt-get install -y --no-install-recommends python3 python3-venv \
-    && python3 -m venv /opt/easysat-venv \
+    && python3 -m venv /opt/appsat-venv \
     && rm -rf /var/lib/apt/lists/*
 
 COPY deployment/worker/package.json deployment/worker/package-lock.json ./

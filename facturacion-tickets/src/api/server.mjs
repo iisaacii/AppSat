@@ -50,7 +50,7 @@ server.headersTimeout = 10_000;
 server.keepAliveTimeout = 5_000;
 
 server.listen(port, "0.0.0.0", () => {
-  logger.info("EasySat Billing API listening.", { port, version: "billing-http.v2" });
+  logger.info("AppSat Billing API listening.", { port, version: "billing-http.v2" });
 });
 
 let shuttingDown = false;
@@ -62,11 +62,11 @@ for (const signal of ["SIGINT", "SIGTERM"]) {
 function shutdown(signal) {
   if (shuttingDown) return;
   shuttingDown = true;
-  logger.info("EasySat Billing API shutting down.", { signal });
+  logger.info("AppSat Billing API shutting down.", { signal });
   server.close(async (error) => {
     await closeBillingQueueClients();
     if (error) {
-      logger.error("EasySat Billing API shutdown failed.", { message: error.message });
+      logger.error("AppSat Billing API shutdown failed.", { message: error.message });
       process.exitCode = 1;
     }
   });

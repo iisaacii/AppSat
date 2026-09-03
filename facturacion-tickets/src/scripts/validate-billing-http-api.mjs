@@ -70,7 +70,7 @@ const handler = createBillingApiHandler({
     if (token !== "valid-token") throw new Error("invalid token");
     return { uid: "user_123", email: "user@example.com" };
   },
-  allowedOrigins: ["https://easysat-dev.web.app"],
+  allowedOrigins: ["https://appsat-dev.web.app"],
   rateLimiter: createMemoryRateLimiter({ limit: 20 }),
   dispatchJobSignal: async (payload) => dispatches.push({ kind: "job", payload }),
   dispatchCommandSignal: async (payload) => dispatches.push({ kind: "command", payload }),
@@ -102,17 +102,17 @@ try {
 
   const preflight = await fetch(`${baseUrl}/v1/billing/jobs`, {
     method: "OPTIONS",
-    headers: { Origin: "https://easysat-dev.web.app" },
+    headers: { Origin: "https://appsat-dev.web.app" },
   });
   assert.equal(preflight.status, 204);
-  assert.equal(preflight.headers.get("access-control-allow-origin"), "https://easysat-dev.web.app");
+  assert.equal(preflight.headers.get("access-control-allow-origin"), "https://appsat-dev.web.app");
 
   const create = await apiFetch("/v1/billing/jobs", {
     method: "POST",
     idempotencyKey: "upload-123",
     body: {
       ticketFileUrl:
-        "https://firebasestorage.googleapis.com/v0/b/easysat-dev.firebasestorage.app/o/billing-lab%2Ftickets%2Fuser_123%2Fticket.jpg?alt=media",
+        "https://firebasestorage.googleapis.com/v0/b/appsat-dev.firebasestorage.app/o/billing-lab%2Ftickets%2Fuser_123%2Fticket.jpg?alt=media",
       taxProfileId: "billing_lab_default",
     },
   });

@@ -20,8 +20,8 @@ if (-not (Test-Path $credentialsPath)) {
 }
 
 $env:GOOGLE_APPLICATION_CREDENTIALS = $credentialsPath
-$env:FIREBASE_PROJECT_ID = "easysat-dev"
-$env:FIREBASE_STORAGE_BUCKET = "easysat-dev.firebasestorage.app"
+$env:FIREBASE_PROJECT_ID = "appsat-dev"
+$env:FIREBASE_STORAGE_BUCKET = "appsat-dev.firebasestorage.app"
 
 $argsList = @(
   "src/scripts/seed-tax-profile-dev.mjs",

@@ -26,7 +26,7 @@ assert.equal(valid.rfcReceptor, expected.rfcReceptor);
 assert.equal(valid.total, 100);
 
 const wrongReceiver = validateCfdiXmlText({
-  xml: validXml.replace(expected.rfcReceptor, "XAXX010101000"),
+  xml: validXml.replace(expected.rfcReceptor, "XEXX010101000"),
   expected,
 });
 assert.equal(wrongReceiver.ok, false);
@@ -56,7 +56,7 @@ assert.equal(
   false,
 );
 
-const placeholder = "<easysatCfdiPlaceholder><job id=\"fixture\" /></easysatCfdiPlaceholder>";
+const placeholder = "<appsatCfdiPlaceholder><job id=\"fixture\" /></appsatCfdiPlaceholder>";
 assert.equal(validateCfdiXmlText({ xml: placeholder }).ok, false);
 assert.equal(
   validateCfdiXmlText({ xml: placeholder, allowDevelopmentPlaceholder: true }).ok,

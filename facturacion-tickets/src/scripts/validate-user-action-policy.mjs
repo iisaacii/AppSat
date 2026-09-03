@@ -12,7 +12,7 @@ const job = {
   taxProfile: {
     rfc: "XAXX010101000",
     legalName: "PERSONA CONTRIBUYENTE DEMO",
-    email: "pruebas@easysat.dev",
+    email: "pruebas@appsat.dev",
     fiscalRegime: "605 - Sueldos y Salarios e Ingresos Asimilados a Salarios",
     cfdiUse: "S01 - Sin efectos fiscales",
     postalCode: "54040",
@@ -119,7 +119,7 @@ assert.equal(captcha.userAction.mobileHandoff.expectedUserAction, "resolve_captc
 assert.equal(captcha.userAction.mobileHandoff.autofill.kind, "webview_autofill.v1");
 assert.equal(captcha.userAction.mobileHandoff.autofill.canRunInExternalBrowser, false);
 assert.ok(captcha.userAction.mobileHandoff.autofill.steps.some((step) => step.selector === "#ticket"));
-assert.ok(captcha.userAction.mobileHandoff.autofill.script.includes("__easySatAutofill"));
+assert.ok(captcha.userAction.mobileHandoff.autofill.script.includes("__appSatAutofill"));
 
 const captchaBlockedWording = buildUserActionRequiredResult({
   reason: "captcha_required",

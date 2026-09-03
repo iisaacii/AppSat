@@ -352,7 +352,7 @@ async function uploadCfdiAsset(bucket, asset) {
       contentType: asset.contentType,
       metadata: {
         firebaseStorageDownloadTokens: token,
-        easysatSourceUrl: asset.sourceUrl ?? "generated-dev-placeholder",
+        appsatSourceUrl: asset.sourceUrl ?? "generated-dev-placeholder",
       },
     },
   });
@@ -385,14 +385,14 @@ function buildDevelopmentXml(job, template, extracted, sourceUrl) {
   return Buffer.from(
     [
       '<?xml version="1.0" encoding="UTF-8"?>',
-      '<easysatCfdiPlaceholder>',
+      '<appsatCfdiPlaceholder>',
       `  <job id="${escapeXml(job.id)}" uid="${escapeXml(job.uid ?? "")}" />`,
       `  <template id="${escapeXml(template?.id ?? "")}" rfcEmisor="${escapeXml(template?.rfcEmisor ?? "")}" />`,
       `  <ticket rfcReceptor="${escapeXml(job.rfcReceptor ?? "")}" folio="${escapeXml(
         extracted.folio ?? "",
       )}" fecha="${escapeXml(extracted.fecha ?? "")}" monto="${escapeXml(extracted.monto ?? "")}" />`,
       `  <source>${escapeXml(sourceUrl ?? "generated-dev-placeholder")}</source>`,
-      "</easysatCfdiPlaceholder>",
+      "</appsatCfdiPlaceholder>",
       "",
     ].join("\n"),
     "utf8",
@@ -401,7 +401,7 @@ function buildDevelopmentXml(job, template, extracted, sourceUrl) {
 
 function buildDevelopmentPdf(job, template, extracted, sourceUrl) {
   const lines = [
-    "EasySat CFDI placeholder",
+    "AppSat CFDI placeholder",
     `Job: ${job.id}`,
     `Template: ${template?.id ?? "-"}`,
     `RFC emisor: ${template?.rfcEmisor ?? "-"}`,

@@ -1,13 +1,14 @@
 {
   "openapi": "3.1.0",
   "info": {
-    "title": "EasySat Billing API",
+    "title": "AppSat Billing API",
     "version": "2.0.0",
     "description": "API asincrona para enviar un ticket y perfil fiscal, ejecutar OCR/A/B3/C y recuperar CFDI."
   },
   "servers": [
     {
-      "url": "https://easysat-billing-stg-api-570722310741.us-central1.run.app"
+      "url": "https://billing.example.com",
+      "description": "Reemplaza por la URL HTTPS entregada por el operador de AppSat."
     }
   ],
   "security": [
@@ -15,7 +16,7 @@
       "firebaseBearer": []
     },
     {
-      "easySatServiceBearer": []
+      "appSatServiceBearer": []
     }
   ],
   "paths": {
@@ -155,10 +156,10 @@
         "scheme": "bearer",
         "bearerFormat": "Firebase ID token"
       },
-      "easySatServiceBearer": {
+      "appSatServiceBearer": {
         "type": "http",
         "scheme": "bearer",
-        "bearerFormat": "EasySat service token",
+        "bearerFormat": "AppSat service token",
         "description": "Sólo para backend servidor-a-servidor. Nunca incluir en Flutter, APK o navegador."
       }
     },

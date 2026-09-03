@@ -20,7 +20,7 @@ export function getBillingApiAllowedOrigins() {
   return String(
     getEnv(
       "BILLING_API_ALLOWED_ORIGINS",
-      "https://easysat-dev.web.app,http://127.0.0.1:52123,http://localhost:52123",
+      "https://appsat-dev.web.app,http://127.0.0.1:52123,http://localhost:52123",
     ),
   )
     .split(",")
@@ -236,7 +236,7 @@ export function getBillingDispatchMode() {
 }
 
 export function getBillingQueuePrefix() {
-  return String(getEnv("BILLING_QUEUE_PREFIX", "easysat:billing"))
+  return String(getEnv("BILLING_QUEUE_PREFIX", "appsat:billing"))
     .trim()
     .replace(/[^a-zA-Z0-9:_-]/g, "-");
 }
@@ -344,7 +344,7 @@ export function isPortalRateLimitRedisRequired() {
 }
 
 export function getPortalRateLimitNamespace() {
-  return String(getEnv("PORTAL_RATE_LIMIT_NAMESPACE", "easysat:billing:portal"))
+  return String(getEnv("PORTAL_RATE_LIMIT_NAMESPACE", "appsat:billing:portal"))
     .trim()
     .replace(/[^a-zA-Z0-9:_-]/g, "-");
 }
@@ -425,7 +425,7 @@ export function getPortalArtifactStoragePrefix() {
 }
 
 export function getFirebaseStorageBucketName() {
-  return normalizeBucketName(getEnv("FIREBASE_STORAGE_BUCKET", "easysat-dev.firebasestorage.app"));
+  return normalizeBucketName(getEnv("FIREBASE_STORAGE_BUCKET", "appsat-dev.firebasestorage.app"));
 }
 
 export function getPortalArtifactsDir() {
@@ -539,7 +539,7 @@ export function shouldUsePortalFixture() {
 
 export function getFirestoreRoot() {
   return {
-    collection: getEnv("FIRESTORE_ROOT_COLLECTION", "EasySat"),
+    collection: getEnv("FIRESTORE_ROOT_COLLECTION", "AppSat"),
     document: getEnv("FIRESTORE_ROOT_DOCUMENT", "app"),
     workerUid: getEnv("FIRESTORE_WORKER_UID"),
   };

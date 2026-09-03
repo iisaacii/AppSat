@@ -8,7 +8,7 @@ import {
   rememberSharedPortalOutcome,
 } from "../portals/portal-knowledge-repository.mjs";
 
-const expectedProjectId = "easysat-dev";
+const expectedProjectId = "appsat-dev";
 const ticketPath = resolve(requiredArg("--ticket"));
 const apiBaseUrl = normalizeApiBaseUrl(requiredEnv("BILLING_API_BASE_URL"));
 const firebaseWebApiKey = requiredEnv("FIREBASE_WEB_API_KEY");
@@ -129,7 +129,7 @@ function smokeTaxProfile() {
   return {
     rfc: "XAXX010101000",
     legalName: "PERSONA CONTRIBUYENTE DEMO",
-    email: "pruebas@easysat.dev",
+    email: "pruebas@appsat.dev",
     fiscalRegime: "605 - Sueldos y Salarios e Ingresos Asimilados a Salarios",
     fiscalRegimes: ["605 - Sueldos y Salarios e Ingresos Asimilados a Salarios"],
     cfdiUse: "S01 - Sin efectos fiscales",
@@ -203,8 +203,8 @@ function clean(value) {
 if (projectId !== expectedProjectId) {
   throw new Error(`End-to-end smoke test is restricted to ${expectedProjectId}.`);
 }
-if (!apiBaseUrl.hostname.startsWith("easysat-billing-stg-api-")) {
-  throw new Error("BILLING_API_BASE_URL must point to the EasySat staging API.");
+if (!apiBaseUrl.hostname.startsWith("appsat-billing-stg-api-")) {
+  throw new Error("BILLING_API_BASE_URL must point to the AppSat staging API.");
 }
 
 const ticketStats = await stat(ticketPath);

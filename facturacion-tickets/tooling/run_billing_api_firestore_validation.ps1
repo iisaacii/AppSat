@@ -17,15 +17,15 @@ if (-not (Test-Path $firebaseCli)) {
 $env:JAVA_HOME = $javaHome
 $env:Path = "$(Join-Path $javaHome 'bin');$env:Path"
 $env:NO_UPDATE_NOTIFIER = "1"
-$env:FIREBASE_PROJECT_ID = "demo-easysat-api-test"
-$env:FIREBASE_STORAGE_BUCKET = "easysat-dev.firebasestorage.app"
+$env:FIREBASE_PROJECT_ID = "demo-appsat-api-test"
+$env:FIREBASE_STORAGE_BUCKET = "appsat-dev.firebasestorage.app"
 
 Push-Location $serviceRoot
 try {
   $firebaseOutput = & $firebaseCli emulators:exec `
     --config $firebaseConfig `
     --only firestore `
-    --project demo-easysat-api-test `
+    --project demo-appsat-api-test `
     "npm run api:firestore:test" 2>&1
   $firebaseExitCode = $LASTEXITCODE
   $firebaseOutput | ForEach-Object { Write-Output $_ }

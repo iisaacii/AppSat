@@ -1,0 +1,51 @@
+rules_version = '2';
+
+// Files submitted to V2 are uploaded by the authenticated API using Admin SDK.
+// The optional billing-lab paths remain narrowly scoped for local/manual testing.
+service firebase.storage {
+  match /b/{bucket}/o {
+    function owns(uid) {
+      return request.auth != null && request.auth.uid == uid;
+    }
+
+    function validTicketImage() {
+      return request.resource != null
+        && request.resource.size <= 10 * 1024 * 1024
+        && request.resource.contentType != null
+        && request.resource.contentType.matches('image/.*');
+    }
+
+    match /billing-lab/tickets/{uid}/{filename} {
+      allow read: if owns(uid);
+      // A client may create a ticket or remove its own pending upload, but
+      // cannot replace an existing image under the same immutable job path.
+      allow write: if owns(uid) && (
+        request.resource == null
+        || (
+          resource == null
+          && filename.matches('^[A-Za-z0-9._-]+$')
+          && validTicketImage()
+        )
+      );
+    }
+
+    // Public API uploads and all generated artifacts are backend-only.
+    match /billing-api/tickets/{uid}/{allPaths=**} {
+      allow read, write: if false;
+    }
+
+    match /billing-lab/cfdis/{uid}/{allPaths=**} {
+      allow read: if owns(uid);
+      allow write: if false;
+    }
+
+    match /billing-lab/portal-artifacts/{uid}/{allPaths=**} {
+      allow read: if owns(uid);
+      allow write: if false;
+    }
+
+    match /{allPaths=**} {
+      allow read, write: if false;
+    }
+  }
+}

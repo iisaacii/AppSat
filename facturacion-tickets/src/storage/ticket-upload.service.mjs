@@ -26,7 +26,7 @@ async function saveTicketUpload(bucket, { uid, ticket, idempotencyKey }) {
 
   if (exists) {
     const [metadata] = await file.getMetadata();
-    const storedHash = metadata.metadata?.easysatContentSha256;
+    const storedHash = metadata.metadata?.appsatContentSha256;
     if (storedHash && storedHash !== contentHash) {
       throw conflict(
         "idempotency_conflict",
@@ -51,9 +51,9 @@ async function saveTicketUpload(bucket, { uid, ticket, idempotencyKey }) {
       cacheControl: "private, max-age=0, no-store",
       metadata: {
         firebaseStorageDownloadTokens: token,
-        easysatContentSha256: contentHash,
-        easysatOriginalFilename: sanitizeMetadata(ticket.filename),
-        easysatSource: "billing_api_v2",
+        appsatContentSha256: contentHash,
+        appsatOriginalFilename: sanitizeMetadata(ticket.filename),
+        appsatSource: "billing_api_v2",
       },
     },
   });

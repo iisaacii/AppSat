@@ -7,7 +7,7 @@ import {
 } from "../config/firebase.mjs";
 import { getFirestoreRoot } from "../config/env.mjs";
 
-const expectedProjectId = "easysat-dev";
+const expectedProjectId = "appsat-dev";
 const apiBaseUrl = normalizeApiBaseUrl(requiredEnv("BILLING_API_BASE_URL"));
 const firebaseWebApiKey = requiredEnv("FIREBASE_WEB_API_KEY");
 const projectId = requiredEnv("FIREBASE_PROJECT_ID");
@@ -19,8 +19,8 @@ if (!process.argv.includes("--confirm-staging")) {
 if (projectId !== expectedProjectId) {
   throw new Error(`API v2 smoke test is restricted to ${expectedProjectId}.`);
 }
-if (!apiBaseUrl.hostname.startsWith("easysat-billing-stg-api-")) {
-  throw new Error("BILLING_API_BASE_URL must point to the EasySat staging API.");
+if (!apiBaseUrl.hostname.startsWith("appsat-billing-stg-api-")) {
+  throw new Error("BILLING_API_BASE_URL must point to the AppSat staging API.");
 }
 
 const probeId = `${Date.now()}_${randomUUID().slice(0, 8)}`;
@@ -185,7 +185,7 @@ function smokeTaxProfile() {
   return {
     rfc: "AAA010101AAA",
     legalName: "EMPRESA DEMO SA DE CV",
-    email: "billing-smoke@easysat.dev",
+    email: "billing-smoke@appsat.dev",
     fiscalRegime: "601 - General de Ley Personas Morales",
     fiscalRegimes: ["601 - General de Ley Personas Morales"],
     cfdiUse: "G03 - Gastos en general",

@@ -9,7 +9,7 @@ const suffix = randomUUID().replaceAll("-", "").slice(0, 8);
 const uid = `smoke_capa_c_${suffix}`;
 const jobId = `capa_c_handoff_${suffix}`;
 const rfcEmisor = `TST010101${suffix.slice(0, 3).toUpperCase()}`;
-const portalUrl = `https://example.com/easysat-capa-c-smoke/${suffix}`;
+const portalUrl = `https://example.com/appsat-capa-c-smoke/${suffix}`;
 const now = new Date().toISOString();
 const folio = `SMOKE${suffix.toUpperCase()}`;
 
@@ -22,7 +22,7 @@ const jobRef = userRef.collection("facturaJobs").doc(jobId);
 const taxProfile = {
   rfc: "XAXX010101000",
   legalName: "PERSONA CONTRIBUYENTE DEMO",
-  email: "pruebas@easysat.dev",
+  email: "pruebas@appsat.dev",
   fiscalRegime: "605 - Sueldos y Salarios e Ingresos Asimilados a Salarios",
   fiscalRegimes: ["605 - Sueldos y Salarios e Ingresos Asimilados a Salarios"],
   cfdiUse: "S01 - Sin efectos fiscales",

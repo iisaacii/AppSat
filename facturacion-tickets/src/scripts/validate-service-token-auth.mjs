@@ -26,4 +26,4 @@ assert.throws(
   /SHA-256/,
 );
 
-console.log("EasySat service-token authentication validation passed.");
+console.log("AppSat service-token authentication validation passed.");

@@ -67,7 +67,7 @@ export function buildFlutterWebviewHandoff({
       preferred: "download_cfdi_or_upload_files",
       acceptedFiles: ["xml", "pdf"],
       xmlIsSufficientForFiscalUse: true,
-      returnToApp: "easysat://billing/handoff-complete",
+      returnToApp: "appsat://billing/handoff-complete",
     },
     createdAt: new Date().toISOString(),
   };
@@ -205,24 +205,24 @@ function buildAutofillScript({ values, steps }) {
     }
     fire(el);
   };
-  window.__easySatAutofill = { status: "running", startedAt: new Date().toISOString(), filled: [], failed: [] };
+  window.__appSatAutofill = { status: "running", startedAt: new Date().toISOString(), filled: [], failed: [] };
   (async () => {
     for (const step of payload.steps || []) {
       if (step.type === "stop") {
-        window.__easySatAutofill.status = "checkpoint";
-        window.__easySatAutofill.reason = step.reason;
-        window.__easySatAutofill.message = step.message;
+        window.__appSatAutofill.status = "checkpoint";
+        window.__appSatAutofill.reason = step.reason;
+        window.__appSatAutofill.message = step.message;
         break;
       }
       const el = await find(step.selector);
       if (!el) {
-        window.__easySatAutofill.failed.push({ step, reason: "element_not_found" });
+        window.__appSatAutofill.failed.push({ step, reason: "element_not_found" });
         if (!step.optional) break;
         continue;
       }
       if (step.type === "fill" || step.type === "setValue" || step.type === "select") {
         setValue(el, step.value);
-        window.__easySatAutofill.filled.push({ selector: step.selector, valueKey: step.valueKey });
+        window.__appSatAutofill.filled.push({ selector: step.selector, valueKey: step.valueKey });
       } else if (step.type === "check") {
         el.checked = step.checked !== false;
         fire(el);
@@ -231,8 +231,8 @@ function buildAutofillScript({ values, steps }) {
       }
       await wait(step.waitAfterMs || 700);
     }
-    if (window.__easySatAutofill.status === "running") {
-      window.__easySatAutofill.status = "done";
+    if (window.__appSatAutofill.status === "running") {
+      window.__appSatAutofill.status = "done";
     }
   })();
 })();
