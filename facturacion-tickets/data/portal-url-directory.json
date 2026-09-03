@@ -1,0 +1,18 @@
+[
+  {
+    "rfcEmisor": "CCO8605231N4",
+    "name": "OXXO Facturacion",
+    "url": "https://www4.oxxo.com/facturacion-electronica/",
+    "source": "dev_seed",
+    "confidence": 0.9,
+    "notes": "URL candidata; Capa A tiene template especifico y puede redirigir al formulario real."
+  },
+  {
+    "rfcEmisor": "SSD980908TS4",
+    "name": "Super Servicio DLT",
+    "url": "https://www.dltgasolineras.com",
+    "source": "dev_seed",
+    "confidence": 0.95,
+    "notes": "URL corregida para DLT Gasolineras"
+  }
+]

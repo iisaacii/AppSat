@@ -1,0 +1,42 @@
+{
+  "projectId": "",
+  "region": "",
+  "namePrefix": "appsat-billing-stg",
+  "network": "",
+  "subnetwork": "",
+  "redisHost": "",
+  "redisPort": 6379,
+  "runtimeServiceAccount": "",
+  "firebaseStorageBucket": "",
+  "firestoreRootCollection": "EasySat",
+  "firestoreRootDocument": "app",
+  "queuePrefix": "appsat:billing:staging",
+  "releaseId": "",
+  "geminiModel": "gemini-3.1-flash-lite",
+  "geminiBackend": "developer",
+  "geminiVertexLocation": "global",
+  "geminiSecret": {
+    "name": "",
+    "version": ""
+  },
+  "allowedOrigins": [],
+  "images": {
+    "api": "",
+    "ocr": "",
+    "browser": ""
+  },
+  "instances": {
+    "ocr": 1,
+    "portal": 1,
+    "capaC": 1,
+    "monitor": 1
+  },
+  "concurrency": {
+    "ocr": 4,
+    "portal": 1,
+    "capaC": 2
+  },
+  "apiMinInstances": 0,
+  "apiMaxInstances": 10,
+  "apiPublicAccess": false
+}

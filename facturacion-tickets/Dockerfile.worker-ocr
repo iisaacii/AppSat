@@ -1,0 +1,23 @@
+FROM node:22-bookworm-slim
+
+ENV NODE_ENV=production
+WORKDIR /app
+
+COPY deployment/worker/package.json deployment/worker/package-lock.json ./
+RUN npm ci --omit=dev && npm cache clean --force
+
+COPY src ./src
+COPY data/portal-url-directory.json data/portal-url-directory-hashmap.json ./data/
+
+RUN mkdir -p \
+      /app/artifacts \
+      /app/data/portal-outcome-memory \
+      /app/data/portal-template-candidates \
+    && chown -R node:node \
+      /app/artifacts \
+      /app/data/portal-outcome-memory \
+      /app/data/portal-template-candidates
+
+USER node
+
+CMD ["node", "src/index.mjs", "--watch", "--store=firestore", "--worker-lane=ocr", "--worker-concurrency=4"]

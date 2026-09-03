@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>OXXO Demo Directo</title>
+  </head>
+  <body>
+    <main>
+      <form id="invoice-form">
+        <h1>Facturacion OXXO Demo Directo</h1>
+        <label>
+          RFC receptor
+          <input id="rfc-receptor" name="rfcReceptor" required />
+        </label>
+        <label>
+          Folio de venta
+          <input id="folio" name="folio" required />
+        </label>
+        <label>
+          ID de ticket
+          <input id="ticket-id" name="ticketId" required />
+        </label>
+        <label>
+          Fecha
+          <input id="fecha" name="fecha" required />
+        </label>
+        <label>
+          Monto
+          <input id="monto" name="monto" required />
+        </label>
+        <button type="submit">Facturar</button>
+      </form>
+      <div id="result" style="display: none">
+        <a
+          class="download-cfdi"
+          href="#cfdi"
+          data-xml-url="fixture://storage/cfdis/oxxo-direct.xml"
+          data-pdf-url="fixture://storage/cfdis/oxxo-direct.pdf"
+        >
+          Descargar CFDI
+        </a>
+      </div>
+    </main>
+    <script>
+      document.getElementById("invoice-form").addEventListener("submit", (event) => {
+        event.preventDefault();
+        document.getElementById("result").style.display = "block";
+      });
+    </script>
+  </body>
+</html>

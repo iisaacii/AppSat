@@ -1,0 +1,2670 @@
+{
+  "CCO8605231N4": {
+    "nombreComercial": "OXXO",
+    "razonSocial": "Cadena Comercial OXXO, S.A. de C.V.",
+    "portalFacturacionUrl": "https://www4.oxxo.com:9443/facturacionElectronica-web/views/layout/inicio.do",
+    "notas": "Requiere número de tienda, folio o número de ticket, ID de venta (ITU bajo el código de barras), fecha de compra y monto total. Permite registro de usuario."
+  },
+  "SEM980701STA": {
+    "nombreComercial": "7-Eleven",
+    "razonSocial": "7-Eleven México, S.A. de C.V.",
+    "portalFacturacionUrl": "https://www.e7-eleven.com.mx/facturacion/KPortalExterno/",
+    "notas": "Requiere número de ticket (bajo código de barras), fecha, hora e importe total. Plazo dentro del mes de la compra."
+  },
+  "NWM9709244W4": {
+    "nombreComercial": "Walmart / Sam's Club / Bodega Aurrera",
+    "razonSocial": "Nueva Walmart de México, S. de R.L. de C.V.",
+    "portalFacturacionUrl": "https://facturacion.walmartmexico.com.mx/",
+    "notas": "Requiere número de Ticket (TC) e ID de Transacción (TR) impresos en el ticket. Aplica para Walmart, Sam's Club, Bodega Aurrera y Walmart Express."
+  },
+  "TSO991022PB6": {
+    "nombreComercial": "Soriana",
+    "razonSocial": "Tiendas Soriana, S.A. de C.V.",
+    "portalFacturacionUrl": "https://www.soriana.com/facturacion-login",
+    "notas": "Requiere número de ticket (debajo de código de barras), código postal y correo electrónico. Plazo de 30 días."
+  },
+  "TCH850701RM1": {
+    "nombreComercial": "Chedraui",
+    "razonSocial": "Tiendas Chedraui, S.A. de C.V.",
+    "portalFacturacionUrl": "https://masfacturaweb.com.mx/chedraui",
+    "notas": "Requiere folio de ticket y monto total. También accesible mediante la sección de facturación de chedraui.com.mx."
+  },
+  "CME910715UB9": {
+    "nombreComercial": "Costco",
+    "razonSocial": "Costco de México, S.A. de C.V.",
+    "portalFacturacionUrl": "https://www.costco.com.mx/wps/portal/publico/Facturacion",
+    "notas": "Requiere número de socio (tarjeta Costco), número de ticket y datos de compra. Debe estar registrado en el portal."
+  },
+  "CSI020226MV4": {
+    "nombreComercial": "Starbucks",
+    "razonSocial": "Café Sirena, S. de R.L. de C.V.",
+    "portalFacturacionUrl": "https://alsea.interfactura.com/",
+    "notas": "Portal central de Alsea. Requiere RFC, número de ticket, número de tienda, fecha e importe sin propina. Plazo 30 días naturales."
+  },
+  "OVI800131GQ6": {
+    "nombreComercial": "Vips",
+    "razonSocial": "Operadora Vips, S. de R.L. de C.V.",
+    "portalFacturacionUrl": "https://alsea.interfactura.com/",
+    "notas": "Portal central de Alsea. Requiere RFC, número de ticket, número de tienda, fecha e importe sin propina. Plazo 30 días naturales."
+  },
+  "OFA9210138U1": {
+    "nombreComercial": "Domino's Pizza / Burger King",
+    "razonSocial": "Operadora de Franquicias Alsea, S.A.P.I. de C.V.",
+    "portalFacturacionUrl": "https://alsea.interfactura.com/",
+    "notas": "Portal central de Alsea para Domino's y Burger King. Requiere número de ticket, número de tienda, fecha de consumo e importe (excluyendo propinas)."
+  },
+  "RAD161031RK1": {
+    "nombreComercial": "McDonald's",
+    "razonSocial": "Restaurantes ADMX, S. de R.L. de C.V.",
+    "portalFacturacionUrl": "https://www.facturacionmcdonalds.com.mx/",
+    "notas": "Requiere número de restaurante, ticket, caja, fecha e importe total. Plazo dentro del mes en curso."
+  },
+  "subway": {
+    "nombreComercial": "Subway",
+    "portalFacturacionUrl": "https://www.facturassubway.mx/",
+    "notas": "La URL y emisor pueden variar según la franquicia específica de la sucursal. Requiere número de ticket, ID de sucursal e importe."
+  },
+  "carlsjr": {
+    "nombreComercial": "Carl's Jr",
+    "portalFacturacionUrl": "https://carlsjr.com.mx/",
+    "notas": "Dado que operan franquicias independientes (como Dragon Foods), se debe verificar en el ticket si requiere portal local (ej. carlsjrmso.com, carlsjrmerida.com)."
+  },
+  "RTO840921RE4": {
+    "nombreComercial": "Toks",
+    "razonSocial": "Restaurantes Toks, S.A. de C.V.",
+    "portalFacturacionUrl": "https://efactura.toks.com.mx/facturacion",
+    "notas": "Portal de facturación de Toks. Requiere folio, monto total (sin propina) y RFC."
+  },
+  "SHE190630V37": {
+    "nombreComercial": "Sanborns",
+    "razonSocial": "Sanborn Hermanos, S.A. de C.V.",
+    "portalFacturacionUrl": "http://facturaelectronica.sanborns.com.mx/",
+    "notas": "Requiere datos del ticket y RFC. Plazo límite de 7 días naturales tras la compra para emitir."
+  },
+  "SGM950714DC2": {
+    "nombreComercial": "Oxxo Gas",
+    "razonSocial": "Servicios Gasolineros de México, S.A. de C.V.",
+    "portalFacturacionUrl": "https://facturacion.oxxogas.com/",
+    "notas": "Requiere código de facturación (Web ID) o folio de ticket y número de estación. Plazo dentro del mes de carga."
+  },
+  "PET040903DH1": {
+    "nombreComercial": "Petro Seven",
+    "razonSocial": "Petromax, S.A. de C.V.",
+    "portalFacturacionUrl": "https://tarjetapetro-7.com.mx/KPortalExterno/",
+    "notas": "Portal de facturación de Petro Seven (Factura Express). Requiere número de estación, folio e importe de ticket. Plazo dentro del mes de consumo."
+  },
+  "BES160503J91": {
+    "nombreComercial": "BP México",
+    "razonSocial": "BP Estaciones y Servicios Energéticos S.A. de C.V.",
+    "portalFacturacionUrl": "https://gasolineriabp.com.mx/",
+    "notas": "Requiere datos del ticket e ID de estación. Franquiciatarios independientes pueden usar portales distintos indicados en el ticket."
+  },
+  "CME821025G96": {
+    "nombreComercial": "Shell México",
+    "razonSocial": "Shell México, S.A. de C.V.",
+    "portalFacturacionUrl": "https://www.shell.com.mx/conductores/facturacion-electronica.html",
+    "notas": "Portal centralizado para ubicar la estación y acceder al portal local de facturación."
+  },
+  "g500": {
+    "nombreComercial": "G500",
+    "razonSocial": "G500 Network, S.A.P.I. de C.V.",
+    "portalFacturacionUrl": "https://g500network.com/facturacion-en-linea/",
+    "notas": "Cada estación opera de forma independiente y tiene su propio RFC emisor en el ticket. El portal unifica la búsqueda de estaciones."
+  },
+  "HPL970402EV7": {
+    "nombreComercial": "Hidrosina",
+    "razonSocial": "Hidrosina Plus, SAPI de CV",
+    "portalFacturacionUrl": "https://web.hidrosina.com.mx/",
+    "notas": "Requiere código de facturación impreso en el ticket, número de estación y monto total."
+  },
+  "CFC110121742": {
+    "nombreComercial": "Farmacias del Ahorro",
+    "razonSocial": "Comercializadora Farmacéutica de Chiapas, S.A.P.I. de C.V.",
+    "portalFacturacionUrl": "https://www.fahorro.com/facturacion",
+    "notas": "Requiere ITU (Identificador de Ticket Único) impreso en el ticket. Plazo de 30 días naturales. También se puede facturar en caja."
+  },
+  "FGU830930PD3": {
+    "nombreComercial": "Farmacias Guadalajara",
+    "razonSocial": "Farmacia Guadalajara, S.A. de C.V.",
+    "portalFacturacionUrl": "https://www.movil.farmaciasguadalajara.com/facturacion/",
+    "notas": "Portal de facturación para compras físicas. Requiere serie, folio, caja, fecha e importe. Para compras en línea, facturar desde Mi Cuenta."
+  },
+  "FBE9110215Z3": {
+    "nombreComercial": "Farmacias Benavides",
+    "razonSocial": "Farmacias Benavides, S.A.B. de C.V.",
+    "portalFacturacionUrl": "https://e-facturate.com/benavides",
+    "notas": "Requiere folio de ticket, total e ID de tienda. Plazo límite de 30 días naturales desde la compra."
+  },
+  "FSI970908ML5": {
+    "nombreComercial": "Farmacias de Similares",
+    "razonSocial": "Farmacias de Similares, S.A. de C.V.",
+    "portalFacturacionUrl": "https://facturacion.gpupm.com/simifactura/portal",
+    "notas": "Portal del grupo operador. Requiere folio del ticket de compra y sucursal. Plazo varía por sucursal."
+  },
+  "PPL961114GZ1": {
+    "nombreComercial": "Farmacia San Pablo",
+    "razonSocial": "Pharma Plus, S.A. de C.V.",
+    "portalFacturacionUrl": "https://www.farmaciasanpablo.com.mx/electronic-billing",
+    "notas": "Requiere número de ticket y total. Plazo de 30 días naturales. Permite solicitar la factura en caja durante la compra."
+  },
+  "DLI931201MI9": {
+    "nombreComercial": "Liverpool",
+    "razonSocial": "Distribuidora Liverpool, S.A. de C.V.",
+    "portalFacturacionUrl": "https://facturacionclientes.liverpool.com.mx/",
+    "notas": "Requiere código de facturación de 20 dígitos impreso en el ticket. Plazo limitado al mes de la compra."
+  },
+  "COP920428Q20": {
+    "nombreComercial": "Coppel",
+    "razonSocial": "Coppel, S.A. de C.V.",
+    "portalFacturacionUrl": "https://facturas.coppel.com",
+    "notas": "Requiere folio del ticket y RFC. Permite consultar e imprimir compras facturadas."
+  },
+  "PHI830429MG6": {
+    "nombreComercial": "El Palacio de Hierro",
+    "razonSocial": "El Palacio de Hierro, S.A. de C.V.",
+    "portalFacturacionUrl": "https://palaciodehierro.cfdinova.com.mx/PortalFacturacionPH/",
+    "notas": "La sección de facturación electrónica se encuentra en el menú inferior. Requiere código de barras de facturación del ticket."
+  },
+  "SUB910603SB3": {
+    "nombreComercial": "Suburbia",
+    "razonSocial": "Suburbia, S. de R.L. de C.V.",
+    "portalFacturacionUrl": "https://facturacionclientes.liverpool.com.mx/",
+    "notas": "Comparte plataforma con Liverpool. Requiere código de facturación impreso en el ticket de Suburbia."
+  },
+  "SOM101125UEA": {
+    "nombreComercial": "Sears",
+    "razonSocial": "Sears Operadora México, S.A. de C.V.",
+    "portalFacturacionUrl": "https://www.sears.com.mx/facturacion",
+    "notas": "Requiere número de ticket, total y fecha. Plazo límite de 7 días naturales tras la fecha de compra."
+  },
+  "ODM950324V2A": {
+    "nombreComercial": "Office Depot",
+    "razonSocial": "Office Depot de México, S.A. de C.V.",
+    "portalFacturacionUrl": "https://facturacion.officedepot.com.mx/#/generaF",
+    "notas": "Requiere número ITU (30 caracteres, sobre el código de barras) e importe total. Plazo hasta fin de mes."
+  },
+  "HDM001017AS1": {
+    "nombreComercial": "The Home Depot",
+    "razonSocial": "Home Depot México, S. de R.L. de C.V.",
+    "portalFacturacionUrl": "https://facturacion.homedepot.com.mx",
+    "notas": "Requiere número de ticket y RFC. Plazo límite de 60 días naturales tras la compra."
+  },
+  "AME970109GW0": {
+    "nombreComercial": "AutoZone",
+    "razonSocial": "AutoZone de México, S. de R.L. de C.V.",
+    "portalFacturacionUrl": "https://www.autozone.com.mx",
+    "notas": "Acceso al portal en el pie de página de autozone.com.mx. Requiere folio de ticket, total e ID de tienda."
+  },
+  "MAS121116E51": {
+    "nombreComercial": "Petco",
+    "razonSocial": "Mascotas y Compañía, S.A.P.I. de C.V.",
+    "portalFacturacionUrl": "https://factura.petco.com.mx",
+    "notas": "Enlace en el menú inferior. Requiere número de ticket y total de compra. Plazo de 30 días naturales."
+  },
+  "OCI970818KX9": {
+    "nombreComercial": "Cinemex",
+    "razonSocial": "Operadora de Cinemas, S.A. de C.V.",
+    "portalFacturacionUrl": "https://webportal.edicomgroup.com/customers/cinemex/search.htm",
+    "notas": "Requiere número de ticket, fecha de compra, complejo e importe total. También se puede solicitar en gerencia de complejo."
+  },
+  "TCI121023F10": {
+    "nombreComercial": "Cinépolis",
+    "razonSocial": "Exhibidora Mexicana Cinépolis, S.A. de C.V.",
+    "portalFacturacionUrl": "https://cinepolis.cdc.origon.cloud/facturacion/cinepolis",
+    "notas": "Portal oficial de facturación directa de Cinépolis. Requiere número de cine, fecha, número de transacción y monto total."
+  },
+  "TME840315KT6": {
+    "nombreComercial": "Telmex",
+    "razonSocial": "Teléfonos de México, S.A.B. de C.V.",
+    "portalFacturacionUrl": "https://mitelmex.telmex.com",
+    "notas": "Se gestiona mediante la cuenta de usuario de Mi Telmex donde se configuran los datos de facturación recurrentes."
+  },
+  "CSS160330CP7": {
+    "nombreComercial": "CFE",
+    "razonSocial": "CFE Suministrador de Servicios Básicos",
+    "portalFacturacionUrl": "https://app.cfe.mx/Aplicaciones/CCFE/MiEspacio/Login.aspx",
+    "notas": "Se gestiona y descarga ingresando al portal 'Mi Espacio CFE' o a través de la app CFE Contigo."
+  },
+  "ADO700918J39": {
+    "nombreComercial": "ADO",
+    "razonSocial": "Autobuses de Oriente, S.A. de C.V.",
+    "portalFacturacionUrl": "https://factura.grupoado.com.mx/FETFS/",
+    "notas": "Requiere folio de boleto (12 dígitos), número de asiento y RFC. La filial emisora se determina en automático."
+  },
+  "CVA041027H80": {
+    "nombreComercial": "Volaris",
+    "razonSocial": "Concesionaria Vuela Compañía de Aviación S.A.P.I. de C.V.",
+    "portalFacturacionUrl": "https://facturacion.volaris.com/",
+    "notas": "Portal directo de facturación de Volaris. Requiere clave de reservación (PNR) y el primer apellido del pasajero."
+  },
+  "AME880912I89": {
+    "nombreComercial": "Aeroméxico",
+    "razonSocial": "Aerovías de México, S.A. de C.V.",
+    "portalFacturacionUrl": "https://www.aeromexico.com/es-mx/facturacion",
+    "notas": "Portal directo de facturación de Aeroméxico. Requiere clave de reservación (PNR) o número de boleto (13 dígitos)."
+  },
+  "ANA050518RL1": {
+    "nombreComercial": "Viva Aerobus",
+    "razonSocial": "Aeroenlaces Nacionales, S.A. de C.V.",
+    "portalFacturacionUrl": "https://facturacion.vivaaerobus.com",
+    "notas": "Requiere clave de reservación y primer apellido del pasajero."
+  },
+  "TLU080610C81": {
+    "nombreComercial": "ETN / Turistar",
+    "razonSocial": "ETN Turistar Lujo, S.A. de C.V.",
+    "portalFacturacionUrl": "https://www.etn.com.mx",
+    "notas": "Requiere número de operación o token del boleto y RFC. Plazo límite de 30 días naturales."
+  },
+  "API6609273E0": {
+    "nombreComercial": "Primera Plus",
+    "razonSocial": "Autobuses de la Piedad, S.A. de C.V.",
+    "portalFacturacionUrl": "https://www.facturaelectronicagfa.mx",
+    "notas": "Requiere código de facturación (token) del boleto y RFC."
+  },
+  "CCC050606EA6": {
+    "nombreComercial": "Circle K",
+    "razonSocial": "Comercializadora Círculo CCK, S.A. de C.V.",
+    "portalFacturacionUrl": "https://facturacionek.com.mx/facturacioncck/",
+    "notas": "Portal de facturación de Circle K y Tiendas Extra para tickets de sucursales físicas. Requiere sucursal, folio y total. Compras de la app Contigo CK se facturan enviando ticket a dudasfacturacionextra@cck.com.mx."
+  },
+  "TTB040915CY9": {
+    "nombreComercial": "Tiendas 3B",
+    "razonSocial": "Tiendas Tres B, S.A. de C.V.",
+    "portalFacturacionUrl": "https://clientes.3bfactura.com",
+    "notas": "Requiere número de tienda, caja, ticket y fecha para facturar compras en sucursales 3B."
+  },
+  "CCF121101KQ4": {
+    "nombreComercial": "La Comer / Fresko / City Market",
+    "razonSocial": "Comercial City Fresko, S. de R.L. de C.V.",
+    "portalFacturacionUrl": "https://www.lacomer.com.mx/emision-cfdiwebangular/#/lacomer",
+    "notas": "Requiere número de ticket de 20 dígitos y RFC. Válido para La Comer, Fresko y City Market."
+  },
+  "ECE9610253TA": {
+    "nombreComercial": "Elektra",
+    "razonSocial": "Nueva Elektra del Milenio, S.A. de C.V.",
+    "portalFacturacionUrl": "https://www.elektra.mx/facturacion-electronica",
+    "notas": "Para compras en línea, se habilita tras recibir el correo de envío. Para tiendas físicas, requiere folio del ticket."
+  },
+  "FAR970429SE2": {
+    "nombreComercial": "Farmacias Yza",
+    "razonSocial": "Farmacon, S.A. de C.V.",
+    "portalFacturacionUrl": "https://app.facturame.mx/farmaciasyza",
+    "notas": "Requiere folio e importe del ticket. Operado bajo el grupo FEMSA."
+  },
+  "VBC910617SR1": {
+    "nombreComercial": "Ticketmaster",
+    "razonSocial": "Venta de Boletos por Computadora, S.A. de C.V.",
+    "portalFacturacionUrl": "https://www.ticketmaster.com.mx",
+    "notas": "Portal desactivado. La facturación de cargos por servicio debe solicitarse enviando un correo a facturaciontm@ticketmaster.com.mx con la Constancia de Situación Fiscal (PDF de menos de 30 días) y número de orden."
+  },
+  "ANE140618P37": {
+    "nombreComercial": "Amazon México",
+    "razonSocial": "Servicios Comerciales Amazon México, S. de R.L. de C.V.",
+    "portalFacturacionUrl": "https://www.amazon.com.mx",
+    "notas": "La facturación se realiza internamente desde el menú 'Mis pedidos' > 'Detalles del pedido' > 'Solicitar factura electrónica (CFDI)'. Requiere registrar el RFC previo en la cuenta."
+  },
+  "MLE981244779": {
+    "nombreComercial": "Mercado Libre México",
+    "razonSocial": "MercadoLibre, S. de R.L. de C.V.",
+    "portalFacturacionUrl": "https://www.mercadolibre.com.mx",
+    "notas": "La facturación de compras o cargos de la plataforma se realiza desde la sección 'Facturación' de la cuenta del usuario."
+  },
+  "RDI841003QJ4": {
+    "nombreComercial": "Telcel",
+    "razonSocial": "Radiomóvil Dipsa, S.A. de C.V.",
+    "portalFacturacionUrl": "https://www.telcel.com/personas/atencion-a-clientes/factura-electronica",
+    "notas": "Para compras de equipos/accesorios en Centros de Atención o Distribuidores. Requiere RFC y uno de los siguientes: IMEI, número de factura o nota de salida. Para facturas de planes mensuales de renta, se realiza ingresando al portal Mi Telcel (https://www.mitelcel.com)."
+  },
+  "ACO151023U11": {
+    "nombreComercial": "AT&T México",
+    "razonSocial": "AT&T Comunicaciones Digitales, S. de R.L. de C.V.",
+    "portalFacturacionUrl": "https://www.att.com.mx/facturacion-electronica.html",
+    "notas": "Para equipos o accesorios comprados en tienda física. Requiere número de operación del ticket y monto total. Los planes mensuales de renta se facturan directamente a través de la App o portal Mi AT&T."
+  },
+  "PPC981014529": {
+    "nombreComercial": "Movistar México",
+    "razonSocial": "Pegaso PCS, S.A. de C.V.",
+    "portalFacturacionUrl": "https://mi.movistar.com.mx/",
+    "notas": "No cuenta con portal de autofacturación independiente para tickets. La facturación de planes y recargas se autogestiona directamente registrando el RFC en la cuenta Mi Movistar."
+  },
+  "ECB121102B78": {
+    "nombreComercial": "Izzi",
+    "razonSocial": "Empresas Cablevisión, S.A. de C.V.",
+    "portalFacturacionUrl": "https://www.izzi.mx/mi-cuenta",
+    "notas": "La facturación de servicios mensuales de internet y televisión por cable se realiza tras registrar el RFC en el portal de autogestión de clientes (izzi App o web izzi.mx)."
+  },
+  "TPT890516JP5": {
+    "nombreComercial": "Totalplay",
+    "razonSocial": "Total Play Telecomunicaciones, S.A. de C.V.",
+    "portalFacturacionUrl": "https://www.mitotalplay.com.mx",
+    "notas": "Requiere dar de alta el RFC llamando a Atención a Clientes (800 330 1111). Una vez registrado, los CFDIs se descargan desde la sección 'Estado de cuenta' del portal Mi Totalplay."
+  },
+  "MEG920701ID8": {
+    "nombreComercial": "Megacable",
+    "razonSocial": "Megacable, S.A. de C.V.",
+    "portalFacturacionUrl": "https://sel.megacable.com.mx/",
+    "notas": "La consulta y facturación de servicios de internet y televisión se autogestiona mediante el número de suscriptor o cuenta en el portal de clientes Megacable."
+  },
+  "SIH951120286": {
+    "nombreComercial": "HEB México",
+    "razonSocial": "Supermercados Internacionales HEB, S.A. de C.V.",
+    "portalFacturacionUrl": "https://facturacion.heb.com.mx/",
+    "notas": "Permite facturar tickets de compra en sucursales físicas dentro de los 30 días naturales posteriores a la compra. Requiere número de ticket, sucursal y monto total."
+  },
+  "CDM840307UP1": {
+    "nombreComercial": "Laboratorio Médico del Chopo",
+    "razonSocial": "Centro de Diagnóstico Médico del Chopo, S.A. de C.V.",
+    "portalFacturacionUrl": "https://facturacion.sapproa.com.mx:9443/facturacionpacientes/facturacion.facturacioninicio.aspx?82",
+    "notas": "Requiere el número de orden y el ID del paciente impresos en el recibo de pago recibido en sucursal. Se recomienda facturar el mismo día de la apertura de la orden."
+  },
+  "SDG030403AM7": {
+    "nombreComercial": "Salud Digna",
+    "razonSocial": "Salud Digna para la Gente, A.C.",
+    "portalFacturacionUrl": "https://comprobantefiscal.salud-digna.org/",
+    "notas": "Requiere folio de la orden, fecha y monto exacto de la compra. Permite registrar datos fiscales para emisión inmediata de CFDI (PDF y XML)."
+  },
+  "PRB100802H20": {
+    "nombreComercial": "KFC México",
+    "razonSocial": "Premium Restaurant Brands, S. de R.L. de C.V.",
+    "portalFacturacionUrl": "https://facturacion.prb.com.mx",
+    "notas": "Requiere folio del ticket y monto total de consumo. Válido para sucursales KFC operadas por Premium Restaurant Brands en México dentro del mes de consumo."
+  },
+  "LGA0111296B6": {
+    "nombreComercial": "Librerías Gandhi",
+    "razonSocial": "Librerías Gandhi, S.A. de C.V.",
+    "portalFacturacionUrl": "https://www.gandhi.com.mx/facturacion",
+    "notas": "Facturación de tickets de tienda física. Cuentas con un límite de tiempo hasta el día 7 del mes siguiente a la compra."
+  },
+  "PMU940317114": {
+    "nombreComercial": "iShop Mixup",
+    "razonSocial": "Promotora Musical, S.A. de C.V.",
+    "portalFacturacionUrl": "https://facturaelectronica.mixup.com/",
+    "notas": "Facturación de tickets de compra de iShop y Mixup. Plazo límite dentro del mismo mes de la compra."
+  },
+  "ISD950921HE5": {
+    "nombreComercial": "PASE Telepeaje",
+    "razonSocial": "Pase, Servicios Electrónicos, S.A. de C.V.",
+    "portalFacturacionUrl": "https://www.pase.com.mx/",
+    "notas": "Portal del TAG PASE para facturación de recargas (prepago) y cruces (pospago)."
+  },
+  "EME880309SK5": {
+    "nombreComercial": "Estafeta",
+    "razonSocial": "Estafeta Mexicana, S.A. de C.V.",
+    "portalFacturacionUrl": "https://www.estafeta.com/Facturacion-electronica",
+    "notas": "Facturación de servicios de mensajería y paquetería de Estafeta."
+  },
+  "DEM8801152E9": {
+    "nombreComercial": "DHL Express México",
+    "razonSocial": "DHL Express México, S.A. de C.V.",
+    "portalFacturacionUrl": "https://facturacionelectronica.dhl.com/cfd_dhl/",
+    "notas": "Portal de autofacturación para envíos utilizando el número de guía (AWB)."
+  },
+  "HER170522M19": {
+    "nombreComercial": "IKEA México",
+    "razonSocial": "Ikano Retail Mexico, S.A. de C.V.",
+    "portalFacturacionUrl": "https://v2.dito.com.mx/Dito.Web/IkeaSelfIssue/ConsultaTicket",
+    "notas": "Generación de facturas de compras en tienda e internet. La razón social se ingresa sin siglas como S.A. de C.V."
+  },
+  "CSD161207R2A": {
+    "nombreComercial": "Sodimac México",
+    "razonSocial": "Comercializadora SDMHC, S. de R.L. de C.V.",
+    "portalFacturacionUrl": "https://genera.emisiondetecno.mx/Sodimac/DeTickets/DeTickets_Sodimac_V40/asp/Facturacion.aspx",
+    "notas": "Requiere número de tienda, transacción, caja, fecha y monto total."
+  },
+  "ADD150727S34": {
+    "nombreComercial": "Decathlon México",
+    "razonSocial": "Artículos Deportivos Decathlon, S.A. de C.V.",
+    "portalFacturacionUrl": "https://factura.decathlon.com.mx/",
+    "notas": "Plazo de 30 días posteriores a la fecha de compra para emitir la factura."
+  },
+  "CPF6307036N8": {
+    "nombreComercial": "Tag IAVE (CAPUFE)",
+    "razonSocial": "Caminos y Puentes Federales de Ingresos y Servicios Conexos",
+    "portalFacturacionUrl": "https://iave.capufe.gob.mx/",
+    "notas": "Portal oficial para la facturación de peajes con el dispositivo TAG IAVE."
+  },
+  "OOM960429832": {
+    "nombreComercial": "OfficeMax",
+    "razonSocial": "Operadora OMX, S.A. de C.V.",
+    "portalFacturacionUrl": "https://facturacion.officemax.com.mx/",
+    "notas": "Requiere número de referencia (ticket) e importe total. Límite de facturación del mes de compra y hasta 10 días del mes siguiente."
+  },
+  "TCB7401303A4": {
+    "nombreComercial": "Transportes Castores",
+    "razonSocial": "Transportes Castores de Baja California, S.A. de C.V.",
+    "portalFacturacionUrl": "https://www.castores.com.mx/globales/facturacion.html",
+    "notas": "Facturación de talones y guías de viaje dentro de 30 días naturales."
+  },
+  "ISP831021NV9": {
+    "nombreComercial": "Innova Sport",
+    "razonSocial": "Innova Sport, S.A. de C.V.",
+    "portalFacturacionUrl": "https://www.innovasport.com/facturacion",
+    "notas": "Límite de 90 días naturales para facturar tickets de tienda física."
+  },
+  "ZMC960601538": {
+    "nombreComercial": "Zara México",
+    "razonSocial": "Zara México, S.A. de C.V.",
+    "portalFacturacionUrl": "https://www.zara.com/integration/mectitofa/web/ticket?brand=Z&locale=es&market=MX",
+    "notas": "Requiere número de ticket, ID de tienda, terminal, fecha e importe. NOTA: Protegido por Akamai WAF; puede dar 403 Forbidden en accesos automatizados."
+  },
+  "CME961203360": {
+    "nombreComercial": "C&A México",
+    "razonSocial": "C&A México, S. de R.L.",
+    "portalFacturacionUrl": "https://facturacion.cyamoda.com/",
+    "notas": ""
+  },
+  "CLE810525EA1": {
+    "nombreComercial": "Casa Ley",
+    "razonSocial": "Casa Ley, S.A.P.I. de C.V.",
+    "portalFacturacionUrl": "https://aplicaciones.casaley.com.mx/facturacionelectronica/",
+    "notas": ""
+  },
+  "CDE8401046V6": {
+    "nombreComercial": "Calimax",
+    "razonSocial": "Central Detallista, S.A. de C.V.",
+    "portalFacturacionUrl": "https://facturas.calimaxjs.com/",
+    "notas": "Portal oficial. Puede presentar tiempos de espera altos o interrupciones de servicio. Enlace accesible desde la sección de Facturación Electrónica de calimax.com.mx."
+  },
+  "OME561118AA8": {
+    "nombreComercial": "Omnibus de México",
+    "razonSocial": "OMNIBUS DE MEXICO, S.A. DE C.V.",
+    "portalFacturacionUrl": "https://venta.odm.com.mx/FacturacionElectronica/IndexFacturaElec.html",
+    "notas": "Requiere RFC, correo electrónico, y datos del boleto (número de operación y número de corrida)."
+  },
+  "KKM0304101S1": {
+    "nombreComercial": "Krispy Kreme México",
+    "razonSocial": "KRISPY KREME MEXICO, S. DE R.L. DE C.V.",
+    "portalFacturacionUrl": "https://facturacion.krispykreme.com.mx/",
+    "notas": "Requiere datos del ticket (tienda, ticket y total) e información de facturación (RFC, Razón Social, Régimen Fiscal y Uso de CFDI)."
+  },
+  "TPA131111PM4": {
+    "nombreComercial": "El Globo",
+    "razonSocial": "Tradición en Pastelerías, S.A. de C.V.",
+    "portalFacturacionUrl": "https://www.masfacturaweb.com.mx:73/ElGlobo/",
+    "notas": "Requiere RFC, ticket de compra, total y fecha. Límite de 7 días naturales desde la compra."
+  },
+  "CNO960830IT7": {
+    "nombreComercial": "Sky México",
+    "razonSocial": "Corporación Novavisión, S. de R.L. de C.V.",
+    "portalFacturacionUrl": "https://micuenta.sky.com.mx/login",
+    "notas": "Se gestiona ingresando al portal de autogestión de clientes Mi Cuenta Sky. Requiere registrar el RFC previamente. Portal protegido por WAF. Requiere acceso manual o cabeceras adicionales."
+  },
+  "CFS070215NNA": {
+    "nombreComercial": "Dish México",
+    "razonSocial": "Comercializadora de Frecuencias Satelitales, S. de R.L. de C.V.",
+    "portalFacturacionUrl": "https://midish.dish.com.mx/",
+    "notas": "Se gestiona mediante el portal Mi Dish. Permite descargar estados de cuenta y facturas tras iniciar sesión."
+  },
+  "GSA950215P54": {
+    "nombreComercial": "Grupo Senda",
+    "razonSocial": "Grupo Senda Autotransporte, S.A. de C.V.",
+    "portalFacturacionUrl": "https://ws.gruposenda.com/facturacion",
+    "notas": ""
+  },
+  "DMA850716ER5": {
+    "nombreComercial": "Deportes Martí",
+    "razonSocial": "Deportes Martí, S.A. de C.V.",
+    "portalFacturacionUrl": "https://portalcfdi.masnegocio.com/bienvenida/index/2",
+    "notas": "Requiere número de referencia del ticket. Plazo de 30 días naturales a partir de la compra."
+  },
+  "COP060201DL4": {
+    "nombreComercial": "Little Caesars (Copizza)",
+    "razonSocial": "Copizza, S. de R.L. de C.V.",
+    "portalFacturacionUrl": "https://littce.net",
+    "notas": "Requiere folio de ticket, ID de sucursal, fecha y monto total. Franquiciatario Copizza."
+  },
+  "EST850628K51": {
+    "nombreComercial": "Steren",
+    "razonSocial": "Electrónica Steren, S.A. de C.V.",
+    "portalFacturacionUrl": "https://facturacion.steren.com.mx/",
+    "notas": "Requiere tienda, identificador de ticket, fecha e importe total."
+  },
+  "MME160812J15": {
+    "nombreComercial": "Miniso",
+    "razonSocial": "Miniso México, S.A.P.I. de C.V.",
+    "portalFacturacionUrl": "https://tickets.diverza.com/miniso-mexico/facturar-ticket",
+    "notas": "Requiere folio de ticket, monto total y fecha de compra. Plazo límite dentro del mes en curso."
+  },
+  "HAM111006K69": {
+    "nombreComercial": "H&M",
+    "razonSocial": "H&M Hennes & Mauritz, S.A. de C.V.",
+    "portalFacturacionUrl": "https://webportal.edicomgroup.com/customers/hm/search.htm",
+    "notas": "Requiere número de ticket (anteponer ceros si es online), fecha e importe total. Válido para tiendas y e-commerce."
+  },
+  "FEH940630UG2": {
+    "nombreComercial": "FedEx (Envíos sin Cuenta)",
+    "razonSocial": "Federal Express Holdings (México) y Compañía, S. en N.C. de C.V.",
+    "portalFacturacionUrl": "https://www.fedex.com/es-mx/billing.html",
+    "notas": "Formulario de facturación para envíos ocasionales (Ship Manager Lite) y clientes registrados (FedEx Billing Online). Requiere número de rastreo (guía) y RFC. NOTA: Protegido por Akamai WAF; puede dar 403 Forbidden o timeouts en accesos automatizados."
+  },
+  "OCM0505317M0": {
+    "nombreComercial": "TeleVía",
+    "razonSocial": "Operadora Concesionaria Mexiquense, S.A. de C.V.",
+    "portalFacturacionUrl": "https://www.televia.com.mx/",
+    "notas": "Requiere registro de datos fiscales por Call Center o CAC. Facturación mensual automática."
+  },
+  "UBV121024TN8": {
+    "nombreComercial": "Uber",
+    "razonSocial": "Uber B.V.",
+    "portalFacturacionUrl": "https://riders.uber.com/trips",
+    "notas": "Facturación gestionada a través del Perfil de Impuestos en la cuenta del usuario. Automática o manual."
+  },
+  "DMI1712045J9": {
+    "nombreComercial": "DiDi",
+    "razonSocial": "DiDi Mobility Information Technology PTE. LTD.",
+    "portalFacturacionUrl": "https://www.didiglobal.com",
+    "notas": "La facturación de viajes se realiza exclusivamente a través de la aplicación móvil de DiDi (sección 'Mis viajes'). El sitio web no cuenta con portal de facturación en línea."
+  },
+  "DCZ010126SB1": {
+    "nombreComercial": "Mobo",
+    "razonSocial": "Distribuidor Celular de la Zona Centro, S.A. de C.V.",
+    "portalFacturacionUrl": "https://facturacion.mobo.com.mx/",
+    "notas": "Requiere folio de ticket, fecha de compra, cajero e importe total."
+  },
+  "BME0004112J6": {
+    "nombreComercial": "Bershka",
+    "razonSocial": "ITX Retail México, S.A. de C.V. (Bershka México)",
+    "portalFacturacionUrl": "https://www.bershka.com/integration/mectitofa/web/ticket?brand=B&locale=MX&market=MX",
+    "notas": "Requiere número de ticket, ID de transacción, fecha y estación de trabajo (work station). NOTA: Protegido por Akamai WAF; puede dar 403 Forbidden en accesos automatizados."
+  },
+  "TRA150604TW1": {
+    "nombreComercial": "Rappi",
+    "razonSocial": "Tecnologías Rappi, S.A.P.I. de C.V.",
+    "portalFacturacionUrl": "https://www.rappi.com.mx",
+    "notas": "La facturación de pedidos se realiza exclusivamente a través de la aplicación móvil de Rappi en la sección de 'Mis pedidos'."
+  },
+  "NIM0206259S6": {
+    "nombreComercial": "Nike México (Tiendas Físicas)",
+    "razonSocial": "Nike de México, S. de R.L. de C.V.",
+    "portalFacturacionUrl": "https://webportal.edicomgroup.com/customers/gps/search.htm",
+    "notas": "Requiere número de referencia del ticket de compra física. Compras online se facturan vía correo electrónico de confirmación."
+  },
+  "AME01010996A": {
+    "nombreComercial": "Adidas México (Tiendas Físicas)",
+    "razonSocial": "Adidas de México, S.A. de C.V.",
+    "portalFacturacionUrl": "https://retailedx.com/adidas/",
+    "notas": "Requiere número de ticket de compra física. Compras online se facturan automáticamente o contactando a soporte con el ID del pedido (AMX...)."
+  },
+  "UPS890918TX1": {
+    "nombreComercial": "UPS México",
+    "razonSocial": "United Parcel Service de México, S.A. de C.V.",
+    "portalFacturacionUrl": "https://www.ups.com/mx/es/support/billing-payment.page",
+    "notas": "Facturación exclusiva para usuarios registrados con cuenta de envío activa en el Centro de Facturación de UPS."
+  },
+  "PAQ8611119I2": {
+    "nombreComercial": "Paquetexpress",
+    "razonSocial": "Paquetexpress, S.A. de C.V.",
+    "portalFacturacionUrl": "https://www.paquetexpress.com.mx/",
+    "notas": "Requiere número de rastreo/guía y RFC. Se puede facturar en la sección de Facturación de la página principal."
+  },
+  "TNE0908126K6": {
+    "nombreComercial": "Tiendas Neto",
+    "razonSocial": "Tiendas Neto, S.A. de C.V.",
+    "portalFacturacionUrl": "https://tiendasneto.com.mx/",
+    "notas": "Requiere número de tienda, folio del ticket de compra y RFC. Plazo límite de 30 días naturales."
+  },
+  "PME0206213M9": {
+    "nombreComercial": "Puma México",
+    "razonSocial": "PUMA México Sport, S.A. de C.V.",
+    "portalFacturacionUrl": "https://www.masfacturaweb.com.mx:73/puma/mfwCreaCFDI.aspx",
+    "notas": "Requiere número de ticket, fecha de compra, monto total y sucursal. Plazo límite corto según condiciones del ticket."
+  },
+  "RED9407289Y9": {
+    "nombreComercial": "Redpack",
+    "razonSocial": "Redpack, S.A. de C.V.",
+    "portalFacturacionUrl": "https://www.redpack.com.mx/",
+    "notas": "Requiere folio de venta y datos fiscales. Se realiza en la sección de Facturación Electrónica del portal principal."
+  },
+  "AEB620401831": {
+    "nombreComercial": "Estrella Blanca",
+    "razonSocial": "Autotransportes Estrella Blanca, S.A. de C.V.",
+    "portalFacturacionUrl": "https://factura.estrellablanca.com.mx/",
+    "notas": "Requiere número de comprobante, número TR e importe total. Válido dentro del mes de compra y hasta 7 días del mes siguiente."
+  },
+  "GFA471204859": {
+    "nombreComercial": "Flecha Amarilla",
+    "razonSocial": "Grupo Flecha Amarilla, S.A. de C.V.",
+    "portalFacturacionUrl": "https://www.facturaelectronicagfa.mx",
+    "notas": "Requiere número TOKEN impreso en el boleto de autobús. Máximo 19 boletos por factura. Plazo límite dentro del mes de compra."
+  },
+  "PME380607H86": {
+    "nombreComercial": "Pemex",
+    "razonSocial": "Petróleos Mexicanos",
+    "portalFacturacionUrl": "https://www.pemex.com",
+    "notas": "La facturación se realiza a través de las estaciones de servicio individuales o el portal corporativo."
+  },
+  "CEM880726UZA": {
+    "nombreComercial": "Cemex",
+    "razonSocial": "CEMEX, S.A.B. de C.V.",
+    "portalFacturacionUrl": "https://www.cemexgo.com",
+    "notas": "Facturación y gestión de pedidos para clientes a través de CEMEX Go."
+  },
+  "BIM011108DJ5": {
+    "nombreComercial": "Bimbo",
+    "razonSocial": "Bimbo, S.A. de C.V.",
+    "portalFacturacionUrl": "https://grupobimbo.com",
+    "notas": "Portal corporativo. La facturación comercial se gestiona con ejecutivos o portales de autoservicio para clientes mayoristas."
+  },
+  "OAD110330430": {
+    "nombreComercial": "Sonora Grill",
+    "razonSocial": "Operadora de Alimentos Durango, S.A.P.I. de C.V.",
+    "portalFacturacionUrl": "https://sonoragrill.com.mx/",
+    "notas": "Requiere datos fiscales, número de ticket y monto del consumo."
+  },
+  "PPR1308272W1": {
+    "nombreComercial": "Pizza Hut",
+    "razonSocial": "Pizza Hut México",
+    "portalFacturacionUrl": "https://www.pizzahut.com.mx/",
+    "notas": "La facturación de compras se realiza en línea con el ticket de compra."
+  },
+  "AOM921203870": {
+    "nombreComercial": "Apple México",
+    "razonSocial": "Apple Operations México, S.A. de C.V.",
+    "portalFacturacionUrl": "https://www.apple.com/mx/",
+    "notas": "Facturación a través de la cuenta de usuario para compras en Apple Store o tienda online."
+  },
+  "MME9411084N6": {
+    "nombreComercial": "Microsoft México",
+    "razonSocial": "Microsoft México, S. de R.L. de C.V.",
+    "portalFacturacionUrl": "https://www.microsoft.com/es-mx/",
+    "notas": "Portal corporativo. Las facturas se gestionan desde el centro de administración de cuentas de Microsoft."
+  },
+  "SEM950210DV9": {
+    "nombreComercial": "Samsung México",
+    "razonSocial": "Samsung Electronics México, S.A. de C.V.",
+    "portalFacturacionUrl": "https://www.samsung.com/mx/",
+    "notas": "Facturación disponible desde el portal del perfil de compras en línea de Samsung Store."
+  },
+  "SME541014DF1": {
+    "nombreComercial": "Sony México",
+    "razonSocial": "Sony de México, S.A. de C.V.",
+    "portalFacturacionUrl": "https://www.sony.com.mx/",
+    "notas": "Facturación gestionada en las compras de la tienda oficial en línea de Sony."
+  },
+  "MTR9707255S6": {
+    "nombreComercial": "Mercado Pago",
+    "razonSocial": "MercadoLibre's payment gateway",
+    "portalFacturacionUrl": "https://www.mercadopago.com.mx/",
+    "notas": "Facturación automática o descarga de CFDI en la sección de informes y facturación de la cuenta."
+  },
+  "PME060222N96": {
+    "nombreComercial": "PayPal México",
+    "razonSocial": "PayPal de México, S. de R.L. de C.V.",
+    "portalFacturacionUrl": "https://www.paypal.com/mx/",
+    "notas": "La facturación de comisiones se puede descargar directamente desde el portal de administración del perfil."
+  },
+  "TTR6809205R5": {
+    "nombreComercial": "Transportes Tresguerras",
+    "razonSocial": "Transportes Tresguerras, S.A. de C.V.",
+    "portalFacturacionUrl": "https://www.tresguerras.com.mx/",
+    "notas": "Requiere número de guía, fecha y RFC para facturar envíos."
+  },
+  "LSO7611087D2": {
+    "nombreComercial": "El Sótano (Librería)",
+    "razonSocial": "Librerías El Sótano, S.A. de C.V.",
+    "portalFacturacionUrl": "https://www.elsotano.com/",
+    "notas": "La facturación se realiza en línea introduciendo el número de ticket."
+  },
+  "LPO7602058G1": {
+    "nombreComercial": "Porrúa (Librería)",
+    "razonSocial": "Librerías Porrúa, S.A. de C.V.",
+    "portalFacturacionUrl": "https://porrua.mx/",
+    "notas": "La facturación se realiza en la sección de facturación en línea utilizando el ticket."
+  },
+  "SFM641014DF1": {
+    "nombreComercial": "Six Flags México",
+    "razonSocial": "Six Flags México, S.A. de C.V.",
+    "portalFacturacionUrl": "https://www.sixflags.com.mx/",
+    "notas": "Facturación de boletos de entrada y consumos realizada a través del enlace de facturación en línea."
+  },
+  "KME9808128G1": {
+    "nombreComercial": "KidZania México",
+    "razonSocial": "KidZania México, S.A. de C.V.",
+    "portalFacturacionUrl": "https://kidzania.com/es/mexico",
+    "notas": "Se requiere el ticket de entrada para generar la factura electrónica en el portal oficial."
+  },
+  "GRE890523MS1": {
+    "nombreComercial": "Recórcholis",
+    "razonSocial": "Grupo Recórcholis, S.A. de C.V.",
+    "portalFacturacionUrl": "https://recorcholis.com.mx/",
+    "notas": "Facturación de recargas y consumos en los centros de entretenimiento a través del sitio web."
+  },
+  "OLA0102148G1": {
+    "nombreComercial": "Laboratorios Olab",
+    "razonSocial": "Laboratorios Olab, S.A. de C.V.",
+    "portalFacturacionUrl": "https://www.olab.com.mx/",
+    "notas": "Requiere la orden de servicio o ticket para facturación en línea."
+  },
+  "LRU5412038G1": {
+    "nombreComercial": "Laboratorios Ruiz",
+    "razonSocial": "Laboratorios Ruiz, S.A. de C.V.",
+    "portalFacturacionUrl": "https://www.laboratoriosruiz.com/",
+    "notas": "Portal para facturar análisis clínicos con número de orden."
+  },
+  "LJE8905148G1": {
+    "nombreComercial": "Laboratorios Jenner",
+    "razonSocial": "Laboratorios Jenner, S.A. de C.V.",
+    "portalFacturacionUrl": "https://www.jenner.com.mx/",
+    "notas": "Se requiere el ID de paciente y el número de orden del ticket."
+  },
+  "ODE880612MS1": {
+    "nombreComercial": "Devlyn",
+    "razonSocial": "Ópticas Devlyn, S.A. de C.V.",
+    "portalFacturacionUrl": "https://www.devlyn.com.mx/",
+    "notas": "La facturación en línea requiere número de sucursal, ticket e importe total."
+  },
+  "OLU5410128G1": {
+    "nombreComercial": "Ópticas Lux",
+    "razonSocial": "Ópticas Lux, S.A. de C.V.",
+    "portalFacturacionUrl": "https://www.lux.mx/",
+    "notas": "Facturación en línea de compras en sucursales o en tienda en línea."
+  },
+  "BFR150612MS1": {
+    "nombreComercial": "Ben & Frank",
+    "razonSocial": "Ben & Frank, S. de R.L. de C.V.",
+    "portalFacturacionUrl": "https://benandfrank.com/",
+    "notas": "La facturación de compras en sucursal o en línea se gestiona a través del enlace de facturación del sitio oficial."
+  },
+  "LCT111012MS1": {
+    "nombreComercial": "TAR Aerolíneas",
+    "razonSocial": "Líneas Aéreas de Querétaro, S.A. de C.V.",
+    "portalFacturacionUrl": "https://www.tarmexico.com/",
+    "notas": "Requiere código de reservación (PNR) y RFC para generar la factura electrónica."
+  },
+  "GRM900514MS1": {
+    "nombreComercial": "Magnicharters",
+    "razonSocial": "Grupo Aéreo Monterrey, S.A. de C.V.",
+    "portalFacturacionUrl": "https://www.magnicharters.com/",
+    "notas": "Facturación de vuelos utilizando la clave de confirmación y datos fiscales."
+  },
+  "SME030214MS1": {
+    "nombreComercial": "Sodexo México",
+    "razonSocial": "Sodexo México, S.A. de C.V.",
+    "portalFacturacionUrl": "https://www.sodexo.com.mx/",
+    "notas": "Gestión de facturación y CFDI para clientes corporativos a través del portal de administración."
+  },
+  "EME721012MS1": {
+    "nombreComercial": "Edenred México",
+    "razonSocial": "Edenred México, S.A. de C.V.",
+    "portalFacturacionUrl": "https://www.edenred.mx/",
+    "notas": "Portal corporativo para clientes de vales de despensa y combustible."
+  },
+  "VIA030214MS1": {
+    "nombreComercial": "Viapass",
+    "razonSocial": "Viapass Telepeaje, S.A. de C.V.",
+    "portalFacturacionUrl": "https://www.viapass.com.mx/",
+    "notas": "Portal de facturación de cruces y recargas de peaje."
+  },
+  "NMF190214MS1": {
+    "nombreComercial": "Nu México",
+    "razonSocial": "Nu México Financiera, S.A. de C.V.",
+    "portalFacturacionUrl": "https://nu.com.mx/",
+    "notas": "La facturación de estados de cuenta o comisiones se realiza a través de la aplicación móvil de Nu."
+  },
+  "PAY120214MS1": {
+    "nombreComercial": "Clip (Payclip)",
+    "razonSocial": "Payclip, S. de R.L. de C.V.",
+    "portalFacturacionUrl": "https://clip.mx/",
+    "notas": "La facturación de comisiones por transacciones se realiza desde el portal de usuario de Clip."
+  },
+  "SPA121012MS1": {
+    "nombreComercial": "Sr. Pago",
+    "razonSocial": "Sr. Pago, S.A. de C.V.",
+    "portalFacturacionUrl": "https://senorpago.com/",
+    "notas": "Facturación de comisiones y servicios financieros a través de la cuenta de usuario."
+  },
+  "KFI121203MS1": {
+    "nombreComercial": "Kueski",
+    "razonSocial": "Kueski, S.A.P.I. de C.V.",
+    "portalFacturacionUrl": "https://kueski.com/",
+    "notas": "Facturación disponible desde el perfil del usuario para pagos de préstamos."
+  },
+  "SME140214MS1": {
+    "nombreComercial": "Stripe México",
+    "razonSocial": "Stripe México, S. de R.L. de C.V.",
+    "portalFacturacionUrl": "https://stripe.com/mx",
+    "notas": "Facturación automática de comisiones cobradas, disponible en el Dashboard del comerciante."
+  },
+  "ALS9206256L4": {
+    "nombreComercial": "Chili's México",
+    "razonSocial": "Alsea, S.A.B. de C.V.",
+    "portalFacturacionUrl": "https://www.chilis.com.mx/",
+    "notas": "Facturación de consumos en sucursales administradas por Alsea."
+  },
+  "ITA060207K88": {
+    "nombreComercial": "Italianni's",
+    "razonSocial": "Italianni's México, S.A. de C.V.",
+    "portalFacturacionUrl": "https://www.italiannis.com.mx/",
+    "notas": "Requiere ticket de consumo para facturar en línea (Grupo Alsea)."
+  },
+  "PFC0908126K6": {
+    "nombreComercial": "PF Chang's",
+    "razonSocial": "PF Chang's México",
+    "portalFacturacionUrl": "https://www.pfchangs.com.mx/",
+    "notas": "Facturación de tickets a través de la plataforma de Alsea."
+  },
+  "TCF121101KQ4": {
+    "nombreComercial": "The Cheesecake Factory",
+    "razonSocial": "The Cheesecake Factory México",
+    "portalFacturacionUrl": "https://thecheesecakefactory.com.mx/",
+    "notas": "Facturación de consumos en línea con los datos del ticket."
+  },
+  "IHO0708126K6": {
+    "nombreComercial": "IHOP México",
+    "razonSocial": "IHOP México",
+    "portalFacturacionUrl": "https://www.ihopmexico.com/",
+    "notas": "Facturación en línea de consumos en sucursales en México."
+  },
+  "DQB041123PZ6": {
+    "nombreComercial": "Dairy Queen México",
+    "razonSocial": "Dairy Queen México",
+    "portalFacturacionUrl": "https://www.dairyqueen.com.mx/",
+    "notas": "La facturación en línea se realiza según el ticket de compra en la página oficial."
+  },
+  "WST0908127K6": {
+    "nombreComercial": "Wings Stop",
+    "razonSocial": "Wings Stop México",
+    "portalFacturacionUrl": "https://wingstop.com.mx/",
+    "notas": "Facturación de consumos en línea."
+  },
+  "SRO0102146U3": {
+    "nombreComercial": "Sushi Roll",
+    "razonSocial": "Sushi Roll México",
+    "portalFacturacionUrl": "https://sushiroll.com.mx/",
+    "notas": "Permite facturar consumos con el ticket en el portal oficial."
+  },
+  "GBI370301K39": {
+    "nombreComercial": "Grupo Bimbo (Alternativo)",
+    "razonSocial": "Grupo Bimbo, S.A.B. de C.V.",
+    "portalFacturacionUrl": "https://grupobimbo.com",
+    "notas": "Facturación corporativa adicional."
+  },
+  "SME1108269D1": {
+    "nombreComercial": "Sephora México",
+    "razonSocial": "Sephora México, S. de R.L. de C.V.",
+    "portalFacturacionUrl": "https://www.sephora.com.mx/",
+    "notas": "La facturación de compras en tiendas físicas y en línea se gestiona a través del enlace de facturación."
+  },
+  "SBE01010996A": {
+    "nombreComercial": "Sally Beauty",
+    "razonSocial": "Sally México, S. de R.L. de C.V.",
+    "portalFacturacionUrl": "https://www.sallymexico.com/",
+    "notas": "Portal para facturar tickets de sucursales Sally Beauty."
+  },
+  "CDA9303082R3": {
+    "nombreComercial": "MacStore (CompuDabo)",
+    "razonSocial": "CompuDabo, S.A. de C.V.",
+    "portalFacturacionUrl": "https://www.macstore.com.mx/",
+    "notas": "Facturación de tickets en línea en el portal oficial."
+  },
+  "RME9211054N6": {
+    "nombreComercial": "RadioShack México",
+    "razonSocial": "RadioShack de México, S.A. de C.V.",
+    "portalFacturacionUrl": "https://www.radioshack.com.mx/",
+    "notas": "Requiere datos fiscales y número de ticket de compra física o en línea."
+  },
+  "CCE0212046U3": {
+    "nombreComercial": "Cuidado con el Perro",
+    "razonSocial": "Cuidado con el Perro",
+    "portalFacturacionUrl": "https://www.cuidadoconelperro.com.mx/",
+    "notas": "Portal oficial para facturación de tickets de compra."
+  },
+  "JBI930101QG1": {
+    "nombreComercial": "Joyerías Bizarro",
+    "razonSocial": "Joyerías Bizarro, S.A. de C.V.",
+    "portalFacturacionUrl": "https://www.joyeriasbizarro.com/",
+    "notas": "La facturación en línea requiere el folio de ticket de compra de Joyería Bizarro."
+  },
+  "CMA811126AW9": {
+    "nombreComercial": "Mabe",
+    "razonSocial": "Controladora Mabe, S.A. de C.V.",
+    "portalFacturacionUrl": "https://www.tiendamabe.com/es_MX/preHome",
+    "notas": "Facturación de compras en línea solicitada a través de formulario en su tienda oficial."
+  },
+  "LME941108ER4": {
+    "nombreComercial": "Lego Store México",
+    "razonSocial": "Lego México, S.A. de C.V.",
+    "portalFacturacionUrl": "https://facturacionjuguetron.azurewebsites.net/",
+    "notas": "Portal de facturación operado por Juguetron para tiendas físicas y tienda online."
+  },
+  "GAP980602F82": {
+    "nombreComercial": "Grupo Aeroportuario del Pacífico (GAP)",
+    "razonSocial": "Grupo Aeroportuario del Pacífico, S.A.B. de C.V.",
+    "portalFacturacionUrl": "https://serviciosgap.com.mx/",
+    "notas": "Facturación de servicios aeroportuarios y estacionamientos en aeropuertos GAP."
+  },
+  "SCC030929EN5": {
+    "nombreComercial": "Tiendas Del Sol",
+    "razonSocial": "Tiendas Del Sol México",
+    "portalFacturacionUrl": "https://tiendasdelsol.com.mx/sitio/facturacion",
+    "notas": "Requiere datos del ticket de compra para generar factura en línea."
+  },
+  "AEM120605663": {
+    "nombreComercial": "American Eagle Outfitters México",
+    "razonSocial": "American Eagle Outfitters México",
+    "portalFacturacionUrl": "https://www.ae.com/mx/es",
+    "notas": "Facturación a través del portal de compras en línea o sección de facturación oficial."
+  },
+  "LFA140313H67": {
+    "nombreComercial": "Old Navy México",
+    "razonSocial": "Old Navy México (Grupo Axo)",
+    "portalFacturacionUrl": "https://grupoaxo.com/facturacion",
+    "notas": "Portal centralizado de Grupo Axo para facturar compras en tiendas físicas y online."
+  },
+  "GPL860521FW8": {
+    "nombreComercial": "Alpura",
+    "razonSocial": "Grupo Alpura, S.A. de C.V.",
+    "portalFacturacionUrl": "https://www.alpura.com/",
+    "notas": "Portal corporativo. La facturación se gestiona en puntos de distribución o atención comercial."
+  },
+  "CCO820507BV4": {
+    "nombreComercial": "La Costeña",
+    "razonSocial": "Conservas La Costeña, S.A. de C.V.",
+    "portalFacturacionUrl": "http://www.lacostena.com.mx",
+    "notas": "Portal corporativo de contacto y servicios comerciales."
+  },
+  "HER8301121X4": {
+    "nombreComercial": "Herdez",
+    "razonSocial": "Grupo Herdez, S.A.B. de C.V.",
+    "portalFacturacionUrl": "https://facttiendas.herdez.com/",
+    "notes": "Portal corporativo. Incluye enlace para facturación de marcas y tiendas afiliadas."
+  },
+  "BAC800208B25": {
+    "nombreComercial": "Bachoco",
+    "razonSocial": "Industrias Bachoco, S.A.B. de C.V.",
+    "portalFacturacionUrl": "https://bachoco.com.mx",
+    "notas": "Portal corporativo. La facturación se gestiona con ejecutivos o portales de autoservicio para clientes mayoristas."
+  },
+  "SUK931216N38": {
+    "nombreComercial": "SuKarne",
+    "razonSocial": "SuKarne, S.A. de C.V.",
+    "portalFacturacionUrl": "https://sukarneexpress.com/",
+    "notas": "Portal corporativo. Permite facturación para clientes registrados y compras institucionales."
+  },
+  "CPE921211N76": {
+    "nombreComercial": "Cafebrería El Péndulo",
+    "razonSocial": "Cafebrería El Péndulo",
+    "portalFacturacionUrl": "https://pendulo.com",
+    "notas": "Requiere datos del ticket de consumo o compra de libros."
+  },
+  "MII9012031F8": {
+    "nombreComercial": "Papalote Museo del Niño",
+    "razonSocial": "Papalote Museo del Niño",
+    "portalFacturacionUrl": "https://www.papalote.org.mx/",
+    "notas": "Facturación de boletos de entrada y membresías en línea."
+  },
+  "BLI110902U2A": {
+    "nombreComercial": "Acuario Inbursa",
+    "razonSocial": "Blau Life, S.A. de C.V.",
+    "portalFacturacionUrl": "https://www.acuarioinbursa.com.mx/",
+    "notas": "Requiere datos del ticket de entrada para facturar en su sitio web."
+  },
+  "RTU881031R29": {
+    "nombreComercial": "Hoteles Camino Real",
+    "razonSocial": "Real Turismo, S.A. de C.V.",
+    "portalFacturacionUrl": "https://www.grupocaminoreal.com",
+    "notes": "Portal de facturación para estancias en hoteles Camino Real, Quinta Real y Real Inn."
+  },
+  "SCC171019SQ7": {
+    "nombreComercial": "City Express by Marriott",
+    "razonSocial": "Servicios Centrales de Cobranza Hotelera, S.A. de C.V.",
+    "portalFacturacionUrl": "https://www.marriott.com/es",
+    "notas": "Gestión de facturación por estancias a través de su plataforma en línea."
+  },
+  "GPO920120440": {
+    "nombreComercial": "Grupo Posadas",
+    "razonSocial": "Grupo Posadas, S.A.B. de C.V.",
+    "portalFacturacionUrl": "https://www.posadas.com/",
+    "notas": "Portal corporativo. La facturación de marcas (Fiesta Americana, Fiesta Inn) se gestiona en su portal de facturación centralizado."
+  },
+  "EKM1404018J1": {
+    "nombreComercial": "Maison Kayser México",
+    "razonSocial": "Eric Kayser México, S.A. de C.V.",
+    "portalFacturacionUrl": "https://maison-kayser.com.mx",
+    "notas": "Facturación de consumos en sucursales a través de su sitio web oficial."
+  },
+  "CMR891207S99": {
+    "nombreComercial": "CMR Restaurantes",
+    "razonSocial": "CMR, S.A.B. de C.V.",
+    "portalFacturacionUrl": "http://facturacion.cmr.mx",
+    "notas": "Portal de facturación para marcas operadas por CMR (Wings, Olive Garden, Red Lobster, etc.)."
+  },
+  "DFL8009138B9": {
+    "nombreComercial": "Flexi",
+    "razonSocial": "Distribuidora Flexi, S.A. de C.V.",
+    "portalFacturacionUrl": "https://www.flexi.com.mx/",
+    "notas": "Facturación de compras en tiendas físicas y tienda online oficial."
+  },
+  "GGI880610918": {
+    "nombreComercial": "Grupo Gigante",
+    "razonSocial": "Grupo Gigante, S.A.B. de C.V.",
+    "portalFacturacionUrl": "https://grupogigante.com.mx",
+    "notas": "Portal corporativo. Enlaces de facturación disponibles para sus filiales comerciales."
+  },
+  "PAV1208206N5": {
+    "nombreComercial": "El Pollo Loco",
+    "razonSocial": "El Pollo Loco México",
+    "portalFacturacionUrl": "https://facturaepl.mx/ticket/cfdi/sucursal.aspx",
+    "notas": "Requiere datos del ticket para facturar consumos en línea."
+  },
+  "OCC110111QTA": {
+    "nombreComercial": "Shake Shack México",
+    "razonSocial": "Operadora de Alimentos y Malteadas, S.A.P.I. de C.V.",
+    "portalFacturacionUrl": "https://www.shakeshack.com.mx",
+    "notas": "Portal de facturación en el pie de página de su sitio oficial."
+  },
+  "OFF1101119X9": {
+    "nombreComercial": "Panda Express México",
+    "razonSocial": "Operadora y Administradora de Restaurantes Gigante, S.A. de C.V.",
+    "portalFacturacionUrl": "https://efactura.pandaexpress.com.mx/facturacion",
+    "notas": "Requiere sucursal, ticket, fecha e importe para facturar consumos."
+  },
+  "AAL020208SU3": {
+    "nombreComercial": "El Cardenal",
+    "razonSocial": "Alimentos El Cardenal, S.A. de C.V.",
+    "portalFacturacionUrl": "https://www.elcardenal.com/",
+    "notas": "Portal corporativo de reservas e información para facturación de consumos."
+  },
+  "CVI010928E14": {
+    "nombreComercial": "El Bajío",
+    "razonSocial": "Cocina y Tradición Mexicana, S.A. de C.V.",
+    "portalFacturacionUrl": "https://facturacionrestauranteelbajio.com.mx/",
+    "notas": "Requiere ticket de consumo e importe para facturación en línea."
+  },
+  "FMT890126BZ4": {
+    "nombreComercial": "Farmacias Roma",
+    "razonSocial": "Farmacias Roma",
+    "portalFacturacionUrl": "https://farmaciasroma.com",
+    "notas": "Facturación en línea de tickets de compra en sucursales Roma."
+  },
+  "DIN971119GG6": {
+    "nombreComercial": "Interceramic",
+    "razonSocial": "Distribuidora Interceramic, S.A. de C.V.",
+    "portalFacturacionUrl": "https://interceramic.com/facturacion",
+    "notas": "Permite facturar compras en tiendas Interceramic mediante folio de ticket."
+  },
+  "CCA950819TGA": {
+    "nombreComercial": "Cemento Cruz Azul",
+    "razonSocial": "Cooperativa La Cruz Azul, S.C.L.",
+    "portalFacturacionUrl": "https://www.cementocruzazul.com.mx",
+    "notas": "Portal corporativo y comercial de facturación para distribuidores y clientes."
+  },
+  "GAS9804013N8": {
+    "nombreComercial": "Grupo Aeroportuario del Sureste (ASUR)",
+    "razonSocial": "Grupo Aeroportuario del Sureste, S.A. de C.V.",
+    "portalFacturacionUrl": "https://facturacion.asur.com.mx",
+    "notas": "Facturación de servicios de estacionamiento y aeroportuarios en aeropuertos ASUR."
+  },
+  "AIC980601988": {
+    "nombreComercial": "Aeropuerto Internacional de la Ciudad de México (AICM)",
+    "razonSocial": "Aeropuerto Internacional de la Ciudad de México, S.A. de C.V.",
+    "portalFacturacionUrl": "https://www.aicm.com.mx/",
+    "notas": "Portal oficial. La facturación de servicios aeroportuarios directos se gestiona en su sección fiscal."
+  },
+  "NUT840801733": {
+    "nombreComercial": "Nutrisa",
+    "razonSocial": "Nutrisa México",
+    "portalFacturacionUrl": "https://facttiendas.herdez.com/",
+    "notas": "La facturación se realiza a través de la plataforma de Grupo Herdez."
+  },
+  "CBA951115457": {
+    "nombreComercial": "Chilim Balam",
+    "razonSocial": "Chilim Balam México",
+    "portalFacturacionUrl": "https://facttiendas.herdez.com/",
+    "notas": "La facturación se realiza a través de la plataforma de Grupo Herdez."
+  },
+  "LUM840214MS1": {
+    "nombreComercial": "Lufthansa México",
+    "razonSocial": "Deutsche Lufthansa AG",
+    "portalFacturacionUrl": "https://www.lufthansa.com/mx/es/facturacion-electronica",
+    "notas": "Facturación electrónica para boletos de avión emitidos en México."
+  },
+  "IBE921012MS1": {
+    "nombreComercial": "Iberia México",
+    "razonSocial": "Iberia Líneas Aéreas de España",
+    "portalFacturacionUrl": "https://www.iberia.com/mx/facturacion-electronica/",
+    "notes": "Facturación de boletos y cargos de equipaje emitidos en México."
+  },
+  "WDM990126350": {
+    "nombreComercial": "Waldo's",
+    "razonSocial": "Waldo's Dolar Mart de México, S. de R.L. de C.V.",
+    "portalFacturacionUrl": "http://facturacion.waldos.com/facturacion/",
+    "notas": "Requiere número de tienda, caja, cajero y ticket para facturar compras en sucursales."
+  },
+  "UTE1605165F1": {
+    "nombreComercial": "Kavak",
+    "razonSocial": "UVI TECH, S.A.P.I. DE C.V.",
+    "portalFacturacionUrl": "https://www.kavak.com",
+    "notas": "La facturación se gestiona en la app o enviando la constancia fiscal a soporte."
+  },
+  "ETN9102079WA": {
+    "nombreComercial": "ETN Turistar Lujo",
+    "razonSocial": "Enlaces Terrestres Nacionales S.A. de C.V.",
+    "portalFacturacionUrl": "https://etn.com.mx/",
+    "notas": "Requiere número de operación del boleto y RFC para facturar viajes."
+  },
+  "ALU830902ST5": {
+    "nombreComercial": "Lumen",
+    "razonSocial": "Abastecedora Lumen, S.A. de C.V.",
+    "portalFacturacionUrl": "https://www.coherdi.mx/autofactura-mobile-lumen/",
+    "notas": "Requiere token impreso en el ticket de compra física."
+  },
+  "TMO97062363A": {
+    "nombreComercial": "Tanya Moss",
+    "razonSocial": "Tanya Moss S.A. de C.V.",
+    "portalFacturacionUrl": "https://www.tanyamoss.com",
+    "notas": "Facturación en línea de compras en sucursales o tienda web."
+  },
+  "GNP9211244P0": {
+    "nombreComercial": "GNP Seguros",
+    "razonSocial": "Grupo Nacional Provincial, S.A.B.",
+    "portalFacturacionUrl": "https://www.gnp.com.mx",
+    "notas": "Facturación disponible a través de la sección de clientes Soy Cliente GNP."
+  },
+  "QCS931209G49": {
+    "nombreComercial": "Quálitas Seguros",
+    "razonSocial": "Quálitas Compañía de Seguros, S.A. de C.V.",
+    "portalFacturacionUrl": "https://www.qualitas.com.mx",
+    "notas": "Permite descargar facturas mediante póliza o recibo de pago."
+  },
+  "ASE931116231": {
+    "nombreComercial": "AXA Seguros",
+    "razonSocial": "AXA Seguros S.A. de C.V.",
+    "portalFacturacionUrl": "https://axa.mx",
+    "notas": "Facturación de pólizas mediante el portal My AXA."
+  },
+  "WIN200304FS3": {
+    "nombreComercial": "Bait",
+    "razonSocial": "Wal-Mart Innovación, S. de R.L. de C.V.",
+    "portalFacturacionUrl": "https://mibait.com",
+    "notas": "Facturación de recargas móviles y planes en línea."
+  },
+  "AMP521016875": {
+    "nombreComercial": "Estrella Roja",
+    "razonSocial": "Autobuses México Puebla Estrella Roja, S.A. de C.V.",
+    "portalFacturacionUrl": "https://facturas.estrellaroja.com.mx/",
+    "notas": "Requiere folio e importe del boleto para facturar en línea."
+  },
+  "GAC9806013U7": {
+    "nombreComercial": "Grupo Aeroportuario del Centro Norte (OMA)",
+    "razonSocial": "Grupo Aeroportuario del Centro Norte, S.A.B. de C.V.",
+    "portalFacturacionUrl": "https://app.facturame.mx/oma/",
+    "notas": "Facturación de boletos de estacionamiento y servicios aeroportuarios."
+  },
+  "TTI961202IM1": {
+    "nombreComercial": "Tony Superpapelerías",
+    "razonSocial": "Tony Tiendas, S.A. de C.V.",
+    "portalFacturacionUrl": "https://facturacion.tony.com.mx/",
+    "notes": "Requiere datos del ticket de compra de menudeo para facturar."
+  },
+  "GAM0309104A4": {
+    "nombreComercial": "GamePlanet",
+    "razonSocial": "Gameplanet, S.A. de C.V.",
+    "portalFacturacionUrl": "https://gameplanet.com/facturacion-electronica",
+    "notas": "Requiere número de transacción de 21 dígitos impreso en el ticket."
+  },
+  "OFU910626UQ0": {
+    "nombreComercial": "Alsuper",
+    "razonSocial": "Operadora Futurama, S.A. de C.V.",
+    "portalFacturacionUrl": "https://facturacion.alsuper.com",
+    "notas": "Requiere sucursal, folio, punto de venta e importe total del ticket."
+  },
+  "CVA991118C63": {
+    "nombreComercial": "Bodegas Alianza",
+    "razonSocial": "Comercializadora de Vinos Alianza, S.A. de C.V.",
+    "portalFacturacionUrl": "https://bodegasalianzakiosco.azurewebsites.net/",
+    "notas": "Requiere serie, número de ticket y código de facturación impreso."
+  },
+  "GRC030429EC4": {
+    "nombreComercial": "La Mansión",
+    "razonSocial": "Grupo Restaurantero del Centro, S.A. de C.V.",
+    "portalFacturacionUrl": "https://www.grupolamansion.com.mx",
+    "notas": "Requiere ticket, fecha de consumo e importe en su portal oficial."
+  },
+  "GCP831026IGA": {
+    "nombreComercial": "Gran Café de la Parroquia de Veracruz",
+    "razonSocial": "Gran Café de La Parroquia de Veracruz, S.A. de C.V.",
+    "portalFacturacionUrl": "https://laparroquiadeveracruz.com/facturacion/",
+    "notas": "Requiere sucursal y número de referencia impreso en el ticket."
+  },
+  "OCJ980219MI5": {
+    "nombreComercial": "S-Mart",
+    "razonSocial": "Operadora de Ciudad Juárez, S.A. de C.V.",
+    "portalFacturacionUrl": "https://facturacion.supermercadossmart.com/",
+    "notas": "Requiere sucursal, ticket, fecha e importe para facturar compras en tiendas S-Mart."
+  },
+  "GNM9712017P7": {
+    "nombreComercial": "Naturgy México",
+    "razonSocial": "Gas Natural de México, S.A. de C.V.",
+    "portalFacturacionUrl": "https://www.naturgy.com.mx",
+    "notas": "Acceso al área de clientes para consulta y descarga de comprobantes fiscales de gas natural."
+  },
+  "LAP9408085S6": {
+    "nombreComercial": "Lapi Laboratorio Médico",
+    "razonSocial": "Lapi, S.A. de C.V.",
+    "portalFacturacionUrl": "https://lapi.mx/",
+    "notas": "Portal de facturación de servicios y análisis de laboratorio clínico."
+  },
+  "QDM521124S17": {
+    "nombreComercial": "Quest Diagnostics México",
+    "razonSocial": "Quest Diagnostics México, S.A. de C.V.",
+    "portalFacturacionUrl": "https://www.questdiagnostics.com.mx",
+    "notas": "Facturación electrónica de servicios y análisis médicos."
+  },
+  "SWI1201268J8": {
+    "nombreComercial": "Swisslab",
+    "razonSocial": "Swisslab Laboratorio Clínico",
+    "portalFacturacionUrl": "https://www.swisslab.com.mx",
+    "notas": "Portal oficial para facturación de servicios de laboratorio."
+  },
+  "NMQ050902HW8": {
+    "nombreComercial": "Fix Ferreterías",
+    "razonSocial": "Nacional de Maquinaria y Herramientas, S.A. de C.V.",
+    "portalFacturacionUrl": "https://fixferreterias.com/facturacion",
+    "notas": "Requiere folio fiscal de ticket de compra en tiendas Fix Ferreterías."
+  },
+  "OPG201222PQ5": {
+    "nombreComercial": "Taquería Orinoco",
+    "razonSocial": "Operadora de Parques y Gastronomía, S.A. de C.V.",
+    "portalFacturacionUrl": "https://wansoft.net/TaqueriaOrinoco/FE.html",
+    "notas": "Portal de facturación en línea operado por Wansoft. Requiere datos del ticket."
+  },
+  "NME110513P13": {
+    "nombreComercial": "Netflix",
+    "razonSocial": "Netflix México, S. de R.L. de C.V.",
+    "portalFacturacionUrl": "https://www.netflix.com",
+    "notas": "La facturación del servicio mensual se realiza y descarga dentro del portal de usuario."
+  },
+  "SSM130206GK4": {
+    "nombreComercial": "Spotify",
+    "razonSocial": "Spotify Mexico, S. de R.L. de C.V.",
+    "portalFacturacionUrl": "https://www.spotify.com",
+    "notas": "Descarga de facturas de suscripciones directamente desde el perfil del usuario."
+  },
+  "MUM180223FD1": {
+    "nombreComercial": "Mumuso",
+    "razonSocial": "Mumuso México, S.A. de C.V.",
+    "portalFacturacionUrl": "https://cw.pos.mx/factura/mumuso",
+    "notas": "Facturación de tickets mediante clave de 12 dígitos en el portal cw.pos.mx."
+  },
+  "AXT940727FP8": {
+    "nombreComercial": "Axtel",
+    "razonSocial": "Axtel, S.A.B. de C.V.",
+    "portalFacturacionUrl": "https://www.axtel.mx",
+    "notas": "Acceso al portal de clientes para facturación de servicios de telecomunicación."
+  },
+  "ALE951128996": {
+    "nombreComercial": "Alestra",
+    "razonSocial": "Alestra, S. de R.L. de C.V.",
+    "portalFacturacionUrl": "https://www.alestra.mx",
+    "notas": "Portal empresarial de telecomunicaciones y servicios en la nube."
+  },
+  "ITE430714KI0": {
+    "nombreComercial": "Tec de Monterrey",
+    "razonSocial": "Instituto Tecnológico y de Estudios Superiores de Monterrey",
+    "portalFacturacionUrl": "https://mitec.tec.mx",
+    "notas": "Facturación electrónica de colegiaturas e inscripciones en el portal MiTec."
+  },
+  "UNA2907227Y5": {
+    "nombreComercial": "UNAM",
+    "razonSocial": "Universidad Nacional Autónoma de México",
+    "portalFacturacionUrl": "https://www.unam.mx",
+    "notas": "Trámites de facturación institucional y pagos escolares."
+  },
+  "UAM740101AR1": {
+    "nombreComercial": "UAM",
+    "razonSocial": "Universidad Autónoma Metropolitana",
+    "portalFacturacionUrl": "https://www.uam.mx",
+    "notas": "Facturación de servicios educativos y derechos escolares en campus UAM."
+  },
+  "IPN811229H26": {
+    "nombreComercial": "IPN",
+    "razonSocial": "Instituto Politécnico Nacional",
+    "portalFacturacionUrl": "https://www.ipn.mx",
+    "notas": "Servicios de facturación y trámites de cobro escolar."
+  },
+  "PVC0712146V9": {
+    "nombreComercial": "Claro Shop",
+    "razonSocial": "Portal de Ventas Claro Shop, S.A. de C.V.",
+    "portalFacturacionUrl": "https://www.claroshop.com",
+    "notas": "Gestión de facturas de compras en línea desde el panel de usuario."
+  },
+  "DJU890724BU0": {
+    "nombreComercial": "Juguetron",
+    "razonSocial": "Distribuidora Juguetron, S.A. de C.V.",
+    "portalFacturacionUrl": "https://facturacionjuguetron.azurewebsites.net/",
+    "notas": "Sección de facturación de compras en jugueterías físicas y online."
+  },
+  "GRU810902IE3": {
+    "nombreComercial": "Gruma",
+    "razonSocial": "Gruma, S.A.B. de C.V.",
+    "portalFacturacionUrl": "https://www.gruma.com",
+    "notas": "Portal corporativo. Permite la facturación comercial para clientes comerciales y distribuidores."
+  },
+  "SFN930813CY7": {
+    "nombreComercial": "Smart & Final",
+    "razonSocial": "Smart & Final del Noroeste, S.A. de C.V.",
+    "portalFacturacionUrl": "https://smartnfinal.com.mx",
+    "notas": "Sección de autofacturación de compras en tiendas de autoservicio Smart & Final."
+  },
+  "CLD0507145H6": {
+    "nombreComercial": "Lala",
+    "razonSocial": "Comercializadora de Lácteos Lala, S.A. de C.V.",
+    "portalFacturacionUrl": "https://www.lala.com.mx",
+    "notas": "Portal corporativo y enlace de facturación para clientes mayoristas."
+  },
+  "MME920427EM3": {
+    "nombreComercial": "MetLife México",
+    "razonSocial": "MetLife México, S.A.",
+    "portalFacturacionUrl": "https://www.metlife.com.mx",
+    "notas": "Portal de autoservicio para clientes para descarga de facturas de seguros de vida y médicos."
+  },
+  "MAS990127EP5": {
+    "nombreComercial": "Maskota",
+    "razonSocial": "Maskota, S.A. de C.V.",
+    "portalFacturacionUrl": "https://cw.pos.mx/factura/maskota",
+    "notes": "Facturación electrónica de compras en tiendas Maskota mediante el ticket."
+  },
+  "NME920220KL4": {
+    "nombreComercial": "Nike",
+    "razonSocial": "Nike de México, S. de R.L. de C.V.",
+    "portalFacturacionUrl": "https://www.nike.com/mx",
+    "notas": "Portal oficial. La facturación de compras en línea se realiza desde el perfil de usuario."
+  },
+  "VMS1604291IA": {
+    "nombreComercial": "Valero México",
+    "razonSocial": "Valero Marketing and Supply de México, S. de R.L. de C.V.",
+    "portalFacturacionUrl": "https://valero.com.mx",
+    "notas": "Portal de facturación de combustibles en estaciones de servicio Valero."
+  },
+  "AAP190422FH4": {
+    "nombreComercial": "Aeroméxico Connect",
+    "razonSocial": "Aerolitoral, S.A. de C.V.",
+    "portalFacturacionUrl": "https://www.aeromexico.com",
+    "notas": "Mismo portal de facturación centralizado de Grupo Aeroméxico para boletos con clave de reserva."
+  },
+  "EOM540618KL1": {
+    "nombreComercial": "Estrella de Oro",
+    "razonSocial": "Estrella de Oro, S.A. de C.V. (Grupo ADO)",
+    "portalFacturacionUrl": "https://www.estrelladeoro.com.mx",
+    "notas": "Acceso al portal de facturación unificado de autobuses del Grupo ADO."
+  },
+  "APU640930KV9": {
+    "nombreComercial": "OCC",
+    "razonSocial": "Autobuses de Primera Clase México Tehuacán Huajuapan de León y Anexas, S.A. de C.V. (Grupo ADO)",
+    "portalFacturacionUrl": "https://factura.grupoado.com.mx/FETFS/",
+    "notas": "Portal de facturación del Grupo ADO para boletos de OCC."
+  },
+  "EFE8908015L3": {
+    "nombreComercial": "Efectivale",
+    "razonSocial": "Efectivale, S. de R.L. de C.V.",
+    "portalFacturacionUrl": "https://www.efectivale.com.mx",
+    "notas": "Portal para descarga de facturas de comisiones y saldo de vales electrónicos."
+  },
+  "TIN090211JC9": {
+    "nombreComercial": "Toka Internacional",
+    "razonSocial": "Toka Internacional, S.A.P.I. de C.V.",
+    "portalFacturacionUrl": "https://toka.com.mx",
+    "notas": "Portal corporativo. Permite a clientes empresariales descargar comprobantes fiscales."
+  },
+  "BII931004P61": {
+    "nombreComercial": "Banco Inbursa",
+    "razonSocial": "Banco Inbursa, S.A. Institución de Banca Múltiple",
+    "portalFacturacionUrl": "https://www.inbursa.com",
+    "notas": "Los CFDI fiscales de comisiones y estados de cuenta se obtienen en el portal de banca en línea."
+  },
+  "BAI0205236Y8": {
+    "nombreComercial": "Banco Azteca",
+    "razonSocial": "Banco Azteca, S.A. Institución de Banca Múltiple",
+    "portalFacturacionUrl": "https://www.bancoazteca.com.mx",
+    "notas": "Consulta y descarga de comprobantes CFDI y estados de cuenta fiscales en la app o banca web."
+  },
+  "HSE701218532": {
+    "nombreComercial": "HDI Seguros",
+    "razonSocial": "HDI Seguros, S.A. de C.V.",
+    "portalFacturacionUrl": "https://www.hdi.com.mx/facturacion/",
+    "notas": "Autofacturación de pólizas mediante número de póliza y RFC."
+  },
+  "EME9704037Q8": {
+    "nombreComercial": "Ecogas México",
+    "razonSocial": "Ecogas México, S. de R.L. de C.V.",
+    "portalFacturacionUrl": "https://www.ecogas.com.mx",
+    "notas": "Acceso al portal de clientes para descargar comprobantes de consumo de gas natural."
+  },
+  "TM0110314RY8": {
+    "nombreComercial": "Virgin Mobile México",
+    "razonSocial": "Virgin Mobile México, S. de R.L. de C.V.",
+    "portalFacturacionUrl": "https://virginmobile.mx/",
+    "notas": "Facturación electrónica de recargas y chips desde el enlace en el pie de página."
+  },
+  "ZSE950306M48": {
+    "nombreComercial": "Zurich México",
+    "razonSocial": "Zurich, Compañía de Seguros, S.A.",
+    "portalFacturacionUrl": "https://www.zurich.com.mx/",
+    "notas": "Portal de pólizas y recolección de datos fiscales para la emisión de CFDI de seguros."
+  },
+  "MTE440316E54": {
+    "nombreComercial": "Mapfre México",
+    "razonSocial": "MAPFRE MEXICO, S.A.",
+    "portalFacturacionUrl": "https://www.mapfre.com.mx",
+    "notas": "Acceso al portal de clientes para facturas de pólizas o Reachcore para proveedores."
+  },
+  "ITE051012PU8": {
+    "nombreComercial": "Charly",
+    "razonSocial": "Inter Tenis, S.A. de C.V.",
+    "portalFacturacionUrl": "https://www.charly.com/facturacion-electronica.html",
+    "notas": "Enlaces separados para facturar compras en tiendas físicas (retail) y compras en línea."
+  },
+  "EME910610G1A": {
+    "nombreComercial": "La Europea",
+    "razonSocial": "La Europea México, S.A.P.I. de C.V.",
+    "portalFacturacionUrl": "https://factura.laeuropea.com.mx/cfdi/facturador",
+    "notas": "Autofacturación de tickets ingresando el código impreso y el importe total."
+  },
+  "PFE040219T11": {
+    "nombreComercial": "Pastelerías Esperanza",
+    "razonSocial": "Pasteles Finos La Esperanza, S.A. de C.V.",
+    "portalFacturacionUrl": "https://cfdi.esperanza.mx",
+    "notas": "Autofacturación de tickets dentro de los 5 días naturales posteriores a la compra."
+  },
+  "ENV0708288K9": {
+    "nombreComercial": "Enviaflores",
+    "razonSocial": "ENVIAFLORES SA DE CV",
+    "portalFacturacionUrl": "https://www.enviaflores.com",
+    "notas": "Sección de facturación de pedidos de regalos y arreglos florales desde la cuenta o enlace de ayuda."
+  },
+  "CGP970522EE4": {
+    "nombreComercial": "Consorcio Gasolinero Plus (Hidrosina)",
+    "razonSocial": "Consorcio Gasolinero Plus, S.A. de C.V.",
+    "portalFacturacionUrl": "https://web.hidrosina.com.mx/",
+    "notas": "Portal de facturación electrónica de Hidrosina. Requiere datos de carga de combustible."
+  },
+  "ATU940621PU7": {
+    "nombreComercial": "Tufesa",
+    "razonSocial": "Autotransportes Tufesa S.A. de C.V.",
+    "portalFacturacionUrl": "https://tufesa.com.mx/facturacion",
+    "notas": "Portal de facturación de boletos de autobús y paquetería de Tufesa."
+  },
+  "GAX0001274Z9": {
+    "nombreComercial": "Grupo Axo",
+    "razonSocial": "Grupo Axo, S.A.P.I. de C.V.",
+    "portalFacturacionUrl": "https://www.grupoaxo.com/facturacion/",
+    "notas": "Portal unificado para marcas operadas por Grupo Axo (Guess, Tommy Hilfiger, Calvin Klein, Hollister, Abercrombie & Fitch, Coach, Victoria's Secret, Promoda)."
+  },
+  "THE791105HP2": {
+    "nombreComercial": "Truper",
+    "razonSocial": "Truper, S.A. de C.V.",
+    "portalFacturacionUrl": "https://facturacionelectronica.truper.com/facturacion/acceso",
+    "notas": "Portal de facturación de compras en tiendas físicas y distribuidores autorizados."
+  },
+  "AEB611030SN7": {
+    "nombreComercial": "Autobuses Estrella Blanca",
+    "razonSocial": "AUTOBUSES ESTRELLA BLANCA, S.A. DE C.V.",
+    "portalFacturacionUrl": "https://factura.estrellablanca.com.mx/",
+    "notas": "Portal oficial para la autofacturación de boletos de autobús del grupo Estrella Blanca."
+  },
+  "PEC1411282LA": {
+    "nombreComercial": "Paquetexpress",
+    "razonSocial": "OPERADORA DE SERVICIOS PAQUETEXPRESS SA DE CV",
+    "portalFacturacionUrl": "https://www.paquetexpress.com.mx",
+    "notas": "Portal oficial para facturación de guías de envío y servicios de mensajería y paquetería."
+  },
+  "RED940114JX9": {
+    "nombreComercial": "Redpack",
+    "razonSocial": "Redpack, S.A. de C.V.",
+    "portalFacturacionUrl": "https://www.redpack.com.mx",
+    "notas": "Portal oficial para facturación de guías de envío y servicios de mensajería y paquetería."
+  },
+  "ASE901221SM4": {
+    "nombreComercial": "Chubb Seguros",
+    "razonSocial": "Chubb Seguros México, S.A.",
+    "portalFacturacionUrl": "https://aba.chubb.com/facturas",
+    "notas": "Portal oficial para descarga de facturas mediante número de póliza."
+  },
+  "ATP561002J67": {
+    "nombreComercial": "Autobuses Flecha Roja",
+    "razonSocial": "Autotransportes de Pasajeros México Toluca San Luis Mextepec Querétaro Flecha Roja, S.A. de C.V.",
+    "portalFacturacionUrl": "https://flecharoja.com.mx/",
+    "notas": "Portal oficial de facturación de boletos de autobús Flecha Roja."
+  },
+  "MAX0611157H8": {
+    "nombreComercial": "GNC México",
+    "razonSocial": "Maxiva, S.A. de C.V.",
+    "portalFacturacionUrl": "https://genera.emisiondetecno.mx/GNC/Detickets/DeTickets_GNC/appDeticket_GNC/",
+    "notas": "Portal de autofacturación para tickets de compra de GNC México."
+  },
+  "SAT8410245V8": {
+    "nombreComercial": "Seguros Atlas",
+    "razonSocial": "Seguros Atlas, S.A.",
+    "portalFacturacionUrl": "https://www.segurosatlas.com.mx",
+    "notas": "Acceso al portal oficial de clientes para descarga de CFDIs de pólizas de seguros."
+  },
+  "GDF9712054NA": {
+    "nombreComercial": "SACMEX",
+    "razonSocial": "Sistema de Aguas de la Ciudad de México",
+    "portalFacturacionUrl": "https://www.facturacion.finanzas.cdmx.gob.mx/contribuyente",
+    "notas": "Generación de comprobantes CFDI por concepto de pago de derechos de agua en la CDMX."
+  },
+  "BES420901CY3": {
+    "nombreComercial": "Hospital Español",
+    "razonSocial": "Sociedad Española de Beneficencia",
+    "portalFacturacionUrl": "https://www.hespanol.com",
+    "notas": "Portal del paciente y facturación de servicios médicos y de hospitalización."
+  },
+  "TAP000504G71": {
+    "nombreComercial": "TAP",
+    "razonSocial": "Transportes y Autobuses del Pacífico, S.A. de C.V.",
+    "portalFacturacionUrl": "https://www.tap.com.mx/",
+    "notas": "Autofacturación de boletos de viaje adquiridos en la línea TAP."
+  },
+  "BNE820901682": {
+    "nombreComercial": "Banjercito",
+    "razonSocial": "Banco Nacional del Ejército, Fuerza Aérea y Armada, S.N.C.",
+    "portalFacturacionUrl": "https://www.gob.mx/banjercito",
+    "notas": "Acceso a la sección de servicios bancarios y facturación electrónica de comisiones."
+  },
+  "AMS950419EG4": {
+    "nombreComercial": "Allianz México",
+    "razonSocial": "Allianz México, S.A. Compañía de Seguros",
+    "portalFacturacionUrl": "https://www.allianz.com.mx",
+    "notas": "Portal oficial para la consulta de facturas y descarga de CFDIs de primas de seguros."
+  },
+  "EUR191219RF4": {
+    "nombreComercial": "Hema México",
+    "razonSocial": "Eurofastfashion, S.A.P.I. de C.V.",
+    "portalFacturacionUrl": "https://cw.pos.mx/factura/hema",
+    "notas": "Portal de facturación de tickets de Hema mediante la plataforma CW POS."
+  },
+  "SME001012RI2": {
+    "nombreComercial": "Star Médica",
+    "razonSocial": "Star Médica, S.A. de C.V.",
+    "portalFacturacionUrl": "https://www.starmedica.com",
+    "notas": "Acceso al portal de facturación en línea para servicios hospitalarios y médicos."
+  },
+  "CSM960528CC4": {
+    "nombreComercial": "AIG Seguros México",
+    "razonSocial": "AIG Seguros México, S.A. de C.V.",
+    "portalFacturacionUrl": "https://www-404.aig.com.mx/AIG.CFDI/",
+    "notas": "Portal oficial de descarga de CFDIs para asegurados de AIG México."
+  },
+  "ASU961217L85": {
+    "nombreComercial": "Afore SURA",
+    "razonSocial": "Afore Sura, S.A. de C.V.",
+    "portalFacturacionUrl": "https://www.suramexico.com",
+    "notas": "Portal de clientes para consulta de estados de cuenta y facturación de comisiones Afore."
+  },
+  "PGA961220PB4": {
+    "nombreComercial": "Afore Profuturo",
+    "razonSocial": "Profuturo Afore, S.A. de C.V.",
+    "portalFacturacionUrl": "https://www.profuturo.mx/",
+    "notas": "Acceso al portal personal para descarga de CFDIs y constancias fiscales de aportaciones."
+  },
+  "BBA830831LJ2": {
+    "nombreComercial": "BBVA México",
+    "razonSocial": "BBVA México, S.A., Institución de Banca Múltiple, Grupo Financiero BBVA México",
+    "portalFacturacionUrl": "https://www.bbva.mx",
+    "notas": "Acceso a la banca digital para descarga de comprobantes fiscales de comisiones bancarias."
+  },
+  "ABA970106H3A": {
+    "nombreComercial": "Afore Citibanamex",
+    "razonSocial": "Afore Banamex, S.A. de C.V.",
+    "portalFacturacionUrl": "https://www.aforebanamex.com.mx",
+    "notas": "Portal oficial para la consulta de saldo y obtención de CFDIs de comisiones de Afore."
+  },
+  "AXX970225GL0": {
+    "nombreComercial": "Afore XXI Banorte",
+    "razonSocial": "Afore XXI Banorte, S.A. de C.V.",
+    "portalFacturacionUrl": "https://www.xxi-banorte.com",
+    "notas": "Acceso al portal transaccional de Afore XXI Banorte para descarga de CFDIs."
+  },
+  "PRE100204N30": {
+    "nombreComercial": "PriceTravel",
+    "razonSocial": "Price Res, S.A.P.I. de C.V.",
+    "portalFacturacionUrl": "https://www.pricetravel.com.mx",
+    "notas": "Sección para autofacturar reservas y paquetes de viajes de PriceTravel."
+  },
+  "AVA880310UI1": {
+    "nombreComercial": "Hertz México",
+    "razonSocial": "Alquiladora de Vehículos Automotores, S.A. de C.V.",
+    "portalFacturacionUrl": "https://www.hertzmexico.com",
+    "notas": "Facturación en línea de contratos de renta de autos en Hertz México."
+  },
+  "FCM1712133F2": {
+    "nombreComercial": "Europcar México",
+    "razonSocial": "FLEET CAR COMPANY MX SA DE CV",
+    "portalFacturacionUrl": "https://www.europcar.com.mx",
+    "notas": "Portal oficial para autofacturar servicios de arrendamiento de vehículos en Europcar."
+  },
+  "SAD560528572": {
+    "nombreComercial": "SADM Monterrey",
+    "razonSocial": "Servicios de Agua y Drenaje de Monterrey, I.P.D.",
+    "portalFacturacionUrl": "https://ayd.sadm.gob.mx/eAyd/",
+    "notas": "Portal de trámites en línea para pago y descarga de facturas de agua en Monterrey."
+  },
+  "SIS780421TR3": {
+    "nombreComercial": "SIAPA Guadalajara",
+    "razonSocial": "Sistema Intermunicipal de los Servicios de Agua Potable y Alcantarillado",
+    "portalFacturacionUrl": "https://www.siapa.gob.mx/reciboenlinea",
+    "notas": "Descarga de recibos y facturación electrónica de pagos del SIAPA Guadalajara."
+  },
+  "SIN9408027L7": {
+    "nombreComercial": "Seguros Inbursa",
+    "razonSocial": "Seguros Inbursa, S.A., Grupo Financiero Inbursa",
+    "portalFacturacionUrl": "https://www.inbursa.com",
+    "notas": "Portal oficial de consulta y descarga de comprobantes fiscales de seguros Inbursa."
+  },
+  "PAF980807H81": {
+    "nombreComercial": "Afore Principal",
+    "razonSocial": "Principal Afore, S.A. de C.V., Principal Grupo Financiero",
+    "portalFacturacionUrl": "https://www.principal.com.mx",
+    "notas": "Portal de clientes para consulta de aportaciones y comprobantes de comisiones Afore."
+  },
+  "AIN9612041P6": {
+    "nombreComercial": "Afore Inbursa",
+    "razonSocial": "Afore Inbursa, S.A. de C.V.",
+    "portalFacturacionUrl": "https://www.inbursa.com",
+    "notas": "Consulta y descarga de CFDIs de comisiones de cuentas individuales de Afore Inbursa."
+  },
+  "OHA051017KE7": {
+    "nombreComercial": "Hospitales Angeles",
+    "razonSocial": "Hospitales Angeles, S.A. de C.V.",
+    "portalFacturacionUrl": "https://hospitalangeles.com/",
+    "notas": "Portal oficial para la facturación digital de servicios de salud en Hospitales Angeles."
+  },
+  "CPM15013J82": {
+    "nombreComercial": "HP Store México",
+    "razonSocial": "Computing and Printing Mexico, S. de R.L. de C.V.",
+    "portalFacturacionUrl": "https://www.hp.com/mx-es/shop/",
+    "notas": "Portal oficial de compra. La facturación electrónica se genera desde el correo de confirmación o soporte."
+  },
+  "LME050301NM8": {
+    "nombreComercial": "Lenovo México",
+    "razonSocial": "Lenovo México, S. de R.L. de C.V.",
+    "portalFacturacionUrl": "https://www.lenovo.com/mx/es/",
+    "notas": "Solicitud de facturación de compras en línea desde la sección de soporte/pedidos."
+  },
+  "DME9204099R6": {
+    "nombreComercial": "Dell México",
+    "razonSocial": "Dell México, S.A. de C.V.",
+    "portalFacturacionUrl": "https://www.dell.com/support/orders",
+    "notas": "Acceso al portal de soporte de pedidos para descarga de facturas en PDF y XML."
+  },
+  "VDE220407P83": {
+    "nombreComercial": "Reebok México",
+    "razonSocial": "Vector Delta S.A. de C.V.",
+    "portalFacturacionUrl": "https://www.reebok.mx",
+    "notas": "Portal oficial. Descarga de CFDIs de compras en línea desde el panel de usuario."
+  },
+  "LMP771017AM6": {
+    "nombreComercial": "Laboratorio Médico Polanco",
+    "razonSocial": "LABORATORIO MEDICO POLANCO, S. A. DE C. V.",
+    "portalFacturacionUrl": "https://www.lmpolanco.com",
+    "notas": "Autofacturación de estudios y análisis de laboratorio ingresando ID y contraseña del ticket."
+  },
+  "PVD091120Q79": {
+    "nombreComercial": "Privalia México",
+    "razonSocial": "Privalia Venta Directa, S.A. de C.V.",
+    "portalFacturacionUrl": "https://mex.privalia.com",
+    "notas": "Facturación electrónica de compras en el club de ventas privado Privalia México."
+  },
+  "LOP101111GH5": {
+    "nombreComercial": "Lala Operaciones",
+    "razonSocial": "Lala Operaciones, S.A. de C.V.",
+    "portalFacturacionUrl": "https://www.grupolala.com",
+    "notas": "Portal corporativo. Permite a socios comerciales y distribuidores la consulta de facturación."
+  },
+  "TEL721214GK7": {
+    "nombreComercial": "Televisa",
+    "razonSocial": "Televisa, S. de R.L. de C.V.",
+    "portalFacturacionUrl": "https://www.televisa.com",
+    "notas": "Portal institucional corporativo para facturación de publicidad y servicios de medios."
+  },
+  "BME820511SU5": {
+    "nombreComercial": "Bayer de México",
+    "razonSocial": "Bayer de México, S.A. de C.V.",
+    "portalFacturacionUrl": "https://bayerdfs.mx",
+    "notas": "Portal de facturación de servicios y distribución comercial de Bayer México."
+  },
+  "PAG1510216C2": {
+    "nombreComercial": "Procter & Gamble México",
+    "razonSocial": "Procter & Gamble Manufacturing México, S. de R.L. de C.V.",
+    "portalFacturacionUrl": "https://www.pginvoice.com",
+    "notas": "Portal de facturación de P&G para socios comerciales e institucionales."
+  },
+  "CPA7503043P1": {
+    "nombreComercial": "Colgate-Palmolive México",
+    "razonSocial": "Colgate Palmolive, S.A. de C.V.",
+    "portalFacturacionUrl": "https://www.colgate.com.mx",
+    "notas": "Portal institucional corporativo para clientes de Colgate-Palmolive en México."
+  },
+  "FRA961126F59": {
+    "nombreComercial": "L'Oréal México",
+    "razonSocial": "Frabel, S.A. de C.V.",
+    "portalFacturacionUrl": "https://www.loreal.com/es-mx/mexico/",
+    "notas": "Portal oficial. Facturación de distribución comercial de productos L'Oréal en México."
+  },
+  "ROC020422UV9": {
+    "nombreComercial": "Cielito Querido Café",
+    "razonSocial": "RC Operadora de Cafeterías, S.A. de C.V.",
+    "portalFacturacionUrl": "https://cielitoquerido.com.mx",
+    "notas": "Autofacturación de consumos en sucursales de Cielito Querido Café."
+  },
+  "LAT110824BJ4": {
+    "nombreComercial": "Smart Fit México",
+    "razonSocial": "LATAMGYM, S.A.P.I. de C.V.",
+    "portalFacturacionUrl": "https://www.smartfit.com.mx",
+    "notas": "Acceso al Espacio Cliente para consultar pagos y descargar facturas de membresías."
+  },
+  "KME940630DR2": {
+    "nombreComercial": "KidZania México",
+    "razonSocial": "KidZania de México, S.A. de C.V.",
+    "portalFacturacionUrl": "https://kidzania.mywork.com.mx",
+    "notas": "Acceso al portal para emisión de CFDIs correspondientes a entradas y eventos en KidZania."
+  },
+  "AEM230616A93": {
+    "nombreComercial": "Mexicana de Aviación",
+    "razonSocial": "Aerolínea del Estado Mexicano, S.A. de C.V.",
+    "portalFacturacionUrl": "https://www.mexicana.gob.mx",
+    "notas": "Portal oficial de compra. La facturación electrónica de boletos se realiza a través de su enlace oficial."
+  },
+  "EMC8412198U0": {
+    "nombreComercial": "Cinépolis",
+    "razonSocial": "Exhibidora Mexicana Cinépolis, S.A. de C.V.",
+    "portalFacturacionUrl": "https://www.cinepolis.com",
+    "notas": "Requiere datos de ticket de compra (número de cine, fecha, transacción e importe) para facturar."
+  },
+  "PMA1805167L1": {
+    "nombreComercial": "Pinturerías Pintu",
+    "razonSocial": "Pinturas Multitonos, S.A. de C.V.",
+    "portalFacturacionUrl": "https://facturacionpintu.com.mx",
+    "notas": "Portal de facturación de tickets de compra de Pinturerías Pintu."
+  },
+  "FES840823HH0": {
+    "nombreComercial": "Farmacias Especializadas",
+    "razonSocial": "Fármacos Especializados, S.A. de C.V.",
+    "portalFacturacionUrl": "https://www.farmaciasespecializadas.com/",
+    "notas": "Facturación electrónica de compras en sucursales o en línea."
+  },
+  "TPA9107028R1": {
+    "nombreComercial": "Parhíkuni",
+    "razonSocial": "Servicios de Pasaje Parhikuni, S.A. de C.V.",
+    "portalFacturacionUrl": "https://ventas.parhikuni.com.mx/request.aspx?PRGNAME=Facturacion",
+    "notas": "Autofacturación de boletos de viaje ingresando el número de operación."
+  },
+  "CAR9008215Z9": {
+    "nombreComercial": "Avis Rent A Car",
+    "razonSocial": "Comercial Ariete, S.A. de C.V.",
+    "portalFacturacionUrl": "https://www.avis.mx",
+    "notas": "Módulo de facturación de contratos de renta de autos cerrados en México."
+  },
+  "SAF980202D99": {
+    "nombreComercial": "Seguros Afirme",
+    "razonSocial": "Seguros Afirme, S.A. de C.V., Afirme Grupo Financiero",
+    "portalFacturacionUrl": "https://www.afirme.com",
+    "notas": "Portal oficial para solicitar facturas de servicios, pólizas o siniestros."
+  },
+  "AGN971009GVA": {
+    "nombreComercial": "Gas Natural del Norte",
+    "razonSocial": "Gas Natural del Norte, S.A. de C.V.",
+    "portalFacturacionUrl": "https://www.gasnn.com.mx",
+    "notas": "Portal de consulta de saldos y pago en línea con opción a facturación."
+  },
+  "MSU820125T58": {
+    "nombreComercial": "Médica Sur",
+    "razonSocial": "Médica Sur, S.A.B. de C.V.",
+    "portalFacturacionUrl": "https://www.medicasur.com.mx/",
+    "notas": "Enlace oficial para consulta de servicios médicos y facturación electrónica."
+  },
+  "AER6201241D0": {
+    "nombreComercial": "Costa Line",
+    "razonSocial": "Autotransportes Estrella Roja del Sur, S.A. de C.V.",
+    "portalFacturacionUrl": "https://www.costaline.com.mx/",
+    "notas": "Generación de factura electrónica mediante número de operación impreso en el boleto."
+  },
+  "SEM980304888": {
+    "nombreComercial": "Engie México",
+    "razonSocial": "ENGIE MEXICO S.A. DE C.V.",
+    "portalFacturacionUrl": "https://www.engiemexico.com/",
+    "notas": "Portal corporativo de ENGIE. Enlace a Mi Cuenta para pago y descarga de recibos fiscales."
+  },
+  "YME1805177N9": {
+    "nombreComercial": "Yoyoso México",
+    "razonSocial": "Yoyoso México, S.A. de C.V.",
+    "portalFacturacionUrl": "https://cw.pos.mx/factura/yoyoso",
+    "notas": "Facturación de compras en tiendas Yoyoso usando plataforma CW POS."
+  },
+  "BFA930210SU5": {
+    "nombreComercial": "Beer Factory",
+    "razonSocial": "Beer Factory, S.A. de C.V.",
+    "portalFacturacionUrl": "https://www.beerfactory.com.mx/",
+    "notas": "Portal oficial para facturación de consumos en sucursales de Beer Factory."
+  },
+  "WAI061123T58": {
+    "nombreComercial": "Wings Army",
+    "razonSocial": "Franquicias Wings Army, S.A. de C.V.",
+    "portalFacturacionUrl": "https://wingsarmy.com/facturacion/",
+    "notas": "Portal de autofacturación de tickets de consumo en Wings Army."
+  },
+  "RPO850426P31": {
+    "nombreComercial": "Potzollcalli",
+    "razonSocial": "Restaurantes Potzollcalli, S.A. de C.V.",
+    "portalFacturacionUrl": "https://potzollcalli.com/facturacion",
+    "notas": "Portal oficial de autofacturación electrónica para sucursales de Potzollcalli."
+  },
+  "GBO881201998": {
+    "nombreComercial": "Bisquets Obregón",
+    "razonSocial": "Grupo Bisquets Obregón, S.A. de C.V.",
+    "portalFacturacionUrl": "https://www.bisquetsobregon.com/",
+    "notas": "Autofacturación electrónica de tickets de consumo en Bisquets Obregón."
+  },
+  "RCA0312046U3": {
+    "nombreComercial": "El Califa",
+    "razonSocial": "Restaurantes El Califa, S.A. de C.V.",
+    "portalFacturacionUrl": "https://elcalifa.com.mx/",
+    "notas": "Autofacturación electrónica para tickets de consumo de Taquerías El Califa."
+  },
+  "GFM130206GK4": {
+    "nombreComercial": "Grupo Fisher's",
+    "razonSocial": "Grupo Fisher's, S.A. de C.V.",
+    "portalFacturacionUrl": "https://fishers.com.mx/",
+    "notas": "Portal de facturación oficial para consumos en restaurantes del Grupo Fisher's."
+  },
+  "HME9501254N9": {
+    "nombreComercial": "HSBC México",
+    "razonSocial": "HSBC México, S.A., Institución de Banca Múltiple",
+    "portalFacturacionUrl": "https://www.hsbc.com.mx/",
+    "notas": "Acceso a banca por internet y herramientas para descarga de CFDIs de comisiones bancarias."
+  },
+  "SIN9412025L4": {
+    "nombreComercial": "Scotiabank México",
+    "razonSocial": "Scotiabank Inverlat, S.A., Institución de Banca Múltiple",
+    "portalFacturacionUrl": "https://www.scotiabank.com.mx/",
+    "notas": "Acceso al portal oficial para obtención de CFDIs y estados de cuenta fiscales de Scotiabank."
+  },
+  "BBA940707IE1": {
+    "nombreComercial": "Banbajío",
+    "razonSocial": "Banco del Bajío, S.A., Institución de Banca Múltiple",
+    "portalFacturacionUrl": "https://banbajio.com.mx",
+    "notas": "Acceso a la banca electrónica de Banbajío para consulta y descarga de facturas de comisiones."
+  },
+  "UVM870210LT1": {
+    "nombreComercial": "UVM (Universidad)",
+    "razonSocial": "Universidad del Valle de México, S.C.",
+    "portalFacturacionUrl": "https://www.uvm.mx/",
+    "notas": "Acceso al portal de facturación electrónica de colegiaturas y servicios educativos de la UVM."
+  },
+  "UTM900618776": {
+    "nombreComercial": "UNITEC (Universidad)",
+    "razonSocial": "Universidad Tecnológica de México, S.C.",
+    "portalFacturacionUrl": "https://www.unitec.mx/",
+    "notas": "Portal para la facturación digital de pagos de colegiaturas y trámites académicos en la UNITEC."
+  },
+  "ACO051202NK7": {
+    "nombreComercial": "Afore Coppel",
+    "razonSocial": "Afore Coppel, S.A. de C.V.",
+    "portalFacturacionUrl": "https://www.aforecoppel.com",
+    "notas": "Portal oficial de Afore Coppel. Permite la descarga de estados de cuenta fiscales y constancias."
+  },
+  "NME980506LPA": {
+    "nombreComercial": "Nestlé México",
+    "razonSocial": "Nestlé México, S.A. de C.V.",
+    "portalFacturacionUrl": "https://www.nestle.com.mx",
+    "notas": "Portal corporativo. Permite a distribuidores y clientes institucionales descargar facturas."
+  },
+  "JJM531116CE7": {
+    "nombreComercial": "Johnson & Johnson de México",
+    "razonSocial": "Johnson & Johnson de México, S.A. de C.V.",
+    "portalFacturacionUrl": "https://www.jnjmexico.com/",
+    "notas": "Portal institucional corporativo para clientes mayoristas y distribuidores de J&J México."
+  },
+  "RME161207R2A": {
+    "nombreComercial": "Repsol México",
+    "razonSocial": "Repsol Downstream México, S.A. de C.V.",
+    "portalFacturacionUrl": "https://facturacion.repsol.com.mx/",
+    "notas": "Autofacturación de tickets de compra de combustible en estaciones de servicio Repsol."
+  },
+  "CME1712045J9": {
+    "nombreComercial": "Chevron México",
+    "razonSocial": "Chevron Combustibles de México, S. de R.L. de C.V.",
+    "portalFacturacionUrl": "https://www.chevronmexico.com/",
+    "notas": "Facturación electrónica en línea para tickets de gasolineras Chevron en México."
+  },
+  "LGA150604TW1": {
+    "nombreComercial": "La Gas",
+    "razonSocial": "Lagas, S.A. de C.V.",
+    "portalFacturacionUrl": "https://lagas.com.mx/",
+    "notas": "Portal de facturación electrónica de combustible para la red de gasolineras La Gas."
+  },
+  "HMI7611087D2": {
+    "nombreComercial": "Hoteles Misión",
+    "razonSocial": "Hoteles Misión, S.A. de C.V.",
+    "portalFacturacionUrl": "https://www.hotelesmision.com.mx/",
+    "notas": "Facturación en línea de hospedajes y consumos en hoteles de la cadena Hoteles Misión."
+  },
+  "NHM971009GVA": {
+    "nombreComercial": "NH Hotels México",
+    "razonSocial": "NH Hoteles de México, S.A. de C.V.",
+    "portalFacturacionUrl": "https://www.nh-hotels.com/",
+    "notas": "Portal de facturación electrónica para huéspedes y clientes de NH Hotels en México."
+  },
+  "ZGM980304888": {
+    "nombreComercial": "Zeta Gas",
+    "razonSocial": "Zeta Gas, S.A. de C.V.",
+    "portalFacturacionUrl": "https://www.zetagassureste.com/",
+    "notas": "Portal de facturación de servicios de suministro de gas LP Zeta Gas."
+  },
+  "RGM820125T58": {
+    "nombreComercial": "Regio Gas",
+    "razonSocial": "Regio Gas, S.A. de C.V.",
+    "portalFacturacionUrl": "https://regiogas.com.mx/",
+    "notas": "Portal oficial para descarga y generación de CFDIs por consumos de Regio Gas."
+  },
+  "AAM6201241D0": {
+    "nombreComercial": "American Airlines México",
+    "razonSocial": "American Airlines, Inc., Sucursal en México",
+    "portalFacturacionUrl": "https://www.aa.com/",
+    "notas": "Portal de facturación electrónica para boletos de avión adquiridos en México."
+  },
+  "DAL6201241D0": {
+    "nombreComercial": "Delta Air Lines México",
+    "razonSocial": "Delta Air Lines, Inc., Sucursal en México",
+    "portalFacturacionUrl": "https://www.delta.com/",
+    "notas": "Portal oficial de emisión de facturas electrónicas CFDI de Delta Air Lines México."
+  },
+  "NCR880310UI1": {
+    "nombreComercial": "National Car Rental México",
+    "razonSocial": "Arrendadora de Vehículos Nacionales, S.A. de C.V.",
+    "portalFacturacionUrl": "https://www.nationalcar.com.mx/",
+    "notas": "Portal oficial para autofacturación de arrendamientos de autos en National México."
+  },
+  "ARC880310UI1": {
+    "nombreComercial": "Alamo Rent A Car México",
+    "razonSocial": "Arrendadora de Vehículos Alamo, S.A. de C.V.",
+    "portalFacturacionUrl": "https://www.alamo.com.mx/",
+    "notas": "Facturación electrónica en línea para servicios de alquiler de autos Alamo en México."
+  },
+  "BCR880310UI1": {
+    "nombreComercial": "Budget Car Rental México",
+    "razonSocial": "Arrendadora de Vehículos Budget, S.A. de C.V.",
+    "portalFacturacionUrl": "https://www.budget.com.mx/",
+    "notas": "Portal oficial de facturación digital para contratos de renta de autos Budget México."
+  },
+  "ERC880310UI1": {
+    "nombreComercial": "Enterprise Rent-A-Car México",
+    "razonSocial": "Arrendadora de Vehículos Enterprise, S.A. de C.V.",
+    "portalFacturacionUrl": "https://www.enterprise.mx/",
+    "notas": "Portal oficial para autofacturar contratos de arrendamiento de Enterprise México."
+  },
+  "SRM880310UI1": {
+    "nombreComercial": "Sixt Rent A Car México",
+    "razonSocial": "Arrendadora de Vehículos Sixt, S.A. de C.V.",
+    "portalFacturacionUrl": "https://www.sixt.mx/",
+    "notas": "Facturación electrónica en línea para contratos de renta de vehículos en Sixt México."
+  },
+  "APM561002J67": {
+    "nombreComercial": "Pullman de Morelos",
+    "razonSocial": "Autobuses Pullman de Morelos, S.A. de C.V.",
+    "portalFacturacionUrl": "https://www.pullman.mx/",
+    "notas": "Portal oficial de autofacturación de boletos de viaje adquiridos en Pullman de Morelos."
+  },
+  "AMT561002J67": {
+    "nombreComercial": "Zinacantepec (Bus)",
+    "razonSocial": "Autobuses México Toluca Zinacantepec y Ramales, S.A. de C.V.",
+    "portalFacturacionUrl": "https://autobuseszinacantepec.com.mx/",
+    "notas": "Autofacturación electrónica de pasajes comprados en autobuses Zinacantepec."
+  },
+  "SBE03092283A": {
+    "nombreComercial": "Superboletos",
+    "razonSocial": "Super Boletos, S.A. de C.V.",
+    "portalFacturacionUrl": "https://www.superboletos.com/",
+    "notas": "Generación de comprobantes CFDI de boletos adquiridos a través del sistema Superboletos."
+  },
+  "ZLI03092283A": {
+    "nombreComercial": "Zignia Live",
+    "razonSocial": "Zignia Live, S.A. de C.V.",
+    "portalFacturacionUrl": "https://zignia.mx/",
+    "notas": "Facturación digital por concepto de eventos y shows organizados por Zignia Live."
+  },
+  "UAN061217L85": {
+    "nombreComercial": "Universidad Anáhuac",
+    "razonSocial": "Universidad Anáhuac, S.C.",
+    "portalFacturacionUrl": "https://www.anahuac.mx/",
+    "notas": "Portal oficial de facturación electrónica de servicios educativos y colegiaturas."
+  },
+  "UIA061217L85": {
+    "nombreComercial": "Universidad Iberoamericana",
+    "razonSocial": "Universidad Iberoamericana, A.C.",
+    "portalFacturacionUrl": "https://www.ibero.mx/",
+    "notas": "Sección para la emisión y descarga de CFDIs por colegiaturas y trámites en la Ibero."
+  },
+  "ITA8501011Y8": {
+    "nombreComercial": "ITAM",
+    "razonSocial": "Instituto Tecnológico Autónomo de México",
+    "portalFacturacionUrl": "https://www.itam.mx/",
+    "notas": "Portal para la facturación electrónica de colegiaturas y servicios estudiantiles del ITAM."
+  },
+  "CAP0612054NA": {
+    "nombreComercial": "Aguas de Puebla",
+    "razonSocial": "Concesiones Integrales, S.A. de C.V.",
+    "portalFacturacionUrl": "https://www.aguapuebla.mx/",
+    "notas": "Generación de facturas electrónicas por el pago de derechos de agua potable en Puebla."
+  },
+  "SWM820511SU5": {
+    "nombreComercial": "Sherwin-Williams México",
+    "razonSocial": "Compañía Sherwin-Williams S.A. de C.V.",
+    "portalFacturacionUrl": "https://www.sherwin.com.mx/",
+    "notes": "Autofacturación de tickets de compra de pinturas y recubrimientos en tiendas oficiales Sherwin-Williams."
+  },
+  "FME110902U2A": {
+    "nombreComercial": "Forever 21 México",
+    "razonSocial": "Forever 21 México, S.A. de C.V.",
+    "portalFacturacionUrl": "https://cw.pos.mx/factura/forever21",
+    "notas": "Facturación electrónica de tickets de tienda física en la plataforma CW POS."
+  },
+  "MMD921008I58": {
+    "nombreComercial": "Massimo Dutti México",
+    "razonSocial": "Massimo Dutti México, S.A. de C.V.",
+    "portalFacturacionUrl": "https://www.massimodutti.com/mx/",
+    "notas": "Facturación electrónica de compras de ropa y accesorios en tienda física o en línea de Massimo Dutti."
+  },
+  "PBM921008I58": {
+    "nombreComercial": "Pull & Bear México",
+    "razonSocial": "Pull & Bear México, S.A. de C.V.",
+    "portalFacturacionUrl": "https://www.pullandbear.com/mx/",
+    "notes": "Portal oficial. Descarga de CFDIs de compras físicas y digitales en tiendas Pull & Bear."
+  },
+  "SME921008I58": {
+    "nombreComercial": "Stradivarius México",
+    "razonSocial": "Stradivarius México, S.A. de C.V.",
+    "portalFacturacionUrl": "https://www.stradivarius.com/mx/",
+    "notas": "Facturación en línea de compras realizadas en la cadena de moda Stradivarius México."
+  },
+  "OYM921008I58": {
+    "nombreComercial": "Oysho México",
+    "razonSocial": "Oysho México, S.A. de C.V.",
+    "portalFacturacionUrl": "https://www.oysho.com/mx/",
+    "notas": "Facturación de tickets y compras en línea para prendas de vestir y lencería Oysho."
+  },
+  "ZHM921008I58": {
+    "nombreComercial": "Zara Home México",
+    "razonSocial": "Zara Home México, S.A. de C.V.",
+    "portalFacturacionUrl": "https://www.zarahome.com/mx/",
+    "notas": "Facturación en línea para compras en la división de hogar y decoración Zara Home México."
+  },
+  "MOC131014T3A": {
+    "nombreComercial": "Mochomos",
+    "razonSocial": "Mochomos Gastronomía, S.A. de C.V.",
+    "portalFacturacionUrl": "https://mochomos.mx/",
+    "notas": "Facturación en línea de consumos en sucursales de restaurantes Mochomos."
+  },
+  "CBA0806128J8": {
+    "nombreComercial": "Cervecería de Barrio",
+    "razonSocial": "Cervecería de Barrio, S.A. de C.V.",
+    "portalFacturacionUrl": "https://lacerveceriadebarrio.com.mx/",
+    "notas": "Autofacturación electrónica de consumos en Cervecería de Barrio."
+  },
+  "TIZ820921B66": {
+    "nombreComercial": "El Tizoncito",
+    "razonSocial": "El Tizoncito de México, S.A. de C.V.",
+    "portalFacturacionUrl": "https://eltizoncito.com.mx/",
+    "notas": "Autofacturación de tickets en la cadena de taquerías El Tizoncito."
+  },
+  "UDG770402IE3": {
+    "nombreComercial": "Universidad de Guadalajara",
+    "razonSocial": "Universidad de Guadalajara",
+    "portalFacturacionUrl": "https://www.udg.mx/",
+    "notas": "Acceso al portal institucional para facturación de servicios educativos y aranceles."
+  },
+  "UAN6909087N2": {
+    "nombreComercial": "UANL",
+    "razonSocial": "Universidad Autónoma de Nuevo León",
+    "portalFacturacionUrl": "https://www.uanl.mx/",
+    "notas": "Acceso al portal de servicios de tesorería y facturación de colegiaturas de la UANL."
+  },
+  "BRM940216IB5": {
+    "nombreComercial": "Banregio",
+    "razonSocial": "Banco Regional, S.A., Institución de Banca Múltiple, Banregio Grupo Financiero",
+    "portalFacturacionUrl": "https://www.banregio.com/",
+    "notas": "Acceso a la banca digital de Banregio para descarga de facturas electrónicas de comisiones."
+  },
+  "BNM840515VB1": {
+    "nombreComercial": "Citibanamex Bank",
+    "razonSocial": "Banco Nacional de México, S.A., Integrante del Grupo Financiero Banamex",
+    "portalFacturacionUrl": "https://www.citibanamex.com/",
+    "notas": "Módulo oficial de Citibanamex para consulta de CFDIs y estados de cuenta fiscales."
+  },
+  "BAI940608F56": {
+    "nombreComercial": "Banca Afirme",
+    "razonSocial": "Banca Afirme, S.A., Institución de Banca Múltiple, Afirme Grupo Financiero",
+    "portalFacturacionUrl": "https://www.afirme.com/",
+    "notas": "Acceso al portal oficial de Afirme para descarga de comprobantes de comisiones."
+  },
+  "BMU060309998": {
+    "nombreComercial": "Banco Multiva",
+    "razonSocial": "Banco Multiva, S.A., Institución de Banca Múltiple, Grupo Financiero Multiva",
+    "portalFacturacionUrl": "https://www.multiva.com.mx/",
+    "notas": "Acceso a la sección de servicios en línea para consulta de facturas electrónicas."
+  },
+  "BAC0004112J6": {
+    "nombreComercial": "Banco Actinver",
+    "razonSocial": "Banco Actinver, S.A., Institución de Banca Múltiple, Grupo Financiero Actinver",
+    "portalFacturacionUrl": "https://www.actinver.com/",
+    "notas": "Acceso a banca en línea de Actinver para descarga de facturas fiscales."
+  },
+  "BIN940301733": {
+    "nombreComercial": "Banco Invex",
+    "razonSocial": "Banco Invex, S.A., Institución de Banca Múltiple, Invex Grupo Financiero",
+    "portalFacturacionUrl": "https://www.invex.com/",
+    "notas": "Descarga de facturas de comisiones e intereses en el portal oficial de Invex."
+  },
+  "BBA940707IE2": {
+    "nombreComercial": "Banco Base",
+    "razonSocial": "Banco Base, S.A., Institución de Banca Múltiple, Grupo Financiero Base",
+    "portalFacturacionUrl": "https://www.bancobase.com/",
+    "notas": "Módulo de consulta de comprobantes fiscales de operaciones de divisas y comisiones."
+  },
+  "CIB0806128J8": {
+    "nombreComercial": "CIBanco",
+    "razonSocial": "CIBanco, S.A., Institución de Banca Múltiple",
+    "portalFacturacionUrl": "https://www.cibanco.com/",
+    "notas": "Acceso a CInavegador para consulta y descarga de comprobantes CFDI."
+  },
+  "KON131014T3A": {
+    "nombreComercial": "Konfío",
+    "razonSocial": "Red Amigo CD, S.A. de C.V., S.F.P. (Konfío)",
+    "portalFacturacionUrl": "https://konfio.mx/",
+    "notas": "Acceso al panel de clientes de Konfío para descarga de facturas de créditos y comisiones."
+  },
+  "BIT140214MS1": {
+    "nombreComercial": "Bitso",
+    "razonSocial": "Bitso, S.A.P.I. de C.V.",
+    "portalFacturacionUrl": "https://bitso.com/",
+    "notas": "Sección de facturación de comisiones por transacciones de criptomonedas dentro del perfil de usuario."
+  },
+  "UAG770402IE3": {
+    "nombreComercial": "Universidad Autónoma de Guadalajara",
+    "razonSocial": "Universidad Autónoma de Guadalajara, A.C.",
+    "portalFacturacionUrl": "https://www.uag.mx/",
+    "notas": "Acceso a la plataforma de tesorería y facturación de servicios escolares de la UAG."
+  },
+  "UDE6909087N2": {
+    "nombreComercial": "Universidad de Monterrey (UDEM)",
+    "razonSocial": "Universidad de Monterrey",
+    "portalFacturacionUrl": "https://www.udem.edu.mx/",
+    "notas": "Portal oficial de alumnos para alta de datos fiscales y facturación de colegiaturas."
+  },
+  "UPA770402IE3": {
+    "nombreComercial": "Universidad Panamericana",
+    "razonSocial": "Universidad Panamericana, A.C.",
+    "portalFacturacionUrl": "https://www.up.edu.mx/",
+    "notas": "Módulo de tesorería del portal de alumnos de la UP para descarga de CFDIs."
+  },
+  "UDL770402IE3": {
+    "nombreComercial": "Universidad de las Américas Puebla (UDLAP)",
+    "razonSocial": "Fundación Universidad de las Américas, Puebla",
+    "portalFacturacionUrl": "https://www.udlap.mx/",
+    "notas": "Portal oficial para alta de datos fiscales y descarga de facturas de colegiaturas de la UDLAP."
+  },
+  "CME401014529": {
+    "nombreComercial": "Colegio de México (Colmex)",
+    "razonSocial": "El Colegio de México, A.C.",
+    "portalFacturacionUrl": "https://www.colmex.mx/",
+    "notas": "Módulo de facturación institucional para cobros de publicaciones y servicios educativos."
+  },
+  "UTM0206213M9": {
+    "nombreComercial": "Universidad Tecmilenio",
+    "razonSocial": "Universidad Tecmilenio, S.C.",
+    "portalFacturacionUrl": "https://tecmilenio.mx/",
+    "notas": "Acceso a Banner / Portal de Alumnos para emisión de facturas de colegiaturas."
+  },
+  "SIT880310UI1": {
+    "nombreComercial": "Sushi Itto",
+    "razonSocial": "Novenus, S.A. de C.V.",
+    "portalFacturacionUrl": "https://sushi-itto.com.mx/",
+    "notas": "Autofacturación de consumos en sucursales de Sushi Itto mediante ticket."
+  },
+  "GIN820511SU5": {
+    "nombreComercial": "Ginos",
+    "razonSocial": "Gino's Ristorante, S.A. de C.V.",
+    "portalFacturacionUrl": "https://www.ginos.com.mx/",
+    "notas": "Autofacturación de consumos en restaurantes Gino's Ristorante."
+  },
+  "PLE820125T58": {
+    "nombreComercial": "Pastelería Lety",
+    "razonSocial": "Pastelería Lety, S.A. de C.V.",
+    "portalFacturacionUrl": "https://www.pastelerialety.com/",
+    "notas": "Portal oficial para autofacturar compras de pasteles y postres en Pastelería Lety."
+  },
+  "PSJ820125T58": {
+    "nombreComercial": "Pastelería San José",
+    "razonSocial": "Pastelería San José, S.A. de C.V.",
+    "portalFacturacionUrl": "https://pasteleriasanjose.com/",
+    "notas": "Facturación electrónica de compras en sucursales de Pastelerías San José."
+  },
+  "PAL820125T58": {
+    "nombreComercial": "Pastelería Alcazar",
+    "razonSocial": "Pastelería Alcazar, S.A. de C.V.",
+    "portalFacturacionUrl": "https://pasteleriaalcazar.mx/",
+    "notas": "Autofacturación electrónica de tickets de compra de Pastelerías Alcazar."
+  },
+  "AMI150604TW1": {
+    "nombreComercial": "Acuario Michin",
+    "razonSocial": "Acuarios Interactivos de México, S.A. de C.V.",
+    "portalFacturacionUrl": "https://acuariomichin.com/",
+    "notas": "Portal de facturación de boletos de entrada adquiridos en Acuario Michin Guadalajara y Puebla."
+  },
+  "GLA03092283A": {
+    "nombreComercial": "Granja las Américas",
+    "razonSocial": "Granja Interactiva de México, S.A. de C.V.",
+    "portalFacturacionUrl": "https://granjalasamericas.com.mx/",
+    "notas": "Autofacturación electrónica de boletos y consumos en Granja las Américas CDMX."
+  },
+  "SMA03092283A": {
+    "nombreComercial": "Selva Mágica",
+    "razonSocial": "Diversiones Guadalajara, S.A. de C.V.",
+    "portalFacturacionUrl": "https://www.selvamagica.com.mx/",
+    "notas": "Portal de facturación oficial de boletos del parque de diversiones Selva Mágica."
+  },
+  "BOL1208206N5": {
+    "nombreComercial": "Boletia",
+    "razonSocial": "Boletia Medios, S.A. de C.V.",
+    "portalFacturacionUrl": "https://boletia.com/",
+    "notas": "Módulo de facturación de cargos por servicio de boletos de eventos vendidos vía Boletia."
+  },
+  "ETI03092283A": {
+    "nombreComercial": "Eticket",
+    "razonSocial": "E-Ticket México, S.A. de C.V.",
+    "portalFacturacionUrl": "https://www.eticket.mx/",
+    "notas": "Portal de facturación para cargos por servicio de boletos comprados en la plataforma Eticket."
+  },
+  "ANA401014529": {
+    "nombreComercial": "Auditorio Nacional",
+    "razonSocial": "Fideicomiso para el Uso y Aprovechamiento del Auditorio Nacional",
+    "portalFacturacionUrl": "https://www.auditorio.com.mx/",
+    "notas": "Sección oficial del Auditorio Nacional para la facturación de servicios de eventos."
+  },
+  "MME0004112J7": {
+    "nombreComercial": "Mobil México",
+    "razonSocial": "ExxonMobil México, S.A. de C.V.",
+    "portalFacturacionUrl": "https://www.mobil.com.mx/",
+    "notas": "Portal corporativo. Permite a usuarios de gasolineras Mobil acceder a su portal de facturación."
+  },
+  "TTE821025G96": {
+    "nombreComercial": "TotalEnergies México",
+    "razonSocial": "TotalEnergies Gas and Power México, S.A. de C.V.",
+    "portalFacturacionUrl": "https://www.totalenergies.mx/",
+    "notas": "Autofacturación de consumos de combustible y aceites en estaciones de servicio de TotalEnergies."
+  },
+  "DRC880310UI1": {
+    "nombreComercial": "Dollar Rent A Car México",
+    "razonSocial": "Arrendadora de Vehículos Dollar, S.A. de C.V.",
+    "portalFacturacionUrl": "https://www.dollarmexico.com.mx/",
+    "notas": "Portal de facturación para contratos de alquiler de autos Dollar en México."
+  },
+  "TCR880310UI1": {
+    "nombreComercial": "Thrifty Car Rental México",
+    "razonSocial": "Arrendadora de Vehículos Thrifty, S.A. de C.V.",
+    "portalFacturacionUrl": "https://www.thrifty.com.mx/",
+    "notas": "Portal oficial para autofacturar contratos de renta de autos Thrifty en México."
+  },
+  "FRC880310UI1": {
+    "nombreComercial": "Fox Rent A Car México",
+    "razonSocial": "Fox Rent A Car México, S.A. de C.V.",
+    "portalFacturacionUrl": "https://www.foxrentacar.com/",
+    "notas": "Facturación electrónica en línea para servicios de alquiler de autos Fox en México."
+  },
+  "SEN840214MS1": {
+    "nombreComercial": "Sendex",
+    "razonSocial": "Sendex Mensajería y Paquetería, S.A. de C.V.",
+    "portalFacturacionUrl": "https://www.sendex.mx/",
+    "notas": "Portal oficial de facturación electrónica de envíos y guías de mensajería Sendex."
+  },
+  "CAR991118C64": {
+    "nombreComercial": "Carssa",
+    "razonSocial": "Carssa Mensajería y Paquetería, S.A. de C.V.",
+    "portalFacturacionUrl": "https://www.carssa.com.mx/",
+    "notas": "Portal de facturación electrónica para servicios de paquetería y envíos en Carssa."
+  },
+  "MBA9806187N8": {
+    "nombreComercial": "Bara (FEMSA)",
+    "razonSocial": "Mercader de Bara, S.A. de C.V.",
+    "portalFacturacionUrl": "https://www.bara.com.mx/",
+    "notas": "Portal de facturación de tickets de compra de tiendas de conveniencia Bara."
+  },
+  "BBB0806128J8": {
+    "nombreComercial": "Bed Bath & Beyond México",
+    "razonSocial": "Bed Bath & Beyond México, S. de R.L. de C.V.",
+    "portalFacturacionUrl": "https://www.bedbathandbeyond.com.mx/",
+    "notas": "Facturación digital de tickets de compra de tiendas físicas Bed Bath & Beyond México."
+  },
+  "AFH0806128J8": {
+    "nombreComercial": "Ashley Furniture HomeStore México",
+    "razonSocial": "Ashley Homestores de México, S. de R.L. de C.V.",
+    "portalFacturacionUrl": "https://www.ashleyfurniture.com.mx/",
+    "notas": "Portal oficial. Facturación electrónica de compras en sucursales de Ashley Furniture."
+  },
+  "AST950419EG4": {
+    "nombreComercial": "El Asturiano",
+    "razonSocial": "Comercializadora El Asturiano, S.A. de C.V.",
+    "portalFacturacionUrl": "https://tiendaselasturiano.com/",
+    "notas": "Portal oficial para autofacturación de tickets de compra de tiendas de conveniencia El Asturiano."
+  },
+  "CES910101529": {
+    "nombreComercial": "CESPT Tijuana",
+    "razonSocial": "Comisión Estatal de Servicios Públicos de Tijuana",
+    "portalFacturacionUrl": "https://www.cespt.gob.mx/",
+    "notas": "Portal institucional para pago y descarga de recibos fiscales de agua potable en Tijuana."
+  },
+  "CES910101530": {
+    "nombreComercial": "CESPE Ensenada",
+    "razonSocial": "Comisión Estatal de Servicios Públicos de Ensenada",
+    "portalFacturacionUrl": "https://www.cespe.gob.mx/",
+    "notas": "Portal oficial para descarga de recibos y facturación de servicios de agua potable en Ensenada."
+  },
+  "SAP840301529": {
+    "nombreComercial": "SAPAL León",
+    "razonSocial": "Sistema de Agua Potable y Alcantarillado de León",
+    "portalFacturacionUrl": "https://www.sapal.gob.mx/",
+    "notas": "Generación de facturas electrónicas por el pago del servicio de agua potable en León, Guanajuato."
+  },
+  "ASA0102148G1": {
+    "nombreComercial": "Aguas de Saltillo",
+    "razonSocial": "Aguas de Saltillo, S.A. de C.V.",
+    "portalFacturacionUrl": "https://www.aguasdesaltillo.com/",
+    "notas": "Portal oficial de pago en línea y facturación electrónica de derechos de agua en Saltillo."
+  },
+  "VIC1604118E8": {
+    "nombreComercial": "La Vicenta",
+    "razonSocial": "La Vicenta Restaurantes, S.A. de C.V.",
+    "portalFacturacionUrl": "https://www.lavicenta.com.mx/",
+    "notas": "Autofacturación de tickets de consumo en la cadena de restaurantes La Vicenta."
+  },
+  "HAR1604118E8": {
+    "nombreComercial": "Harry's",
+    "razonSocial": "Harry's Steakhouse & Raw Bar, S.A. de C.V.",
+    "portalFacturacionUrl": "https://harrys.com.mx/",
+    "notas": "Módulo de facturación electrónica para restaurantes Harry's."
+  },
+  "POR1604118E8": {
+    "nombreComercial": "Porfirio's",
+    "razonSocial": "Porfirio's Restaurante, S.A. de C.V.",
+    "portalFacturacionUrl": "https://porfirios.com.mx/",
+    "notas": "Autofacturación de consumos en sucursales de Porfirio's."
+  },
+  "SFR1604118E8": {
+    "nombreComercial": "Señor Frog's",
+    "razonSocial": "Señor Frog's de México, S.A. de C.V.",
+    "portalFacturacionUrl": "https://senorfrogs.com/",
+    "notas": "Módulo de facturación de consumos y souvenirs en Señor Frog's."
+  },
+  "ITE570731PS9": {
+    "nombreComercial": "ITESO",
+    "razonSocial": "Instituto Tecnológico y de Estudios Superiores de Occidente, A.C.",
+    "portalFacturacionUrl": "https://iteso.mx/",
+    "notas": "Acceso al portal institucional para alumnos y facturación de servicios escolares."
+  },
+  "UGU450325KY2": {
+    "nombreComercial": "Universidad de Guanajuato",
+    "razonSocial": "Universidad de Guanajuato",
+    "portalFacturacionUrl": "https://www.ugto.mx/",
+    "notas": "Módulo de tesorería y facturación de pagos y colegiaturas."
+  },
+  "UVE450101FM9": {
+    "nombreComercial": "Universidad Veracruzana",
+    "razonSocial": "Universidad Veracruzana",
+    "portalFacturacionUrl": "https://www.uv.mx/",
+    "notas": "Módulo de pago en línea y facturación electrónica institucional."
+  },
+  "UAY8409012S1": {
+    "nombreComercial": "Universidad Autónoma de Yucatán",
+    "razonSocial": "Universidad Autónoma de Yucatán",
+    "portalFacturacionUrl": "https://www.uady.mx/",
+    "notas": "Acceso a la plataforma de cobros y facturación de colegiaturas."
+  },
+  "UAS230110SU8": {
+    "nombreComercial": "Universidad Autónoma de San Luis Potosí",
+    "razonSocial": "Universidad Autónoma de San Luis Potosí",
+    "portalFacturacionUrl": "https://www.uaslp.mx/",
+    "notas": "Portal institucional para el registro de datos fiscales y descarga de recibos."
+  },
+  "UAE560321112": {
+    "nombreComercial": "Universidad Autónoma del Estado de México",
+    "razonSocial": "Universidad Autónoma del Estado de México",
+    "portalFacturacionUrl": "https://www.uaemex.mx/",
+    "notas": "Portal institucional para control de pagos y facturación de servicios escolares."
+  },
+  "UAS651204MZ9": {
+    "nombreComercial": "Universidad Autónoma de Sinaloa",
+    "razonSocial": "Universidad Autónoma de Sinaloa",
+    "portalFacturacionUrl": "https://www.uas.edu.mx/",
+    "notas": "Portal de tesorería y facturación electrónica de la UAS."
+  },
+  "UAC730403446": {
+    "nombreComercial": "Universidad Autónoma de Coahuila",
+    "razonSocial": "Universidad Autónoma de Coahuila",
+    "portalFacturacionUrl": "https://www.uadec.mx/",
+    "notas": "Acceso a servicios escolares y facturas electrónicas de colegiaturas."
+  },
+  "UAE5702287S5": {
+    "nombreComercial": "Universidad Autónoma de Baja California",
+    "razonSocial": "Universidad Autónoma de Baja California",
+    "portalFacturacionUrl": "https://www.uabc.mx/",
+    "notes": "Portal de alumnos para el registro fiscal y obtención de CFDIs."
+  },
+  "UAA740224TQ2": {
+    "nombreComercial": "Universidad Autónoma de Aguascalientes",
+    "razonSocial": "Universidad Autónoma de Aguascalientes",
+    "portalFacturacionUrl": "https://www.uaa.mx/",
+    "notas": "Portal oficial para alta de RFC y consulta de CFDIs emitidos."
+  },
+  "USO530922NH6": {
+    "nombreComercial": "Universidad de Sonora",
+    "razonSocial": "Universidad de Sonora",
+    "portalFacturacionUrl": "https://www.unison.mx/",
+    "notas": "Módulo oficial de tesorería y facturación para alumnos y proveedores."
+  },
+  "HME970425QN1": {
+    "nombreComercial": "Hooters México",
+    "razonSocial": "Hooters de México, S.A. de C.V.",
+    "portalFacturacionUrl": "https://hooters.com.mx/",
+    "notas": "Portal de autofacturación electrónica para consumo en sucursales de Hooters."
+  },
+  "UAM130508KA6": {
+    "nombreComercial": "Under Armour México",
+    "razonSocial": "Under Armour México S. de R.L. de C.V.",
+    "portalFacturacionUrl": "https://www.underarmour.com.mx/",
+    "notas": "Portal oficial. Facturación en línea para compras electrónicas y de tiendas físicas."
+  },
+  "VMI050120AU6": {
+    "nombreComercial": "Aldo Conti",
+    "razonSocial": "27 MICRAS INTERNACIONAL, S.A. DE C.V.",
+    "portalFacturacionUrl": "https://www.aldoconti.com/",
+    "notas": "Autofacturación de tickets para compras en tiendas Aldo Conti."
+  },
+  "WTR060327CNA": {
+    "nombreComercial": "Woolworth México",
+    "razonSocial": "Woolworth Trading, S.A. de C.V.",
+    "portalFacturacionUrl": "https://tiendasdelsol.com.mx/sitio/facturacion",
+    "notas": "Facturación digital de tickets de compra de tiendas físicas Woolworth México."
+  },
+  "SKI020328NK5": {
+    "nombreComercial": "Super Kiosko",
+    "razonSocial": "Super Kiosko, S.A. de C.V.",
+    "portalFacturacionUrl": "https://mikiosko.mx/",
+    "notas": "Facturación de consumos y compras en tiendas de conveniencia Kiosko."
+  },
+  "UCN111025KY9": {
+    "nombreComercial": "Lush México",
+    "razonSocial": "Ukm Cosméticos Naturales, S.A. de C.V.",
+    "portalFacturacionUrl": "https://www.lush.mx/",
+    "notas": "Facturación de compras en tiendas físicas y e-commerce de Lush México."
+  },
+  "MOM140206925": {
+    "nombreComercial": "Mango México",
+    "razonSocial": "MANGO OPERACIONES MEXICO, S. DE R.L. DE C.V.",
+    "portalFacturacionUrl": "https://www.mango.com/",
+    "notas": "Portal oficial para autofacturar compras realizadas en tiendas físicas Mango México."
+  },
+  "WME8709287L5": {
+    "nombreComercial": "Whirlpool México",
+    "razonSocial": "Whirlpool México, S. de R.L. de C.V.",
+    "portalFacturacionUrl": "https://www.whirlpool.mx/",
+    "notas": "Portal corporativo. Permite a clientes mayoristas e individuales facturar compras."
+  },
+  "LEM9308114C4": {
+    "nombreComercial": "LG Electronics México",
+    "razonSocial": "LG Electronics México, S.A. de C.V.",
+    "portalFacturacionUrl": "https://www.lg.com/mx/",
+    "notas": "Facturación en línea de equipos y servicios adquiridos en la tienda oficial LG México."
+  },
+  "PME780907754": {
+    "nombreComercial": "Panasonic de México",
+    "razonSocial": "Panasonic de México, S.A. de C.V.",
+    "portalFacturacionUrl": "https://www.panasonic.com.mx/",
+    "notas": "Facturación electrónica de compras en tienda en línea y soporte oficial."
+  },
+  "PMC1507018K6": {
+    "nombreComercial": "Philips México",
+    "razonSocial": "Philips Mexico Commercial, S.A. de C.V.",
+    "portalFacturacionUrl": "https://www.philips.com.mx/",
+    "notas": "Facturación digital para pedidos de la tienda en línea y servicios oficiales."
+  },
+  "DME761202CP9": {
+    "nombreComercial": "Danone de México",
+    "razonSocial": "Danone de México, S.A. de C.V.",
+    "portalFacturacionUrl": "https://www.grupodanone.com.mx/",
+    "notas": "Portal corporativo institucional para consulta de facturas de clientes y distribuidores."
+  },
+  "CPM110719SG3": {
+    "nombreComercial": "PepsiCo México",
+    "razonSocial": "Comercializadora PepsiCo México, S. de R.L. de C.V.",
+    "portalFacturacionUrl": "https://www.pepsico.com.mx/",
+    "notas": "Portal institucional corporativo para consulta de comprobantes fiscales de clientes."
+  },
+  "SAB730510K44": {
+    "nombreComercial": "Sabritas",
+    "razonSocial": "Sabritas, S. de R.L. de C.V.",
+    "portalFacturacionUrl": "https://www.pepsico.com.mx/",
+    "notas": "Acceso al portal de facturas y operaciones del grupo PepsiCo México."
+  },
+  "BAR011108CC6": {
+    "nombreComercial": "Barcel",
+    "razonSocial": "Barcel S.A. de C.V.",
+    "portalFacturacionUrl": "https://www.barcel.com.mx/",
+    "notas": "Acceso al portal de facturación y proveedores de Grupo Bimbo para Barcel."
+  },
+  "DCM000125IY6": {
+    "nombreComercial": "Despegar",
+    "razonSocial": "Despegar.com México S.A. de C.V.",
+    "portalFacturacionUrl": "https://www.despegar.com.mx/",
+    "notas": "Portal oficial para descarga de facturas por reservas de vuelos y hoteles en Despegar."
+  },
+  "CMP8011309T6": {
+    "nombreComercial": "Comex",
+    "razonSocial": "Comercial Mexicana de Pinturas, S.A. de C.V.",
+    "portalFacturacionUrl": "https://www.comex.com.mx/",
+    "notas": "Portal corporativo que facilita el acceso a los módulos de facturación por tienda."
+  },
+  "PBE970101718": {
+    "nombreComercial": "Pinturas Berel",
+    "razonSocial": "Pinturas Berel, S.A. de C.V.",
+    "portalFacturacionUrl": "https://www.berel.com.mx/",
+    "notas": "Portal oficial. Facturación de compras de pinturas Berel en distribuidores."
+  },
+  "SLM8504013R0": {
+    "nombreComercial": "Sayer Lack Mexicana",
+    "razonSocial": "Sayer Lack Mexicana, S.A. de C.V.",
+    "portalFacturacionUrl": "https://www.gruposayer.com/",
+    "notas": "Portal corporativo. Permite a clientes e industrias obtener sus facturas."
+  },
+  "GIN040203PF0": {
+    "nombreComercial": "Afore Invercap",
+    "razonSocial": "Afore InverCap S.A. de C.V.",
+    "portalFacturacionUrl": "https://www.invercap.com.mx/",
+    "notas": "Portal oficial de Invercap para consulta de constancias fiscales y estados de cuenta."
+  },
+  "SBR130327HU9": {
+    "nombreComercial": "Broxel",
+    "razonSocial": "Servicios Broxel, S.A.P.I. de C.V.",
+    "portalFacturacionUrl": "https://broxel.com/",
+    "notes": "Acceso a la plataforma digital para facturación de comisiones y estados de cuenta."
+  },
+  "PAV910724HWA": {
+    "nombreComercial": "Copa Airlines",
+    "razonSocial": "Compañía Panameña de Aviación, S.A.",
+    "portalFacturacionUrl": "https://www.copaair.com/",
+    "notas": "Portal oficial de Copa Airlines para la emisión de facturas CFDI de vuelos en México."
+  },
+  "CMA0502079L6": {
+    "nombreComercial": "COMAPA Reynosa",
+    "razonSocial": "Comisión Municipal de Agua Potable y Alcantarillado de Reynosa",
+    "portalFacturacionUrl": "https://comapareynosa.gob.mx/",
+    "notas": "Portal oficial de pago en línea y descarga de recibos del servicio de agua en Reynosa."
+  },
+  "JAP841102C29": {
+    "nombreComercial": "JAPAMI Irapuato",
+    "razonSocial": "Junta de Agua Potable, Drenaje, Alcantarillado y Saneamiento del Municipio de Irapuato, Gto.",
+    "portalFacturacionUrl": "https://www.japami.gob.mx/",
+    "notas": "Portal institucional para pago y facturación del servicio de agua potable en Irapuato."
+  },
+  "AHE020124U84": {
+    "nombreComercial": "Agua de Hermosillo",
+    "razonSocial": "Agua de Hermosillo",
+    "portalFacturacionUrl": "https://www.aguadehermosillo.gob.mx/",
+    "notas": "Portal oficial para consulta de recibos, pagos y facturas de Agua de Hermosillo."
+  },
+  "CAP811007MT7": {
+    "nombreComercial": "CAPA Quintana Roo",
+    "razonSocial": "Comisión de Agua Potable y Alcantarillado del Estado de Quintana Roo",
+    "portalFacturacionUrl": "https://capanet.capa.gob.mx/",
+    "notas": "Portal oficial CAPANet para pago en línea y recibos de agua en Quintana Roo."
+  },
+  "SAP1912175Y2": {
+    "nombreComercial": "Seapal Vallarta",
+    "razonSocial": "Sistema de Agua Potable, Drenaje y Alcantarillado de Puerto Vallarta",
+    "portalFacturacionUrl": "https://seapal.gob.mx/",
+    "notas": "Portal oficial para consulta y pago de recibos de agua potable en Puerto Vallarta."
+  },
+  "OIM960813E9A": {
+    "nombreComercial": "Interapas San Luis Potosí",
+    "razonSocial": "Organismo Intermunicipal Metropolitano de Agua Potable, Saneamiento y Servicios Conexos de SLP",
+    "portalFacturacionUrl": "https://www.interapas.mx/",
+    "notas": "Portal oficial de pagos y facturación del servicio intermunicipal de agua potable en SLP."
+  },
+  "JAP8201083PA": {
+    "nombreComercial": "JAPAY Mérida",
+    "razonSocial": "Junta de Agua Potable y Alcantarillado de Yucatán",
+    "portalFacturacionUrl": "https://www.yucatan.gob.mx/japay",
+    "notas": "Módulo oficial de consulta de adeudos y facturación electrónica JAPAY Mérida."
+  },
+  "AMD801118JW3": {
+    "nombreComercial": "AMD Durango",
+    "razonSocial": "Aguas del Municipio de Durango",
+    "portalFacturacionUrl": "https://www.amd.gob.mx/",
+    "notas": "Portal oficial de AMD para facturar el pago de servicios de agua y saneamiento."
+  },
+  "SIA910801RC8": {
+    "nombreComercial": "SIAPA Tepic",
+    "razonSocial": "Sistema Integral de Agua Potable y Alcantarillado de Tepic",
+    "portalFacturacionUrl": "https://siapa.tepic.gob.mx/",
+    "notas": "Portal oficial del SIAPA Tepic para pago en línea y descarga de recibos digitales."
+  },
+  "AUS901226BA0": {
+    "nombreComercial": "AUS (Autotransportes Unidos de Sinaloa)",
+    "razonSocial": "Autotransportes Unidos de Sinaloa, S.A. de C.V.",
+    "portalFacturacionUrl": "https://unidosdesinaloa.com.mx/",
+    "notas": "Portal oficial para facturación de boletos en la línea Autotransportes Unidos de Sinaloa."
+  },
+  "OTE0902104Q2": {
+    "nombreComercial": "Hoteles Emporio",
+    "razonSocial": "Operadora Turística Emporio Reforma S.A. de C.V.",
+    "portalFacturacionUrl": "https://hotelesemporio.com/",
+    "notas": "Módulo de facturación de estancias y consumos en hoteles Emporio."
+  },
+  "SPM860820CF5": {
+    "nombreComercial": "Servicio Postal Mexicano",
+    "razonSocial": "Servicio Postal Mexicano",
+    "portalFacturacionUrl": "https://www.gob.mx/correosdemexico",
+    "notas": "Sección oficial gubernamental de Correos de México para solicitud de facturas corporativas."
+  }
+}

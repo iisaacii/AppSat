@@ -1,0 +1,25 @@
+# General
+.DS_Store
+.idea/
+.vscode/
+
+# Facturacion de tickets
+facturacion-tickets/node_modules/
+facturacion-tickets/.env
+facturacion-tickets/.env.*
+!facturacion-tickets/.env.example
+facturacion-tickets/secrets/
+facturacion-tickets/artifacts/
+facturacion-tickets/logs/
+facturacion-tickets/scratch/
+facturacion-tickets/data/stagehand-cache/
+facturacion-tickets/data/stagehand-registry/
+facturacion-tickets/data/portal-template-candidates/
+facturacion-tickets/data/portal-outcome-memory/
+facturacion-tickets/data/tax-profiles/
+!facturacion-tickets/data/tax-profiles/
+!facturacion-tickets/data/tax-profiles/sample.json
+facturacion-tickets/data/stagehand-fixtures/
+facturacion-tickets/*.log
+facturacion-tickets/deployment/cloud-run/generated/
+facturacion-tickets/deployment/cloud-run/staging.config.json

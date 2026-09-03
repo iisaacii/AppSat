@@ -1,0 +1,15 @@
+.gcloudignore
+.git
+.gitignore
+.env
+.env.*
+secrets/**
+node_modules/**
+deployment/**/node_modules/**
+artifacts/**
+data/**
+docs/**
+logs/**
+scratch/**
+*.log
+*.candidate.json

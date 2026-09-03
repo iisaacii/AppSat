@@ -1,0 +1,11 @@
+{
+  "schemaVersion": "portal-template.v1",
+  "id": "oxxo-demo",
+  "name": "OXXO Real Validation Template",
+  "merchantName": "Cadena Comercial OXXO",
+  "rfcEmisor": "CCO8605231N4",
+  "portalFamily": "oxxo_real_validation",
+  "portalUrl": "https://www4.oxxo.com:9443/facturacionElectronica-web/views/layout/inicio.do",
+  "fixturePath": "src/portals/fixtures/oxxo-real-validation-portal.html",
+  "active": true
+}

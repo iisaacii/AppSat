@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>OXXO Facturacion Fixture</title>
+    <style>
+      :root {
+        color-scheme: light;
+        font-family: Arial, sans-serif;
+      }
+
+      body {
+        margin: 0;
+        background: #f5f6f8;
+        color: #1f2937;
+      }
+
+      main {
+        max-width: 720px;
+        margin: 32px auto;
+        padding: 24px;
+        background: white;
+        border: 1px solid #d8dee8;
+        border-radius: 8px;
+      }
+
+      h1 {
+        margin: 0 0 20px;
+        font-size: 24px;
+      }
+
+      fieldset {
+        margin: 0 0 20px;
+        padding: 16px;
+        border: 1px solid #d8dee8;
+        border-radius: 8px;
+      }
+
+      label {
+        display: block;
+        margin: 12px 0;
+        font-size: 14px;
+      }
+
+      input,
+      select {
+        display: block;
+        width: 100%;
+        margin-top: 6px;
+        padding: 10px 12px;
+        border: 1px solid #b9c2d0;
+        border-radius: 6px;
+        font-size: 15px;
+        box-sizing: border-box;
+      }
+
+      button {
+        padding: 10px 14px;
+        border: 0;
+        border-radius: 6px;
+        background: #0f766e;
+        color: white;
+        font-weight: 700;
+        cursor: pointer;
+      }
+
+      #tax-section {
+        display: none;
+      }
+
+      #tax-section.is-visible {
+        display: block;
+      }
+
+      .notice {
+        margin-bottom: 16px;
+        padding: 12px;
+        border-radius: 6px;
+        background: #ecfdf5;
+        color: #065f46;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Facturacion Electronica OXXO</h1>
+      <form id="form">
+        <fieldset>
+          <legend>Datos del ticket</legend>
+          <label>
+            Fecha
+            <input id="form:fecha_input" name="form:fecha_input" />
+          </label>
+          <label>
+            Folio
+            <input id="form:folio" name="form:folio" />
+          </label>
+          <label>
+            Venta
+            <input id="form:venta" name="form:venta" />
+          </label>
+          <label>
+            Total
+            <input id="form:total" name="form:total" />
+          </label>
+          <a id="form:validarTicket" href="#">Validar Ticket</a>
+          <button id="form:continuar" type="button" disabled>Continuar</button>
+        </fieldset>
+
+        <section id="tax-section" aria-label="Datos fiscales">
+          <div class="notice">Ticket validado. Captura los datos fiscales.</div>
+          <fieldset>
+            <legend>Datos fiscales</legend>
+            <label>
+              Email
+              <input id="form:email" name="form:email" />
+            </label>
+            <label>
+              RFC
+              <input id="form:rfc" name="form:rfc" />
+            </label>
+            <label>
+              Razon social
+              <input id="form:razon" name="form:razon" />
+            </label>
+            <label>
+              Calle
+              <input id="form:calle" name="form:calle" />
+            </label>
+            <label>
+              Numero exterior
+              <input id="form:ext" name="form:ext" />
+            </label>
+            <label>
+              Numero interior
+              <input id="form:int" name="form:int" />
+            </label>
+            <label>
+              Colonia
+              <input id="form:colonia" name="form:colonia" />
+            </label>
+            <label>
+              Municipio
+              <input id="form:dele" name="form:dele" />
+            </label>
+            <label>
+              Codigo postal
+              <input id="form:codigo" name="form:codigo" />
+            </label>
+            <label>
+              Estado
+              <select id="form:estado_input" name="form:estado_input">
+                <option value="">Selecciona estado</option>
+                <option value="NUEVO LEON">NUEVO LEON</option>
+                <option value="CIUDAD DE MEXICO">CIUDAD DE MEXICO</option>
+                <option value="ESTADO DE MEXICO">ESTADO DE MEXICO</option>
+              </select>
+            </label>
+            <label>
+              Regimen fiscal
+              <select id="form:selectOneMenuRegFis_input" name="form:selectOneMenuRegFis_input">
+                <option value="">Selecciona regimen</option>
+                <option value="605">605 - Sueldos y Salarios e Ingresos Asimilados a Salarios</option>
+                <option value="616">616 - Sin obligaciones fiscales</option>
+                <option value="612">612 - Personas Fisicas con Actividades Empresariales y Profesionales</option>
+              </select>
+            </label>
+            <label>
+              Uso CFDI
+              <select id="form:selectOneMenuCFDI_input" name="form:selectOneMenuCFDI_input">
+                <option value="">Selecciona uso CFDI</option>
+                <option value="S01">S01 - Sin efectos fiscales</option>
+                <option value="G03">G03 - Gastos en general</option>
+              </select>
+            </label>
+            <a id="form:preview" href="#">Previsualiza Factura</a>
+            <div id="form:dlgPreview" hidden>
+              <strong>Previsualizacion de factura</strong>
+              <p>Datos listos para revision antes de generar factura.</p>
+            </div>
+            <button id="form:generarFactura" type="button">Generar Factura</button>
+            <div id="cfdi-result" hidden>
+              <a
+                class="download-cfdi download-cfdi-xml"
+                href="data:application/xml,%3C%3Fxml%20version%3D%221.0%22%3F%3E%3Ccfdi%20source%3D%22fixture%22%3EOXXO%3C%2Fcfdi%3E"
+                download="oxxo-real-validation.xml"
+              >
+                Descargar XML
+              </a>
+              <a
+                class="download-cfdi download-cfdi-pdf"
+                href="data:application/pdf,%25PDF-1.4%0A%25%20OXXO%20fixture%20PDF%0A"
+                download="oxxo-real-validation.pdf"
+              >
+                Descargar PDF
+              </a>
+            </div>
+          </fieldset>
+        </section>
+      </form>
+    </main>
+
+    <script>
+      document.getElementById("form:validarTicket").addEventListener("click", (event) => {
+        event.preventDefault();
+        document.getElementById("form:continuar").disabled = false;
+      });
+
+      document.getElementById("form:continuar").addEventListener("click", () => {
+        document.getElementById("tax-section").classList.add("is-visible");
+      });
+
+      document.getElementById("form:preview").addEventListener("click", (event) => {
+        event.preventDefault();
+        document.getElementById("form:dlgPreview").hidden = false;
+      });
+
+      document.getElementById("form:generarFactura").addEventListener("click", (event) => {
+        event.preventDefault();
+        document.getElementById("cfdi-result").hidden = false;
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,24 @@
+{
+  "projectId": "appsat-dev",
+  "region": "us-central1",
+  "network": "appsat-billing-stg-vpc",
+  "subnetwork": "appsat-billing-stg-subnet",
+  "subnetCidr": "10.42.0.0/24",
+  "redis": {
+    "name": "appsat-billing-stg-redis",
+    "tier": "basic",
+    "memorySizeGb": 1,
+    "version": "redis_7_2",
+    "maxmemoryPolicy": "noeviction"
+  },
+  "artifactRepository": "appsat-billing-staging",
+  "runtimeServiceAccountId": "appsat-billing-stg-runtime",
+  "runtimeServiceAccountEmail": "appsat-billing-stg-runtime@appsat-dev.iam.gserviceaccount.com",
+  "geminiBackend": "developer",
+  "geminiVertexLocation": "global",
+  "geminiSecretName": "appsat-gemini-api-key",
+  "firebaseStorageBucket": "appsat-dev.firebasestorage.app",
+  "allowedOrigins": [
+    "https://appsat-dev.web.app"
+  ]
+}

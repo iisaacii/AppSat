@@ -1,0 +1,94 @@
+{
+  "id": "oxxo_facturacion",
+  "schemaVersion": "portal-template.v1",
+  "name": "OXXO Facturacion Family",
+  "rateLimit": {
+    "concurrency": 2,
+    "perMinute": 20
+  },
+  "requiredFields": [
+    {
+      "name": "rfcReceptor",
+      "label": "RFC receptor",
+      "source": "rfcReceptor"
+    },
+    {
+      "name": "rfcEmisor",
+      "label": "RFC emisor",
+      "source": "rfcEmisor"
+    },
+    {
+      "name": "folio",
+      "label": "Folio de venta",
+      "source": "ocrCandidates.folioVenta"
+    },
+    {
+      "name": "ticketId",
+      "label": "ID de ticket",
+      "source": "ocrCandidates.ticketId"
+    },
+    {
+      "name": "fecha",
+      "label": "Fecha",
+      "source": "fecha"
+    },
+    {
+      "name": "monto",
+      "label": "Monto total",
+      "source": "monto"
+    }
+  ],
+  "steps": [
+    {
+      "type": "goto",
+      "urlFrom": "portalUrl"
+    },
+    {
+      "type": "clickText",
+      "text": "Facturación electrónica",
+      "optional": true,
+      "timeoutMs": 3000
+    },
+    {
+      "type": "waitForSelector",
+      "selector": "#rfc-receptor"
+    },
+    {
+      "type": "fill",
+      "selector": "#rfc-receptor",
+      "valueFrom": "rfcReceptor"
+    },
+    {
+      "type": "fill",
+      "selector": "#folio",
+      "valueFrom": "folio"
+    },
+    {
+      "type": "fill",
+      "selector": "#ticket-id",
+      "valueFrom": "ticketId"
+    },
+    {
+      "type": "fill",
+      "selector": "#fecha",
+      "valueFrom": "fecha"
+    },
+    {
+      "type": "fill",
+      "selector": "#monto",
+      "valueFrom": "monto"
+    },
+    {
+      "type": "click",
+      "selector": "button[type='submit']"
+    },
+    {
+      "type": "waitForSelector",
+      "selector": "a.download-cfdi"
+    },
+    {
+      "type": "download",
+      "selector": "a.download-cfdi"
+    }
+  ]
+}

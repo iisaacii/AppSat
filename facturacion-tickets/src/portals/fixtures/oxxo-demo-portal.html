@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>OXXO Demo Facturacion</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: #101624;
+        color: #f8fafc;
+      }
+
+      main {
+        max-width: 520px;
+        margin: 0 auto;
+        padding: 32px 20px;
+      }
+
+      label {
+        display: block;
+        margin-top: 14px;
+        color: #cbd5e1;
+        font-size: 13px;
+      }
+
+      input {
+        box-sizing: border-box;
+        width: 100%;
+        margin-top: 6px;
+        padding: 11px 12px;
+        border: 1px solid #334155;
+        border-radius: 6px;
+        background: #0f172a;
+        color: #f8fafc;
+      }
+
+      button,
+      a {
+        display: inline-block;
+        margin-top: 18px;
+        padding: 11px 14px;
+        border: 0;
+        border-radius: 6px;
+        background: #10b981;
+        color: #052e22;
+        font-weight: 700;
+        text-decoration: none;
+      }
+
+      #result {
+        display: none;
+        margin-top: 18px;
+        padding: 12px;
+        border: 1px solid #10b981;
+        border-radius: 6px;
+        color: #bbf7d0;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <section id="landing">
+        <h1>OXXO Demo</h1>
+        <p>Pagina informativa con menu de facturacion.</p>
+        <a id="facturacion-electronica" href="#facturacion">Facturación electrónica</a>
+      </section>
+      <form id="invoice-form" style="display: none">
+        <h1>Facturacion OXXO Demo</h1>
+        <label>
+          RFC receptor
+          <input id="rfc-receptor" name="rfcReceptor" required />
+        </label>
+        <label>
+          Folio de venta
+          <input id="folio" name="folio" required />
+        </label>
+        <label>
+          ID de ticket
+          <input id="ticket-id" name="ticketId" required />
+        </label>
+        <label>
+          Fecha
+          <input id="fecha" name="fecha" required />
+        </label>
+        <label>
+          Monto
+          <input id="monto" name="monto" required />
+        </label>
+        <button type="submit">Facturar</button>
+      </form>
+      <div id="result">
+        CFDI generado
+        <br />
+        <a
+          class="download-cfdi"
+          href="#cfdi"
+          data-xml-url="fixture://storage/cfdis/oxxo-demo.xml"
+          data-pdf-url="fixture://storage/cfdis/oxxo-demo.pdf"
+        >
+          Descargar CFDI
+        </a>
+      </div>
+    </main>
+    <script>
+      document.getElementById("facturacion-electronica").addEventListener("click", (event) => {
+        event.preventDefault();
+        document.getElementById("landing").style.display = "none";
+        document.getElementById("invoice-form").style.display = "block";
+      });
+
+      document.getElementById("invoice-form").addEventListener("submit", (event) => {
+        event.preventDefault();
+        document.getElementById("result").style.display = "block";
+      });
+    </script>
+  </body>
+</html>

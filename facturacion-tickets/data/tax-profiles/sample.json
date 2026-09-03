@@ -1,0 +1,19 @@
+{
+  "id": "sample-profile",
+  "source": "public_sample",
+  "sourceFile": "sample.json",
+  "rfc": "XAXX010101000",
+  "legalName": "PERSONA CONTRIBUYENTE DEMO",
+  "email": "demo@example.com",
+  "fiscalRegime": "605 - Sueldos y Salarios e Ingresos Asimilados a Salarios",
+  "fiscalRegimes": ["605 - Sueldos y Salarios e Ingresos Asimilados a Salarios"],
+  "cfdiUse": "S01 - Sin efectos fiscales",
+  "postalCode": "00000",
+  "street": "CALLE DEMO",
+  "exteriorNumber": "1",
+  "interiorNumber": "",
+  "neighborhood": "CENTRO",
+  "municipality": "MUNICIPIO DEMO",
+  "state": "CIUDAD DE MEXICO",
+  "country": "MEX"
+}

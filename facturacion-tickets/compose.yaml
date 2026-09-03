@@ -1,0 +1,200 @@
+name: easysat-billing
+
+x-firebase-environment: &firebase-environment
+  FIREBASE_PROJECT_ID: ${FIREBASE_PROJECT_ID:-easysat-dev}
+  FIREBASE_STORAGE_BUCKET: ${FIREBASE_STORAGE_BUCKET:-easysat-dev.firebasestorage.app}
+  GOOGLE_APPLICATION_CREDENTIALS: /run/secrets/firebase-service-account.json
+  FIRESTORE_ROOT_COLLECTION: ${FIRESTORE_ROOT_COLLECTION:-EasySat}
+  FIRESTORE_ROOT_DOCUMENT: ${FIRESTORE_ROOT_DOCUMENT:-app}
+
+x-worker-environment: &worker-environment
+  <<: *firebase-environment
+  BILLING_JOB_STORE: firestore
+  CFDI_STORAGE_MODE: firebase
+  OCR_ENGINE: google_vision
+  PORTAL_RUNNER_MODE: playwright
+  PORTAL_KNOWLEDGE_STORE: firestore
+  REDIS_URL: ${REDIS_URL:-redis://redis:6379}
+  BILLING_DISPATCH_MODE: ${BILLING_DISPATCH_MODE:-hybrid}
+  BILLING_QUEUE_PREFIX: ${BILLING_QUEUE_PREFIX:-easysat:billing}
+  BILLING_QUEUE_FALLBACK_POLL_MS: ${BILLING_QUEUE_FALLBACK_POLL_MS:-30000}
+  BILLING_QUEUE_ATTEMPTS: ${BILLING_QUEUE_ATTEMPTS:-3}
+  BILLING_QUEUE_BACKOFF_MS: ${BILLING_QUEUE_BACKOFF_MS:-1000}
+  PORTAL_RATE_LIMIT_BACKEND: redis
+  PORTAL_RATE_LIMIT_REDIS_REQUIRED: "true"
+  PORTAL_RATE_LIMIT_NAMESPACE: ${PORTAL_RATE_LIMIT_NAMESPACE:-easysat:billing:portal}
+  PORTAL_RATE_LIMIT_LEASE_MS: ${PORTAL_RATE_LIMIT_LEASE_MS:-120000}
+  PORTAL_RATE_LIMIT_ACQUIRE_TIMEOUT_MS: ${PORTAL_RATE_LIMIT_ACQUIRE_TIMEOUT_MS:-900000}
+  WORKER_POLL_INTERVAL_MS: ${WORKER_POLL_INTERVAL_MS:-5000}
+  WORKER_LEASE_DURATION_MS: ${WORKER_LEASE_DURATION_MS:-120000}
+  WORKER_HEARTBEAT_INTERVAL_MS: ${WORKER_HEARTBEAT_INTERVAL_MS:-30000}
+  WORKER_MAX_ATTEMPTS: ${WORKER_MAX_ATTEMPTS:-3}
+  FIRESTORE_ENABLE_COLLECTION_GROUP: ${FIRESTORE_ENABLE_COLLECTION_GROUP:-true}
+  HEADLESS: ${CONTAINER_HEADLESS:-true}
+
+x-firebase-credentials: &firebase-credentials
+  - type: bind
+    source: ./secrets/firebase-service-account.json
+    target: /run/secrets/firebase-service-account.json
+    read_only: true
+
+services:
+  redis:
+    image: redis:7.4-alpine
+    ports:
+      - "${REDIS_HOST_BIND:-127.0.0.1}:${REDIS_HOST_PORT:-6379}:6379"
+    command:
+      - redis-server
+      - --appendonly
+      - "yes"
+      - --appendfsync
+      - everysec
+      - --maxmemory-policy
+      - noeviction
+    volumes:
+      - redis-data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+      start_period: 5s
+    restart: unless-stopped
+
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: easysat-billing-api:local
+    depends_on:
+      redis:
+        condition: service_healthy
+    environment:
+      <<: *firebase-environment
+      PORT: 8080
+      REDIS_URL: ${REDIS_URL:-redis://redis:6379}
+      BILLING_DISPATCH_MODE: ${BILLING_API_DISPATCH_MODE:-hybrid}
+      BILLING_QUEUE_PREFIX: ${BILLING_QUEUE_PREFIX:-easysat:billing}
+      BILLING_QUEUE_ATTEMPTS: ${BILLING_QUEUE_ATTEMPTS:-3}
+      BILLING_QUEUE_BACKOFF_MS: ${BILLING_QUEUE_BACKOFF_MS:-1000}
+      BILLING_API_ALLOWED_ORIGINS: ${BILLING_API_ALLOWED_ORIGINS:-https://easysat-dev.web.app,http://127.0.0.1:52123,http://localhost:52123}
+      BILLING_API_TICKET_LIMIT_BYTES: ${BILLING_API_TICKET_LIMIT_BYTES:-10485760}
+    ports:
+      - "${BILLING_API_HOST_PORT:-8080}:8080"
+    volumes: *firebase-credentials
+    init: true
+    stop_grace_period: 30s
+    restart: unless-stopped
+
+  ocr-worker:
+    profiles: ["workers"]
+    build:
+      context: .
+      dockerfile: Dockerfile.worker-ocr
+    image: easysat-billing-worker-ocr:local
+    depends_on:
+      redis:
+        condition: service_healthy
+    environment:
+      <<: *worker-environment
+      WORKER_ID: ${OCR_WORKER_ID:-billing-ocr-local}
+      WORKER_LANE: ocr
+      WORKER_CONCURRENCY: ${OCR_WORKER_CONCURRENCY:-4}
+      OCR_GEMINI_VISION_ENABLED: ${OCR_GEMINI_VISION_ENABLED:-true}
+      OCR_GEMINI_VISION_MODEL: ${OCR_GEMINI_VISION_MODEL:-gemini-3.1-flash-lite}
+      OCR_AUTONOMOUS_MAX_CANDIDATE_SETS: ${OCR_AUTONOMOUS_MAX_CANDIDATE_SETS:-4}
+      GEMINI_API_KEY: ${GEMINI_API_KEY:-}
+    volumes: *firebase-credentials
+    init: true
+    stop_grace_period: 3m
+    restart: unless-stopped
+
+  portal-worker:
+    profiles: ["workers"]
+    build:
+      context: .
+      dockerfile: Dockerfile.worker-browser
+    image: easysat-billing-worker-browser:local
+    depends_on:
+      redis:
+        condition: service_healthy
+    environment:
+      <<: *worker-environment
+      WORKER_ID: ${PORTAL_WORKER_ID:-billing-portal-local}
+      WORKER_LANE: portal
+      WORKER_CONCURRENCY: ${PORTAL_WORKER_CONCURRENCY:-1}
+      B3_BROWSER_USE_ENABLED: "true"
+      B3_BROWSER_USE_PROVIDER: ${B3_BROWSER_USE_PROVIDER:-google}
+      B3_BROWSER_USE_MODEL: ${B3_BROWSER_USE_MODEL:-gemini-3.1-flash-lite}
+      B3_BROWSER_USE_DISABLE_DEV_SHM_USAGE: "true"
+      B3_BROWSER_USE_CHROMIUM_SANDBOX: "false"
+      B3_BROWSER_USE_DEFAULT_EXTENSIONS: "false"
+      B3_BROWSER_USE_CALCULATE_COST: ${B3_BROWSER_USE_CALCULATE_COST:-false}
+      B3_BROWSER_USE_MODEL_PRICING_URL: ${B3_BROWSER_USE_MODEL_PRICING_URL:-}
+      B3_USAGE_WARN_TOTAL_TOKENS: ${B3_USAGE_WARN_TOTAL_TOKENS:-200000}
+      B3_USAGE_CRITICAL_TOTAL_TOKENS: ${B3_USAGE_CRITICAL_TOTAL_TOKENS:-500000}
+      B3_USAGE_WARN_ESTIMATED_COST_USD: ${B3_USAGE_WARN_ESTIMATED_COST_USD:-0.25}
+      B3_USAGE_CRITICAL_ESTIMATED_COST_USD: ${B3_USAGE_CRITICAL_ESTIMATED_COST_USD:-1}
+      GEMINI_API_KEY: ${GEMINI_API_KEY:-}
+    volumes: *firebase-credentials
+    shm_size: "1gb"
+    init: true
+    stop_grace_period: 20m
+    restart: unless-stopped
+
+  capa-c-worker:
+    profiles: ["workers"]
+    build:
+      context: .
+      dockerfile: Dockerfile.worker-browser
+    image: easysat-billing-worker-browser:local
+    depends_on:
+      redis:
+        condition: service_healthy
+    command: ["node", "src/index.mjs", "--watch", "--store=firestore", "--worker-lane=capa_c", "--worker-concurrency=2"]
+    environment:
+      <<: *worker-environment
+      WORKER_ID: ${CAPA_C_WORKER_ID:-billing-capa-c-local}
+      WORKER_LANE: capa_c
+      WORKER_CONCURRENCY: ${CAPA_C_WORKER_CONCURRENCY:-2}
+      GEMINI_API_KEY: ${GEMINI_API_KEY:-}
+    volumes: *firebase-credentials
+    shm_size: "1gb"
+    init: true
+    stop_grace_period: 20m
+    restart: unless-stopped
+
+  queue-monitor:
+    profiles: ["workers"]
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: easysat-billing-api:local
+    depends_on:
+      redis:
+        condition: service_healthy
+    command: ["node", "src/scripts/monitor-billing-queues.mjs", "--watch"]
+    environment:
+      REDIS_URL: ${REDIS_URL:-redis://redis:6379}
+      BILLING_QUEUE_PREFIX: ${BILLING_QUEUE_PREFIX:-easysat:billing}
+      BILLING_MONITOR_INTERVAL_MS: ${BILLING_MONITOR_INTERVAL_MS:-30000}
+      BILLING_MONITOR_STARTUP_GRACE_MS: ${BILLING_MONITOR_STARTUP_GRACE_MS:-60000}
+      BILLING_MONITOR_ALERT_COOLDOWN_MS: ${BILLING_MONITOR_ALERT_COOLDOWN_MS:-300000}
+      BILLING_MONITOR_REQUIRE_WORKERS: "true"
+      BILLING_QUEUE_WARN_WAITING: ${BILLING_QUEUE_WARN_WAITING:-25}
+      BILLING_QUEUE_CRITICAL_WAITING: ${BILLING_QUEUE_CRITICAL_WAITING:-100}
+      BILLING_QUEUE_WARN_OLDEST_MS: ${BILLING_QUEUE_WARN_OLDEST_MS:-120000}
+      BILLING_QUEUE_CRITICAL_OLDEST_MS: ${BILLING_QUEUE_CRITICAL_OLDEST_MS:-600000}
+      BILLING_QUEUE_WARN_ACTIVE_MS: ${BILLING_QUEUE_WARN_ACTIVE_MS:-1200000}
+      BILLING_QUEUE_CRITICAL_ACTIVE_MS: ${BILLING_QUEUE_CRITICAL_ACTIVE_MS:-2700000}
+      BILLING_QUEUE_WARN_DELAYED_OVERDUE_MS: ${BILLING_QUEUE_WARN_DELAYED_OVERDUE_MS:-60000}
+      BILLING_QUEUE_CRITICAL_DELAYED_OVERDUE_MS: ${BILLING_QUEUE_CRITICAL_DELAYED_OVERDUE_MS:-300000}
+      BILLING_QUEUE_FAILURE_WINDOW_MS: ${BILLING_QUEUE_FAILURE_WINDOW_MS:-900000}
+      BILLING_QUEUE_WARN_RECENT_FAILURES: ${BILLING_QUEUE_WARN_RECENT_FAILURES:-3}
+      BILLING_QUEUE_CRITICAL_RECENT_FAILURES: ${BILLING_QUEUE_CRITICAL_RECENT_FAILURES:-10}
+    init: true
+    stop_grace_period: 45s
+    restart: unless-stopped
+
+volumes:
+  redis-data:

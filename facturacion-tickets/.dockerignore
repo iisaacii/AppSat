@@ -1,0 +1,17 @@
+.env
+.git
+.gitignore
+artifacts
+data/*
+!data/portal-url-directory.json
+!data/portal-url-directory-hashmap.json
+debug.log
+docs
+deployment/*/node_modules
+firestore-debug.log
+logs
+node_modules
+scratch
+secrets
+tooling
+*.candidate.json

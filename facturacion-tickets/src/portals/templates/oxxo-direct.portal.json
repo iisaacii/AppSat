@@ -1,0 +1,11 @@
+{
+  "schemaVersion": "portal-template.v1",
+  "id": "oxxo-direct-demo",
+  "name": "OXXO Direct Form Demo Template",
+  "merchantName": "Cadena Comercial OXXO Direct Demo",
+  "rfcEmisor": "CCO8605231N5",
+  "portalFamily": "oxxo_facturacion",
+  "portalUrl": "https://www.oxxo.com/facturacion/directa",
+  "fixturePath": "src/portals/fixtures/oxxo-direct-form-portal.html",
+  "active": true
+}

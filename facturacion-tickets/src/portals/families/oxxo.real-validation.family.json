@@ -1,0 +1,348 @@
+{
+  "id": "oxxo_real_validation",
+  "schemaVersion": "portal-template.v1",
+  "name": "OXXO Real Validation Family",
+  "rateLimit": {
+    "concurrency": 1,
+    "perMinute": 6
+  },
+  "preflightRules": [
+    {
+      "type": "dateYearEqualsCurrent",
+      "field": "ticketDate",
+      "status": "needs_user_action",
+      "reason": "ticket_outside_current_fiscal_year",
+      "message": "OXXO no permite facturar tickets emitidos en un ejercicio fiscal diferente"
+    }
+  ],
+  "requiredFields": [
+    {
+      "name": "ticketDate",
+      "label": "Fecha del ticket",
+      "source": "fecha",
+      "format": "date:dd/mm/yyyy"
+    },
+    {
+      "name": "folio",
+      "label": "Folio de venta",
+      "source": "ocrCandidates.folioVenta"
+    },
+    {
+      "name": "ticketId",
+      "label": "ID de ticket",
+      "source": "ocrCandidates.ticketId"
+    },
+    {
+      "name": "monto",
+      "label": "Monto total",
+      "source": "monto",
+      "format": "number:fixed2"
+    },
+    {
+      "name": "taxRfc",
+      "label": "RFC receptor",
+      "source": "taxProfile.rfc"
+    },
+    {
+      "name": "taxLegalName",
+      "label": "Razon social",
+      "source": "taxProfile.legalName"
+    },
+    {
+      "name": "taxStreet",
+      "label": "Calle",
+      "source": "taxProfile.street"
+    },
+    {
+      "name": "taxExteriorNumber",
+      "label": "Numero exterior",
+      "source": "taxProfile.exteriorNumber"
+    },
+    {
+      "name": "taxNeighborhood",
+      "label": "Colonia",
+      "source": "taxProfile.neighborhood"
+    },
+    {
+      "name": "taxMunicipality",
+      "label": "Municipio",
+      "source": "taxProfile.municipality"
+    },
+    {
+      "name": "taxPostalCode",
+      "label": "Codigo postal",
+      "source": "taxProfile.postalCode"
+    },
+    {
+      "name": "taxState",
+      "label": "Estado",
+      "source": "taxProfile.state",
+      "format": "state:mexico-portal"
+    },
+    {
+      "name": "taxFiscalRegime",
+      "label": "Regimen fiscal",
+      "source": "taxProfile.fiscalRegime"
+    },
+    {
+      "name": "taxCfdiUse",
+      "label": "Uso CFDI",
+      "source": "taxProfile.cfdiUse"
+    }
+  ],
+  "steps": [
+    {
+      "type": "goto",
+      "urlFrom": "portalUrl"
+    },
+    {
+      "type": "click",
+      "selector": "#form\\:dlgInfoTicket .ui-dialog-titlebar-close",
+      "optional": true,
+      "timeoutMs": 3000
+    },
+    {
+      "type": "waitForSelector",
+      "selector": "#form\\:fecha_input",
+      "timeoutMs": 15000
+    },
+    {
+      "type": "setValue",
+      "selector": "#form\\:fecha_input",
+      "valueFrom": "ticketDate"
+    },
+    {
+      "type": "fill",
+      "selector": "#form\\:folio",
+      "valueFrom": "folio"
+    },
+    {
+      "type": "fill",
+      "selector": "#form\\:venta",
+      "valueFrom": "ticketId"
+    },
+    {
+      "type": "fill",
+      "selector": "#form\\:total",
+      "valueFrom": "monto"
+    },
+    {
+      "type": "clickText",
+      "text": "Validar Ticket",
+      "exact": true,
+      "timeoutMs": 15000
+    },
+    {
+      "type": "waitForSelectorOrStop",
+      "selector": "#form\\:continuar:not([disabled])",
+      "timeoutMs": 15000,
+      "status": "needs_user_action",
+      "reason": "ticket_validation_rejected",
+      "message": "OXXO no valido el ticket; revisa datos del ticket o regimen fiscal del receptor",
+      "messageSelectors": [
+        ".ui-growl-message",
+        ".ui-growl-title",
+        ".ui-growl-detail",
+        ".ui-messages",
+        ".ui-message",
+        "[id$='messages']",
+        "[id$='msgs']"
+      ]
+    },
+    {
+      "type": "click",
+      "selector": "#form\\:continuar"
+    },
+    {
+      "type": "waitForSelectorOrStop",
+      "selector": "#form\\:rfc:not([disabled])",
+      "timeoutMs": 15000,
+      "status": "needs_user_action",
+      "reason": "tax_form_disabled_after_ticket_validation",
+      "message": "OXXO valido el ticket pero no habilito la captura fiscal; revisa si quedo pendiente o ya fue usado",
+      "messageSelectors": [
+        ".ui-growl-message",
+        ".ui-growl-title",
+        ".ui-growl-detail",
+        ".ui-messages",
+        ".ui-message",
+        "[id$='messages']",
+        "[id$='msgs']"
+      ]
+    },
+    {
+      "type": "fill",
+      "selector": "#form\\:rfc",
+      "valueFrom": "taxRfc"
+    },
+    {
+      "type": "fill",
+      "selector": "#form\\:razon",
+      "valueFrom": "taxLegalName"
+    },
+    {
+      "type": "fill",
+      "selector": "#form\\:calle",
+      "valueFrom": "taxStreet"
+    },
+    {
+      "type": "fill",
+      "selector": "#form\\:ext",
+      "valueFrom": "taxExteriorNumber"
+    },
+    {
+      "type": "fill",
+      "selector": "#form\\:int",
+      "valueFrom": "taxProfile.interiorNumber"
+    },
+    {
+      "type": "fill",
+      "selector": "#form\\:colonia",
+      "valueFrom": "taxNeighborhood"
+    },
+    {
+      "type": "fill",
+      "selector": "#form\\:dele",
+      "valueFrom": "taxMunicipality"
+    },
+    {
+      "type": "fill",
+      "selector": "#form\\:codigo",
+      "valueFrom": "taxPostalCode"
+    },
+    {
+      "type": "select",
+      "selector": "#form\\:estado_input",
+      "valueFrom": "taxState"
+    },
+    {
+      "type": "waitForSelectorOrStop",
+      "selector": "#form\\:selectOneMenuRegFis_input:not([disabled])",
+      "state": "attached",
+      "timeoutMs": 15000,
+      "status": "needs_user_action",
+      "reason": "tax_regime_not_available",
+      "message": "OXXO no habilito el regimen fiscal para el RFC capturado",
+      "messageSelectors": [
+        ".ui-growl-message",
+        ".ui-growl-title",
+        ".ui-growl-detail",
+        ".ui-messages",
+        ".ui-message",
+        "[id$='messages']",
+        "[id$='msgs']"
+      ]
+    },
+    {
+      "type": "select",
+      "selector": "#form\\:selectOneMenuRegFis_input",
+      "valueFrom": "taxFiscalRegime"
+    },
+    {
+      "type": "waitForSelectorOrStop",
+      "selector": "#form\\:selectOneMenuCFDI_input:not([disabled])",
+      "state": "attached",
+      "timeoutMs": 15000,
+      "status": "needs_user_action",
+      "reason": "cfdi_use_not_available",
+      "message": "OXXO no habilito el uso CFDI para el RFC capturado",
+      "messageSelectors": [
+        ".ui-growl-message",
+        ".ui-growl-title",
+        ".ui-growl-detail",
+        ".ui-messages",
+        ".ui-message",
+        "[id$='messages']",
+        "[id$='msgs']"
+      ]
+    },
+    {
+      "type": "selectOrStop",
+      "selector": "#form\\:selectOneMenuCFDI_input",
+      "valueFrom": "taxCfdiUse",
+      "timeoutMs": 10000,
+      "status": "needs_user_action",
+      "reason": "cfdi_use_not_supported_by_regime",
+      "message": "OXXO no ofrece el uso CFDI elegido para el regimen fiscal capturado"
+    },
+    {
+      "type": "select",
+      "selector": "#form\\:estado_input",
+      "valueFrom": "taxState",
+      "timeoutMs": 10000
+    },
+    {
+      "type": "waitForSelector",
+      "selector": "#form\\:generarFactura",
+      "timeoutMs": 15000
+    },
+    {
+      "type": "clickText",
+      "text": "Previsualiza Factura",
+      "exact": true,
+      "timeoutMs": 15000
+    },
+    {
+      "type": "waitForSelectorOrStop",
+      "selector": "#form\\:dlgPreview",
+      "timeoutMs": 15000,
+      "status": "needs_user_action",
+      "reason": "invoice_preview_not_available",
+      "message": "OXXO no mostro la previsualizacion; revisa campos obligatorios antes de generar factura",
+      "messageSelectors": [
+        ".ui-growl-message",
+        ".ui-growl-title",
+        ".ui-growl-detail",
+        ".ui-messages",
+        ".ui-message",
+        "[id$='messages']",
+        "[id$='msgs']"
+      ]
+    },
+    {
+      "type": "click",
+      "selector": "#form\\:dlgPreview .ui-dialog-titlebar-close",
+      "timeoutMs": 5000,
+      "optional": true
+    },
+    {
+      "type": "waitForSelector",
+      "selector": "#form\\:dlgPreview_modal",
+      "state": "hidden",
+      "timeoutMs": 5000,
+      "optional": true
+    },
+    {
+      "type": "finalSubmit",
+      "selector": "#form\\:generarFactura",
+      "timeoutMs": 15000,
+      "status": "needs_user_action",
+      "reason": "invoice_preview_ready",
+      "message": "OXXO: previsualizacion lista; falta revision humana antes de Generar Factura"
+    },
+    {
+      "type": "waitForSelectorOrStop",
+      "selector": "a:has-text(\"Descargar PDF\"), button:has-text(\"Descargar PDF\")",
+      "timeoutMs": 30000,
+      "status": "needs_user_action",
+      "reason": "cfdi_download_not_available",
+      "message": "OXXO genero la factura pero no mostro enlaces de descarga CFDI",
+      "messageSelectors": [
+        ".ui-growl-message",
+        ".ui-growl-title",
+        ".ui-growl-detail",
+        ".ui-messages",
+        ".ui-message",
+        "[id$='messages']",
+        "[id$='msgs']"
+      ]
+    },
+    {
+      "type": "download",
+      "selector": "a:has-text(\"Descargar PDF\"), button:has-text(\"Descargar PDF\")",
+      "xmlSelector": "a:has-text(\"Descargar XML\"), button:has-text(\"Descargar XML\")",
+      "pdfSelector": "a:has-text(\"Descargar PDF\"), button:has-text(\"Descargar PDF\")",
+      "captureDownloads": true
+    }
+  ]
+}

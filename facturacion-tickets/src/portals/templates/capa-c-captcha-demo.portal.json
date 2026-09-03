@@ -1,0 +1,128 @@
+{
+  "schemaVersion": "portal-template.v1",
+  "id": "capa-c-captcha-demo",
+  "name": "Capa C CAPTCHA Demo",
+  "merchantName": "Portal Demo Capa C",
+  "rfcEmisor": "AAA010101AAA",
+  "portalUrl": "https://facturacion.demo.test/captcha",
+  "fixturePath": "src/portals/fixtures/capa-c-captcha-demo-portal.html",
+  "active": true,
+  "requiredFields": [
+    {
+      "name": "rfcReceptor",
+      "label": "RFC receptor",
+      "source": "taxProfile.rfc"
+    },
+    {
+      "name": "taxLegalName",
+      "label": "Razon social",
+      "source": "taxProfile.legalName"
+    },
+    {
+      "name": "rfcEmisor",
+      "label": "RFC emisor",
+      "source": "rfcEmisor"
+    },
+    {
+      "name": "folio",
+      "label": "Folio",
+      "source": "folio"
+    },
+    {
+      "name": "fecha",
+      "label": "Fecha",
+      "source": "fecha"
+    },
+    {
+      "name": "monto",
+      "label": "Monto",
+      "source": "monto",
+      "format": "number:plain"
+    },
+    {
+      "name": "taxPostalCode",
+      "label": "Codigo postal",
+      "source": "taxProfile.postalCode"
+    },
+    {
+      "name": "taxEmail",
+      "label": "Correo",
+      "source": "taxProfile.email"
+    },
+    {
+      "name": "taxFiscalRegime",
+      "label": "Regimen fiscal",
+      "source": "taxProfile.fiscalRegime"
+    },
+    {
+      "name": "taxCfdiUse",
+      "label": "Uso CFDI",
+      "source": "taxProfile.cfdiUse"
+    }
+  ],
+  "steps": [
+    {
+      "type": "goto",
+      "urlFrom": "portalUrl"
+    },
+    {
+      "type": "waitForSelector",
+      "selector": "#rfc-receptor"
+    },
+    {
+      "type": "fill",
+      "selector": "#rfc-receptor",
+      "valueFrom": "rfcReceptor"
+    },
+    {
+      "type": "fill",
+      "selector": "#razon-social",
+      "valueFrom": "taxLegalName"
+    },
+    {
+      "type": "fill",
+      "selector": "#rfc-emisor",
+      "valueFrom": "rfcEmisor"
+    },
+    {
+      "type": "fill",
+      "selector": "#folio",
+      "valueFrom": "folio"
+    },
+    {
+      "type": "fill",
+      "selector": "#fecha",
+      "valueFrom": "fecha"
+    },
+    {
+      "type": "fill",
+      "selector": "#monto",
+      "valueFrom": "monto"
+    },
+    {
+      "type": "fill",
+      "selector": "#cp",
+      "valueFrom": "taxPostalCode"
+    },
+    {
+      "type": "fill",
+      "selector": "#emailInput",
+      "valueFrom": "taxEmail"
+    },
+    {
+      "type": "select",
+      "selector": "#regimen",
+      "valueFrom": "taxFiscalRegime"
+    },
+    {
+      "type": "select",
+      "selector": "#uso-cfdi",
+      "valueFrom": "taxCfdiUse"
+    },
+    {
+      "type": "stop",
+      "reason": "captcha_required",
+      "message": "Formulario prellenado; el usuario debe resolver el CAPTCHA y continuar en el portal."
+    }
+  ]
+}

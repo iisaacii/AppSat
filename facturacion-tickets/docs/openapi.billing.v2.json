@@ -1,0 +1,233 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "EasySat Billing API",
+    "version": "2.0.0",
+    "description": "API asincrona para enviar un ticket y perfil fiscal, ejecutar OCR/A/B3/C y recuperar CFDI."
+  },
+  "servers": [
+    {
+      "url": "https://easysat-billing-stg-api-570722310741.us-central1.run.app"
+    }
+  ],
+  "security": [
+    {
+      "firebaseBearer": []
+    },
+    {
+      "easySatServiceBearer": []
+    }
+  ],
+  "paths": {
+    "/v2/billing/jobs": {
+      "post": {
+        "summary": "Crear job autonomo de facturacion",
+        "parameters": [
+          {
+            "name": "Idempotency-Key",
+            "in": "header",
+            "required": true,
+            "schema": { "type": "string", "maxLength": 128 }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "required": ["ticket", "taxProfile"],
+                "properties": {
+                  "ticket": {
+                    "type": "string",
+                    "contentMediaType": "image/jpeg",
+                    "contentEncoding": "binary"
+                  },
+                  "taxProfile": {
+                    "type": "string",
+                    "description": "Objeto TaxProfile serializado como JSON"
+                  },
+                  "rfcReceptor": { "type": "string" }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "202": {
+            "description": "Job aceptado",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/JobEnvelope" }
+              }
+            }
+          },
+          "400": { "$ref": "#/components/responses/Error" },
+          "401": { "$ref": "#/components/responses/Error" },
+          "413": { "$ref": "#/components/responses/Error" },
+          "415": { "$ref": "#/components/responses/Error" },
+          "422": { "$ref": "#/components/responses/Error" },
+          "429": { "$ref": "#/components/responses/Error" }
+        }
+      }
+    },
+    "/v2/billing/jobs/{jobId}": {
+      "get": {
+        "summary": "Consultar estado y resultado",
+        "parameters": [
+          { "$ref": "#/components/parameters/JobId" }
+        ],
+        "responses": {
+          "200": {
+            "description": "Estado actual",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/JobEnvelope" }
+              }
+            }
+          },
+          "401": { "$ref": "#/components/responses/Error" },
+          "404": { "$ref": "#/components/responses/Error" }
+        }
+      }
+    },
+    "/v2/billing/jobs/{jobId}/events": {
+      "get": {
+        "summary": "Consultar eventos recientes",
+        "parameters": [
+          { "$ref": "#/components/parameters/JobId" },
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": { "type": "integer", "minimum": 1, "maximum": 50 }
+          }
+        ],
+        "responses": {
+          "200": { "description": "Eventos del job" },
+          "401": { "$ref": "#/components/responses/Error" },
+          "404": { "$ref": "#/components/responses/Error" }
+        }
+      }
+    },
+    "/v2/billing/jobs/{jobId}/commands": {
+      "post": {
+        "summary": "Solicitar una accion de Capa C",
+        "parameters": [
+          { "$ref": "#/components/parameters/JobId" },
+          {
+            "name": "Idempotency-Key",
+            "in": "header",
+            "required": true,
+            "schema": { "type": "string", "maxLength": 128 }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": ["type", "payload"],
+                "properties": {
+                  "type": {
+                    "type": "string",
+                    "enum": ["request_capa_c_resume"]
+                  },
+                  "payload": { "type": "object" }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "202": { "description": "Comando aceptado" },
+          "400": { "$ref": "#/components/responses/Error" },
+          "401": { "$ref": "#/components/responses/Error" },
+          "409": { "$ref": "#/components/responses/Error" }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "firebaseBearer": {
+        "type": "http",
+        "scheme": "bearer",
+        "bearerFormat": "Firebase ID token"
+      },
+      "easySatServiceBearer": {
+        "type": "http",
+        "scheme": "bearer",
+        "bearerFormat": "EasySat service token",
+        "description": "Sólo para backend servidor-a-servidor. Nunca incluir en Flutter, APK o navegador."
+      }
+    },
+    "parameters": {
+      "JobId": {
+        "name": "jobId",
+        "in": "path",
+        "required": true,
+        "schema": { "type": "string" }
+      }
+    },
+    "schemas": {
+      "JobEnvelope": {
+        "type": "object",
+        "required": ["data", "meta"],
+        "properties": {
+          "data": { "$ref": "#/components/schemas/Job" },
+          "meta": { "type": "object" }
+        }
+      },
+      "Job": {
+        "type": "object",
+        "required": ["id", "status", "isTerminal", "needsUserAction"],
+        "properties": {
+          "id": { "type": "string" },
+          "status": { "type": "string" },
+          "workflowStage": { "type": ["string", "null"] },
+          "processingMode": { "const": "autonomous" },
+          "statusMessage": { "type": ["string", "null"] },
+          "isTerminal": { "type": "boolean" },
+          "needsUserAction": { "type": "boolean" },
+          "pollAfterMs": { "type": "integer" },
+          "ticket": { "type": "object" },
+          "ocrResolution": { "type": ["object", "null"] },
+          "userAction": { "type": ["object", "null"] },
+          "result": {
+            "type": "object",
+            "properties": {
+              "xmlUrl": { "type": ["string", "null"], "format": "uri" },
+              "pdfUrl": { "type": ["string", "null"], "format": "uri" },
+              "validation": { "type": ["object", "null"] },
+              "warning": { "type": ["string", "null"] }
+            }
+          },
+          "error": { "type": ["object", "null"] }
+        }
+      }
+    },
+    "responses": {
+      "Error": {
+        "description": "Error de API",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "error": {
+                  "type": "object",
+                  "properties": {
+                    "code": { "type": "string" },
+                    "message": { "type": "string" },
+                    "requestId": { "type": "string" }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
