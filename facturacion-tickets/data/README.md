@@ -9,6 +9,15 @@ ejecutar el codigo desde cero.
   portales verificables y metadatos no personales.
 - `tax-profiles/sample.json`: perfil fiscal sintetico para validaciones.
 
+## Catalogo CFDI
+
+`sat-catalogs/catCFDI_V_4_20260603.xls` es una copia de referencia de los
+catalogos CFDI 4.0 del SAT. El servicio no lee el Excel en cada solicitud:
+los valores que necesita estan materializados en
+`src/fiscal/sat-cfdi-catalog.mjs` para responder rapido y sin depender de
+Excel. Si llega una version nueva del catalogo, se debe regenerar ese modulo,
+ejecutar `npm run release:preflight` y revisar el cambio antes de desplegarlo.
+
 ## No se versiona
 
 - Fotos de tickets, QR extraidos o archivos subidos por usuarios.

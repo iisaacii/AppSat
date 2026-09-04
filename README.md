@@ -79,13 +79,19 @@ Firebase de AppSat. Las reglas se pueden comprobar localmente desde
 - [Despliegue](facturacion-tickets/deployment/README.md): API, workers, Redis
   y Cloud Run.
 
+## Material de referencia
+
+- [Guia practica de impuestos](declaracion-mensual/referencias/Guia_Practica_Impuestos_Mexico.pdf): material de consulta general para el futuro modulo de declaracion mensual. No es logica ejecutable ni sustituye una fuente fiscal oficial actualizada.
+- [Catalogo CFDI 4.0](facturacion-tickets/data/sat-catalogs/catCFDI_V_4_20260603.xls): copia de referencia de los catalogos SAT usados para generar `src/fiscal/sat-cfdi-catalog.mjs`. Si se actualiza, debe regenerarse y validarse ese modulo antes de cambiarlo en produccion.
+
 ## Seguridad y datos fiscales
 
-El repositorio publico contiene solo ejemplos sinteticos. Estan excluidos de
-Git los tickets, perfiles fiscales reales, credenciales Firebase, claves de
-Gemini, cookies, capturas del navegador, XML/PDF y memoria aprendida de los
-portales. Los resultados reales deben almacenarse en infraestructura privada
-con permisos minimos y politicas de retencion.
+El repositorio publico contiene codigo, documentacion y referencias publicas;
+no contiene datos fiscales personales de usuarios. Estan excluidos de Git los
+tickets, perfiles fiscales reales, credenciales Firebase, claves de Gemini,
+cookies, capturas del navegador, XML/PDF y memoria aprendida de los portales.
+Los resultados reales deben almacenarse en infraestructura privada con
+permisos minimos y politicas de retencion.
 
 ## Estado de la migracion
 
